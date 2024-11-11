@@ -173,12 +173,12 @@ section {
 }
 
 #Main2 {
-  background-color: pink; /* Green for Home page */
+  background-color: grey; /* Green for Home page */
 }
 
-#contact {
-  background-color: #9C27B0; /* Purple for Contact page */
-}
+/* #contact {
+  background-color: grey; 
+} */
 
 #Accessories {
   background-color: #2196F3; /* Blue for Accessories page */
@@ -319,4 +319,162 @@ nav a:hover {
 }
 
 /* ----------------------------------------------------------------------------------------- */
+/* CONTACT SECTION */
+/* ----------------------------------------------------------------------------------------- */
+#contact {
+  background-color: #ffffff;
+  padding: 50px 100px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
 
+#contact h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto 1fr; /* Maintain columns */
+  gap: 20px;
+  align-items: start;
+}
+
+.vertical-divider {
+  width: 1px;
+  background-color: #000;
+  height: 100%;
+}
+
+.contact-form-container {
+  border-left: none;
+  padding-left: 20px;
+}
+
+.contact-form-container h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.contact-form-container p {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 1rem;
+}
+
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form-container button {
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form-container button:hover {
+  background-color: #555;
+}
+
+/* Contact section spacing */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.vertical-divider {
+  width: 1px;
+  background-color: #000;
+  height: 100%;
+}
+
+/* Divider styling */
+.horizontal-divider {
+  margin: 30px 0;
+  height: 1px;
+  background-color: #ddd;
+}
+
+/* Email Updates and Social Icons Styling */
+.email-updates {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  gap: 10px; /* Adds space between the input and button */
+}
+
+.email-updates input {
+  width: 400px; /* Set the desired width for the input box */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.email-updates button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.email-updates button:hover {
+  background-color: #555;
+}
+
+/* Styling for the subscription message */
+#subscribeMessage {
+  margin-top: 10px;
+  color: green;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Hidden class to toggle visibility */
+.hidden {
+  display: none;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #000;
+}
