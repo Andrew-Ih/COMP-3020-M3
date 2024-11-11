@@ -7,35 +7,157 @@
     </head>
 
     <body>
-        <header>
-            <nav>
-                <a href="index.html" class="logo">LUX EV</a>
-                <ul class="nav-links">
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Vehicles</a>
-                        <div class="dropdown-content">
-                            <a href="sedan.html">Sedans</a>
-                            <a href="suv.html">SUVs</a>
-                            <a href="truck.html">Trucks</a>
-                        </div>
-                    </li>
-                    <li><a href="accessories.html">Accessories</a></li>
-                    <li><a href="maintenance.html">Maintenance</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <!-- NAV BAR -->
+        <nav>
+            <div class="home-button">
+              <a href="#" onclick="showPage('Main')"><h1>LUX-EV</h1></a>
+            </div>
 
-        <main>
-            <section class="hero">
-                <h1>LUX EV</h1>
-                <p>Welcome to LUX EV, the future of electric vehicles.</p>
-            </section>
+            <ul>
+              <li class="dropdown">
+                <a href="#">Vehicles</a>
+                <div class="dropdown-content">
+                    <!-- Car Brand Logos -->
+                    <div class="brand-logos">
+                        <div class="logo-item">Audi</div>
+                        <div class="logo-item">Toyota</div>
+                        <div class="logo-item">Aston Martin</div>
+                        <div class="logo-item">Land Rover</div>
+                        <div class="logo-item">Tesla</div>
+                        <div class="logo-item">Porsche</div>
+                    </div>
+                    <!-- Additional Options -->
+                    <div class="dropdown-options">
+                        <a href="#" onclick="showPage('view-all')">View All</a>
+                        <a href="#" onclick="showPage('test-drive')">Test Drive</a>
+                        <a href="#" onclick="showPage('compare')">Compare</a>
+                        <a href="#" onclick="showPage('brandnew')">Brand New</a>
+                        <a href="#" onclick="showPage('preowned')">Pre-Owned</a>
+                    </div>
+                </div>
+              </li>
+              <li>
+                <a href="#" onclick="showPage('Accessories')">Accessories</a>
+              </li>
+              <li>
+                <a href="#" onclick="showPage('Maintenance')">Maintenance</a>
+              </li>
+              <li>
+                <a href="#" onclick="showPage('contact')">Contact</a>
+              </li>
+            </ul>
+            <div class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+        </nav>
 
-            <section id="contact" class="contact-section">
-                <h2>Contact Us</h2>
-                <p>For inquiries, support, or more information, please contact us at support@luxev.com or call 123-456-7890.</p>
-            </section>
-        </main>
+        <!-- Hamburger Menu bar -->
+        <div class="menubar">
+            <ul>
+              <!-- <li>
+                <a href="#" onclick="showPage('Vehicles')">Vehicles</a>
+              </li> -->
+              <li class="dropdown">
+                <a href="#">Vehicles</a>
+                <!-- <div class="dropdown-content"> -->
+                    <!-- Car Brand Logos -->
+                    <!-- <div class="brand-logos">
+                        <div class="logo-item">Audi</div>
+                        <div class="logo-item">Toyota</div>
+                        <div class="logo-item">Aston Martin</div>
+                        <div class="logo-item">Land Rover</div>
+                        <div class="logo-item">Tesla</div>
+                        <div class="logo-item">Porsche</div>
+                    </div> -->
+                    <!-- Additional Options -->
+                    <!-- <div class="dropdown-options">
+                        <a href="#">View All</a>
+                        <a href="#">Test Drive</a>
+                        <a href="#">Compare</a>
+                        <a href="#">Brand New</a>
+                        <a href="#">Pre-Owned</a>
+                    </div> -->
+                <!-- </div> -->
+              </li>
+              <li>
+                <a href="#" onclick="showPage('Accessories')">Accessories</a>
+              </li>
+              <li>
+                <a href="#" onclick="showPage('Maintenance')">Maintenance</a>
+              </li>
+              <li>
+                <a href="#" onclick="showPage('contact')">Contact</a>
+              </li>
+            </ul>
+        </div>
+
+        <!-- Pages -->
+
+        <!-- MAIN SECTION  -->
+        <section id="Main" class="active">
+          <h1>Main1</h1>
+          <p>This is the FIRST MAIN page.</p>
+        </section>
+
+        <!-- 2ND MAIN SECTION  -->
+        <section id="Main2" class="active">
+          <h1>MAIN2</h1>
+          <p>This is the 2ND MAIN page.</p>
+        </section>
+
+        <!-- CONTACT SECTION (3RD MAIN SECTION) -->
+        <section id="contact" class="active">
+          <h1>Contact Page</h1>
+          <p>Get in touch with us!</p>
+        </section>
+
+        <!-- ACCESSORIES SECTION  -->
+        <section id="Accessories">
+          <h1>Accessories</h1>
+          <p>This is the accessories page.</p>
+        </section>
+        
+        <!-- MAINTENANCE SECTION -->
+        <section id="Maintenance">
+          <h1>Maintenace Page</h1>
+          <p>Get in touch with us!</p>
+        </section>
+
+        <!-- VIEW ALL VEHICLES SECTION -->
+        <section id="view-all">
+          <h1>VIEW ALL Page</h1>
+        </section>
+
+        <!-- TEST DRIVE SECTION -->
+        <section id="test-drive">
+          <h1>TestDrive Page</h1>
+          <p>TestDrive your vehicle</p>
+        </section>
+
+        <!-- COMPARE SECTION -->
+        <section id="compare">
+          <h1>Compare Page</h1>
+          <p>Compare vehicles</p>
+        </section>
+
+        <!-- BRAND NEW SECTION -->
+        <section id="brandnew">
+          <h1>BrandNew Page</h1>
+        </section>
+
+        <!-- PRE-OWNED SECTION -->
+        <section id="preowned">
+          <h1>Pre-Owned Page</h1>
+        </section>
+
+        <!-- CHECKOUT Section -->
+        <section id="checkout">
+          <h1>Checkout Page</h1>
+          <p>Purchase your vehicle</p>
+        </section>
+
+
     </body>
 </html>
