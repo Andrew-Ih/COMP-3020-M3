@@ -31,3 +31,10 @@ function showPage(pageId) {
 
 // Expose the function globally
 window.showPage = showPage
+
+function toggleDropdown() {
+  const dropdown = document.getElementById("vehicleDropdown");
+  dropdown.classList.toggle("active");
+}
+
+window.toggleDropdown = toggleDropdown

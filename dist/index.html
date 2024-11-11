@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <title>LUX EV</title>
     </head>
 
@@ -15,17 +16,18 @@
 
             <ul>
               <li class="dropdown">
-                <a href="#">Vehicles</a>
-                <div class="dropdown-content">
+                <a href="#" onclick="toggleDropdown()">Vehicles <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content" id="vehicleDropdown">
                     <!-- Car Brand Logos -->
                     <div class="brand-logos">
-                        <div class="logo-item">Audi</div>
-                        <div class="logo-item">Toyota</div>
-                        <div class="logo-item">Aston Martin</div>
-                        <div class="logo-item">Land Rover</div>
-                        <div class="logo-item">Tesla</div>
-                        <div class="logo-item">Porsche</div>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Audi</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Toyota</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Aston Martin</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Land Rover</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Tesla</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Porsche</div></a>
                     </div>
+                    <div class="divider"></div>
                     <!-- Additional Options -->
                     <div class="dropdown-options">
                         <a href="#" onclick="showPage('view-all')">View All</a>
@@ -60,7 +62,7 @@
                 <a href="#" onclick="showPage('Vehicles')">Vehicles</a>
               </li> -->
               <li class="dropdown">
-                <a href="#">Vehicles</a>
+                <a href="#">Vehicles <i class="fas fa-chevron-down"></i></a>
                 <!-- <div class="dropdown-content"> -->
                     <!-- Car Brand Logos -->
                     <!-- <div class="brand-logos">
@@ -73,11 +75,11 @@
                     </div> -->
                     <!-- Additional Options -->
                     <!-- <div class="dropdown-options">
-                        <a href="#">View All</a>
-                        <a href="#">Test Drive</a>
-                        <a href="#">Compare</a>
-                        <a href="#">Brand New</a>
-                        <a href="#">Pre-Owned</a>
+                      <a href="#" onclick="showPage('view-all')">View All</a>
+                      <a href="#" onclick="showPage('test-drive')">Test Drive</a>
+                      <a href="#" onclick="showPage('compare')">Compare</a>
+                      <a href="#" onclick="showPage('brandnew')">Brand New</a>
+                      <a href="#" onclick="showPage('preowned')">Pre-Owned</a>
                     </div> -->
                 <!-- </div> -->
               </li>
