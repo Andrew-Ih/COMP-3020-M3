@@ -181,8 +181,79 @@
         
         <!-- MAINTENANCE SECTION -->
         <section id="Maintenance">
-          <h1>Maintenace Page</h1>
-          <p>Get in touch with us!</p>
+          <h1>Maintenance</h1>
+          <p class="scroll-message">Scroll down to book an appointment and view our extensive maintenance services.</p>
+
+          <!-- What We Offer Section -->
+          <div class="what-we-offer">
+            <h2>What We Offer</h2>
+            <div class="service-box-container">
+              <div class="service-box">
+                <img src="img/vehicle-inspection.jpg" alt="Vehicle Inspection">
+                <h3>Comprehensive Vehicle Inspections</h3>
+                <p>Ensure your vehicle is in top condition with a detailed inspection covering all major components.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/oil-change.jpg" alt="Oil Change">
+                <h3>Oil and Fluid Changes</h3>
+                <p>Keep your engine running smoothly with regular oil and fluid changes to maximize performance.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/brake-service.jpg" alt="Brake Service">
+                <h3>Brake System Servicing</h3>
+                <p>Ensure your safety with comprehensive brake checks and servicing for optimal performance.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/tire-change.jpg" alt="Tire Change">
+                <h3>Tire Rotations and Replacements</h3>
+                <p>Maintain even tire wear and extend their life with expert rotations and replacements.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/battery-check.jpg" alt="Battery Check">
+                <h3>Battery Checks and Replacements</h3>
+                <p>Stay charged with battery health checks and replacements to avoid unexpected failures.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/engine-diagnostics.jpg" alt="Engine Diagnostics">
+                <h3>Engine Diagnostics and Tune-Ups</h3>
+                <p>Diagnose and resolve engine issues with advanced tools and expert tune-up services.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/ac-repair.jpg" alt="AC Repair">
+                <h3>Air Conditioning and Heating Repairs</h3>
+                <p>Enjoy comfort year-round with reliable A/C and heating system repairs and maintenance.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/suspension.jpg" alt="Suspension Maintenance">
+                <h3>Suspension and Steering Maintenance</h3>
+                <p>Experience smooth handling with checks and repairs for your suspension and steering systems.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/transmission.jpg" alt="Transmission Services">
+                <h3>Transmission Services</h3>
+                <p>Keep your vehicle's transmission in prime condition with expert servicing and repairs.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/maintenance-package.jpg" alt="Maintenance Package">
+                <h3>Regular Maintenance Packages</h3>
+                <p>Choose from comprehensive maintenance packages tailored to your vehicle's needs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book Appointment Section -->
+          <div class="book-appointment">
+            <h2>Book an Appointment</h2>
+            <form id="appointmentForm">
+              <input type="text" id="fullName" placeholder="Full Name" required />
+              <input type="email" id="email" placeholder="Email" required />
+              <input type="tel" id="phone" placeholder="Phone Number" required />
+              <input type="date" id="appointmentDate" required />
+              <textarea id="appointmentMessage" placeholder="Additional Information (optional)"></textarea>
+              <button type="submit">Book Now</button>
+            </form>
+            <p id="appointmentConfirmation" class="hidden">Your appointment has been booked!</p>
+          </div>
         </section>
 
         <!-- VIEW ALL VEHICLES SECTION -->

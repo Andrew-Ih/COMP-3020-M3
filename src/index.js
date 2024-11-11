@@ -10,6 +10,9 @@ const toggleNav = () => {
 };
 mobileNav.addEventListener("click", () => toggleNav());
 
+//--------------------------------------------------------------------------------------------
+// ShowPage function, controlls the switching of the pages through the navbar and buttons
+//--------------------------------------------------------------------------------------------
 function showPage(pageId) {
   // Hide all sections
   document.querySelectorAll("section").forEach(section => {
@@ -39,7 +42,9 @@ function toggleDropdown() {
 
 window.toggleDropdown = toggleDropdown
 
+//--------------------------------------------------------------------------------------------
 // Contact form submission handling
+//--------------------------------------------------------------------------------------------
 document.getElementById("contactForm").addEventListener("submit", function(event) {
   event.preventDefault();
   
@@ -77,6 +82,9 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   }, 3000);
 });
 
+//--------------------------------------------------------------------------------------------
+// Email Updates submission and form validation handling 
+//--------------------------------------------------------------------------------------------
 document.getElementById("subscribeForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent the form from submitting
   
@@ -102,4 +110,29 @@ document.getElementById("subscribeForm").addEventListener("submit", function(eve
   setTimeout(() => {
     subscribeMessage.classList.add("hidden");
   }, 3000);
+});
+
+//--------------------------------------------------------------------------------------------
+// Appointment form submission handling
+//--------------------------------------------------------------------------------------------
+document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  const appointmentConfirmation = document.getElementById("appointmentConfirmation");
+
+  // Show confirmation message
+  appointmentConfirmation.textContent = "Thank you for booking!";
+  appointmentConfirmation.style.color = "green"; // Green color for success message
+  appointmentConfirmation.classList.remove("hidden");
+
+  // Clear the form inputs
+  this.reset();
+
+  // Hide the confirmation message after 3 seconds
+  setTimeout(() => {
+    appointmentConfirmation.classList.add("hidden");
+  }, 3000);
+
+  // Ensure that the page stays in the Maintenance section after the form is submitted
+  // document.getElementById("Maintenance").scrollIntoView({ behavior: "smooth" });
 });
