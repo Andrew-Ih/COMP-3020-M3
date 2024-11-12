@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <title>LUX EV</title>
     </head>
 
@@ -15,17 +16,18 @@
 
             <ul>
               <li class="dropdown">
-                <a href="#">Vehicles</a>
-                <div class="dropdown-content">
+                <a href="#" onclick="toggleDropdown()">Vehicles <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content" id="vehicleDropdown">
                     <!-- Car Brand Logos -->
                     <div class="brand-logos">
-                        <div class="logo-item">Audi</div>
-                        <div class="logo-item">Toyota</div>
-                        <div class="logo-item">Aston Martin</div>
-                        <div class="logo-item">Land Rover</div>
-                        <div class="logo-item">Tesla</div>
-                        <div class="logo-item">Porsche</div>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Audi</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Toyota</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Aston Martin</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Land Rover</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Tesla</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Porsche</div></a>
                     </div>
+                    <div class="divider"></div>
                     <!-- Additional Options -->
                     <div class="dropdown-options">
                         <a href="#" onclick="showPage('view-all')">View All</a>
@@ -60,7 +62,7 @@
                 <a href="#" onclick="showPage('Vehicles')">Vehicles</a>
               </li> -->
               <li class="dropdown">
-                <a href="#">Vehicles</a>
+                <a href="#">Vehicles <i class="fas fa-chevron-down"></i></a>
                 <!-- <div class="dropdown-content"> -->
                     <!-- Car Brand Logos -->
                     <!-- <div class="brand-logos">
@@ -73,11 +75,11 @@
                     </div> -->
                     <!-- Additional Options -->
                     <!-- <div class="dropdown-options">
-                        <a href="#">View All</a>
-                        <a href="#">Test Drive</a>
-                        <a href="#">Compare</a>
-                        <a href="#">Brand New</a>
-                        <a href="#">Pre-Owned</a>
+                      <a href="#" onclick="showPage('view-all')">View All</a>
+                      <a href="#" onclick="showPage('test-drive')">Test Drive</a>
+                      <a href="#" onclick="showPage('compare')">Compare</a>
+                      <a href="#" onclick="showPage('brandnew')">Brand New</a>
+                      <a href="#" onclick="showPage('preowned')">Pre-Owned</a>
                     </div> -->
                 <!-- </div> -->
               </li>
@@ -97,21 +99,110 @@
 
         <!-- MAIN SECTION  -->
         <section id="Main" class="active">
-          <h1>Main1</h1>
-          <p>This is the FIRST MAIN page.</p>
+          <div class="hero-container">
+            <img src="d9c71fcd59ae34c299de.avif" alt="Tesla Car" class="hero-image">
+            <div class="hero-overlay">
+              <h1>Save Earth, Go Electric</h1>
+              <!-- <p>Experience the future of driving with electric vehicles. Efficient, eco-friendly, and powerful — making a positive impact on the planet starts with your choice of car.</p> -->
+            </div>
+          </div>
         </section>
 
         <!-- 2ND MAIN SECTION  -->
         <section id="Main2" class="active">
-          <h1>MAIN2</h1>
-          <p>This is the 2ND MAIN page.</p>
+          <h1>Featured Cars</h1>
+          <div class="featured-cars">
+            <!-- Featured Car 1 -->
+            <div class="car-card">
+              <img src="99978dbedf573fcd2454.avif" alt="Featured Car 1">
+              <div class="car-details">
+                <h2>Car Model 1</h2>
+                <p>Description of the car, highlighting its features and specifications. Mention price or any special details.</p>
+                <div class="car-buttons">
+                  <button onclick="showPage('view-all')">View More</button>
+                  <button onclick="showPage('checkout')">Buy Now</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Featured Car 2 -->
+            <div class="car-card">
+              <img src="5934c07980a583bd92f5.avif" alt="Featured Car 2">
+              <div class="car-details">
+                <h2>Car Model 2</h2>
+                <p>Description of the car, highlighting its features and specifications. Mention price or any special details.</p>
+                <div class="car-buttons">
+                  <button onclick="showPage('view-all')">View More</button>
+                  <button onclick="showPage('checkout')">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- CONTACT SECTION (3RD MAIN SECTION) -->
         <section id="contact" class="active">
-          <h1>Contact Page</h1>
-          <p>Get in touch with us!</p>
+          <h1>Contact Us</h1>
+          <div class="contact-grid">
+            <!-- Existing columns for vehicles, support, finance, etc. -->
+            <div>
+              <h3>Vehicles</h3>
+              <p>All vehicles</p>
+              <p>Toyota</p>
+              <p>Ford</p>
+              <p>BMW</p>
+              <p>Aston Martin</p>
+              <p>Honda</p>
+            </div>
+            <div>
+              <h3>Support</h3>
+              <p>Services</p>
+              <p>Maintenance</p>
+              <p>Roadside Assistance</p>
+              <p>Customer Support</p>
+            </div>
+            <div>
+              <h3>Finance</h3>
+              <p>Trade-In</p>
+              <p>Credit</p>
+              <p>Insurance</p>
+            </div>
+            <div class="vertical-divider"></div>
+            <div class="contact-form-container">
+              <h3>Contact</h3>
+              <p>Email: LuxEV@gmail.com</p>
+              <p>Phone: 204-555-3826</p>
+              <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required />
+                <input type="email" id="email" placeholder="Your Email" required />
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+              <p id="form-message"></p>
+            </div>
+          </div>
+        
+          <!-- Divider above the subscription and social media -->
+          <div class="horizontal-divider"></div>
+
+          <div class="email-updates">
+            <form id="subscribeForm">
+              <input type="email" id="subscribeEmail" placeholder="Enter your email for updates" required />
+              <button type="submit">Subscribe</button>
+            </form>
+            <p id="subscribeMessage" class="hidden">Thanks for subscribing!</p>
+          </div>
+        
+          <div class="horizontal-divider"></div>
+        
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
         </section>
+        
 
         <!-- ACCESSORIES SECTION  -->
         <section id="Accessories">
@@ -121,26 +212,209 @@
         
         <!-- MAINTENANCE SECTION -->
         <section id="Maintenance">
-          <h1>Maintenace Page</h1>
-          <p>Get in touch with us!</p>
+          <h1>Maintenance</h1>
+          <p class="scroll-message">Scroll down to book an appointment and view our extensive maintenance services.</p>
+
+          <!-- What We Offer Section -->
+          <div class="what-we-offer">
+            <h2>What We Offer</h2>
+            <div class="service-box-container">
+              <div class="service-box">
+                <img src="e7dc883108c458eb1170.jpg" alt="Vehicle Inspection">
+                <h3>Comprehensive Vehicle Inspections</h3>
+                <p>Ensure your vehicle is in top condition with a detailed inspection covering all major components.</p>
+              </div>
+              <div class="service-box">
+                <img src="2656dbc30b011732de57.jpg" alt="Oil Change">
+                <h3>Oil and Fluid Changes</h3>
+                <p>Keep your engine running smoothly with regular oil and fluid changes to maximize performance.</p>
+              </div>
+              <div class="service-box">
+                <img src="e9d1af9bb503f4505f07.jpg" alt="Brake Service">
+                <h3>Brake System Servicing</h3>
+                <p>Ensure your safety with comprehensive brake checks and servicing for optimal performance.</p>
+              </div>
+              <div class="service-box">
+                <img src="8905826b28d9b06933a8.jpg" alt="Tire Change">
+                <h3>Tire Rotations and Replacements</h3>
+                <p>Maintain even tire wear and extend their life with expert rotations and replacements.</p>
+              </div>
+              <div class="service-box">
+                <img src="7bdb35f6b0fc10ea0116.jpg" alt="Battery Check">
+                <h3>Battery Checks and Replacements</h3>
+                <p>Stay charged with battery health checks and replacements to avoid unexpected failures.</p>
+              </div>
+              <div class="service-box">
+                <img src="d56b4883c7dd131cccb9.jpg" alt="Engine Diagnostics">
+                <h3>Engine Diagnostics and Tune-Ups</h3>
+                <p>Diagnose and resolve engine issues with advanced tools and expert tune-up services.</p>
+              </div>
+              <div class="service-box">
+                <img src="a3f7a5bb6d47957490ba.jpg" alt="AC Repair">
+                <h3>Air Conditioning and Heating Repairs</h3>
+                <p>Enjoy comfort year-round with reliable A/C and heating system repairs and maintenance.</p>
+              </div>
+              <div class="service-box">
+                <img src="86bf551b537fae749765.jpg" alt="Suspension Maintenance">
+                <h3>Suspension and Steering Maintenance</h3>
+                <p>Experience smooth handling with checks and repairs for your suspension and steering systems.</p>
+              </div>
+              <!-- <div class="service-box">
+                <img src="img/transmission.jpg" alt="Transmission Services">
+                <h3>Transmission Services</h3>
+                <p>Keep your vehicle's transmission in prime condition with expert servicing and repairs.</p>
+              </div>
+              <div class="service-box">
+                <img src="img/maintenance-package.jpg" alt="Maintenance Package">
+                <h3>Regular Maintenance Packages</h3>
+                <p>Choose from comprehensive maintenance packages tailored to your vehicle's needs.</p>
+              </div> -->
+            </div>
+          </div>
+
+          <!-- Book Appointment Section -->
+          <div class="book-appointment">
+            <h2>Book an Appointment</h2>
+            <form id="appointmentForm">
+              <input type="text" id="fullName" placeholder="Full Name" required />
+              <input type="email" id="email" placeholder="Email" required />
+              <input type="tel" id="phone" placeholder="Phone Number" required />
+              <input type="date" id="appointmentDate" required />
+              <textarea id="appointmentMessage" placeholder="Additional Information (optional)"></textarea>
+              <button type="submit">Book Now</button>
+            </form>
+            <p id="appointmentConfirmation" class="hidden">Your appointment has been booked!</p>
+          </div>
         </section>
 
         <!-- VIEW ALL VEHICLES SECTION -->
-        <section id="view-all">
-          <h1>VIEW ALL Page</h1>
+        <section id="view-all" class="view-vehicles-section">
+          <h1>View Vehicles</h1>
+          
+          <!-- Carousel Controls -->
+          <button id="prevButton" class="carousel-nav">&#8249;</button>
+
+          <!-- 3D Carousel -->
+          <div class="carousel-3d-container">
+            <div class="carousel-3d" id="carousel3D">
+              <div class="carousel-item active"><img src="a4c3077b3370b3bcf693.avif" alt="Car 1"></div>
+              <div class="carousel-item"><img src="99978dbedf573fcd2454.avif" alt="Car 2"></div>
+              <div class="carousel-item"><img src="5934c07980a583bd92f5.avif" alt="Car 3"></div>
+              <div class="carousel-item"><img src="a4c3077b3370b3bcf693.avif" alt="Car 4"></div>
+              <div class="carousel-item"><img src="5934c07980a583bd92f5.avif" alt="Car 5"></div>
+            </div>
+          </div>
+          
+          <!-- Carousel Controls -->
+          <button id="nextButton" class="carousel-nav">&#8250;</button>
         </section>
+        
 
         <!-- TEST DRIVE SECTION -->
-        <section id="test-drive">
-          <h1>TestDrive Page</h1>
-          <p>TestDrive your vehicle</p>
+        <section id="test-drive" class="test-drive-section">
+          <h1>Book a Test Drive</h1>
+          <div class="test-drive-container">
+            <div class="intro">
+              <p class="test-drive-description">Experience the performance of your favorite vehicle by booking a test drive.</p>
+              <img src="5934c07980a583bd92f5.avif" alt="Test Drive" class="test-drive-image">
+            </div>
+        
+            <!-- Form for Booking Test Drive -->
+            <form id="testDriveForm">
+              <div class="personal-info">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+              
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+              </div>
+        
+              <fieldset>
+                <legend>Select Car</legend>
+                <label for="carModel">Car Model:</label>
+                <select id="carModel" name="carModel">
+                  <option value="teslaModel3">Tesla Model 3</option>
+                  <option value="cybertruck">Tesla Cybertruck</option>
+                  <option value="lexusRX">Lexus RX</option>
+                  <option value="astonMartinDBX">Aston Martin DBX</option>
+                </select>
+              </fieldset>
+        
+              <fieldset>
+                <legend>Preferred Date</legend>
+                <label for="preferredDate">Preferred Date:</label>
+                <input type="date" id="preferredDate" name="preferredDate" required>
+              </fieldset>
+        
+              <!-- Book Now Button -->
+              <button type="submit" class="book-now-button">Book Now</button>
+            </form>
+          </div>
         </section>
 
         <!-- COMPARE SECTION -->
-        <section id="compare">
-          <h1>Compare Page</h1>
-          <p>Compare vehicles</p>
+        <section id="compare" class="compare-section">
+          <h1>Compare Vehicles</h1>
+          <p>Select vehicles to compare their specifications and features.</p>
+
+          <!-- Vehicle Selection Form -->
+          <div class="vehicle-selection">
+            <label for="car1-select">Select Car 1:</label>
+            <select id="car1-select" onchange="updateCompareDetails('car1', this.value)">
+              <option value="car1">Tesla Model 3</option>
+              <option value="car2">Aston Martin DBX</option>
+              <option value="car3">Cyber Truck</option>
+            </select>
+
+            <label for="car2-select">Select Car 2:</label>
+            <select id="car2-select" onchange="updateCompareDetails('car2', this.value)">
+              <option value="car1">Tesla Model 3</option>
+              <option value="car2">Aston Martin DBX</option>
+              <option value="car3">Cyber Truck</option>
+            </select>
+          </div>
+
+          <div class="compare-grid">
+            <!-- Car 1 -->
+            <div class="compare-item" id="compare-car1">
+              <img src="99978dbedf573fcd2454.avif" alt="Car 1" class="compare-image">
+              <h2 id="car1-name">Tesla Model 3</h2>
+              <div class="compare-details">
+                <h3>Performance</h3>
+                <p id="car1-performance">Range: 358 miles, Acceleration: 0-60 mph in 3.1 seconds</p>
+                <h3>Features</h3>
+                <p id="car1-features">Autopilot, 15-inch touchscreen, premium audio system</p>
+                <h3>Price</h3>
+                <p id="car1-price">$50,000</p>
+              </div>
+              <!-- Buy Now Button -->
+              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="divider"></div>
+
+            <!-- Car 2 -->
+            <div class="compare-item" id="compare-car2">
+              <img src="5934c07980a583bd92f5.avif" alt="Car 2" class="compare-image">
+              <h2 id="car2-name">Aston Martin DBX</h2>
+              <div class="compare-details">
+                <h3>Performance</h3>
+                <p id="car2-performance">Range: 305 miles, Acceleration: 0-60 mph in 4.5 seconds</p>
+                <h3>Features</h3>
+                <p id="car2-features">Luxury interior, advanced safety systems, 10-inch display</p>
+                <h3>Price</h3>
+                <p id="car2-price">$190,000</p>
+              </div>
+              <!-- Buy Now Button -->
+              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+            </div>
+          </div>
         </section>
+
 
         <!-- BRAND NEW SECTION -->
         <section id="brandnew">
