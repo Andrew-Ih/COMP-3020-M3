@@ -769,3 +769,78 @@ input:focus, select:focus {
 p, h1, h2 {
   color: #222; /* Ensure headings and text are visible */
 }
+
+/* ----------------------------------------------------------------------------------------- */
+/* COMPARE PAGE SECTION */
+/* ----------------------------------------------------------------------------------------- */
+.vehicle-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.vehicle-selection label {
+  margin-right: 10px;
+}
+
+.compare-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.compare-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure items stretch to the same height */
+  gap: 20px;
+}
+
+/* FIX THE LENGTH OF THE DIVIDER */
+.divider {
+  width: 2px;
+  background-color: #ddd;
+  margin: 0 20px;
+  align-self: stretch; /* Make the divider stretch to match the height of the containers */
+}
+
+.compare-item {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.compare-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.compare-details h3 {
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+.divider {
+  width: 2px;
+  background-color: #ddd;
+  margin: 0 20px;
+}
+
+.buy-now-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: block;
+  width: 100%; /* Make the button span the full width */
+}
+
+.buy-now-button:hover {
+  background-color: #333;
+}

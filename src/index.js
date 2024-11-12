@@ -185,3 +185,47 @@ document.getElementById('testDriveForm').addEventListener('submit', function(eve
     this.reset(); // Resets the form fields
   }, 3000);
 });
+
+//--------------------------------------------------------------------------------------------
+// Compare section 
+//--------------------------------------------------------------------------------------------
+
+import teslaImage from './img/tesla3.avif';
+import astonMartinImage from './img/astonmartin2.webp';
+import cyberTruckImage from './img/cybertruck.avif';
+
+const carData = {
+  car1: {
+    name: "Tesla Model 3",
+    image: teslaImage,
+    performance: "Range: 358 miles, Acceleration: 0-60 mph in 3.1 seconds",
+    features: "Autopilot, 15-inch touchscreen, premium audio system",
+    price: "$50,000"
+  },
+  car2: {
+    name: "Aston Martin DBX",
+    image: astonMartinImage,
+    performance: "Range: 305 miles, Acceleration: 0-60 mph in 4.5 seconds",
+    features: "Luxury interior, advanced safety systems, 10-inch display",
+    price: "$190,000"
+  },
+  car3: {
+    name: "Cyber Truck",
+    image: cyberTruckImage,
+    performance: "Range: 225 miles, Acceleration: 0-60 mph in 5.0 seconds",
+    features: "Spacious cabin, 14-inch display, panoramic roof",
+    price: "$60,000"
+  }
+};
+
+function updateCompareDetails(carId, selectedCar) {
+  const carDetails = carData[selectedCar];
+  document.getElementById(`${carId}-name`).textContent = carDetails.name;
+  document.getElementById(`compare-${carId}`).querySelector('img').src = carDetails.image;
+  document.getElementById(`${carId}-performance`).textContent = carDetails.performance;
+  document.getElementById(`${carId}-features`).textContent = carDetails.features;
+  document.getElementById(`${carId}-price`).textContent = carDetails.price;
+}
+
+// Expose the function globally
+window.updateCompareDetails = updateCompareDetails

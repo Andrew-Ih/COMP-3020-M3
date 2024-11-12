@@ -356,10 +356,65 @@
         </section>
 
         <!-- COMPARE SECTION -->
-        <section id="compare">
-          <h1>Compare Page</h1>
-          <p>Compare vehicles</p>
+        <section id="compare" class="compare-section">
+          <h1>Compare Vehicles</h1>
+          <p>Select vehicles to compare their specifications and features.</p>
+
+          <!-- Vehicle Selection Form -->
+          <div class="vehicle-selection">
+            <label for="car1-select">Select Car 1:</label>
+            <select id="car1-select" onchange="updateCompareDetails('car1', this.value)">
+              <option value="car1">Tesla Model 3</option>
+              <option value="car2">Aston Martin DBX</option>
+              <option value="car3">Cyber Truck</option>
+            </select>
+
+            <label for="car2-select">Select Car 2:</label>
+            <select id="car2-select" onchange="updateCompareDetails('car2', this.value)">
+              <option value="car1">Tesla Model 3</option>
+              <option value="car2">Aston Martin DBX</option>
+              <option value="car3">Cyber Truck</option>
+            </select>
+          </div>
+
+          <div class="compare-grid">
+            <!-- Car 1 -->
+            <div class="compare-item" id="compare-car1">
+              <img src="img/tesla4.avif" alt="Car 1" class="compare-image">
+              <h2 id="car1-name">Tesla Model 3</h2>
+              <div class="compare-details">
+                <h3>Performance</h3>
+                <p id="car1-performance">Range: 358 miles, Acceleration: 0-60 mph in 3.1 seconds</p>
+                <h3>Features</h3>
+                <p id="car1-features">Autopilot, 15-inch touchscreen, premium audio system</p>
+                <h3>Price</h3>
+                <p id="car1-price">$50,000</p>
+              </div>
+              <!-- Buy Now Button -->
+              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="divider"></div>
+
+            <!-- Car 2 -->
+            <div class="compare-item" id="compare-car2">
+              <img src="img/cybertruck.avif" alt="Car 2" class="compare-image">
+              <h2 id="car2-name">Aston Martin DBX</h2>
+              <div class="compare-details">
+                <h3>Performance</h3>
+                <p id="car2-performance">Range: 305 miles, Acceleration: 0-60 mph in 4.5 seconds</p>
+                <h3>Features</h3>
+                <p id="car2-features">Luxury interior, advanced safety systems, 10-inch display</p>
+                <h3>Price</h3>
+                <p id="car2-price">$190,000</p>
+              </div>
+              <!-- Buy Now Button -->
+              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+            </div>
+          </div>
         </section>
+
 
         <!-- BRAND NEW SECTION -->
         <section id="brandnew">
