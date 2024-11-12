@@ -463,9 +463,73 @@
                           <option value="credit">Credit Card</option>
                           <option value="paypal">PayPal</option>
                       </select>
-                  </div>
+                  </div>                  
                   <button type="submit">Place Order</button>
               </form>
+              <form action="#" method="POST" onsubmit="return validateCheckoutForm()">
+                <h2>$150,000</h2>
+                <div class="checkout-finance-options">
+                    Finance Options: <span>$200 a month</span>
+                </div>
+                <div class="checkout-color-options">
+                    Colour:
+                    <label><input type="radio" name="color" value="red"> Red</label>
+                    <label><input type="radio" name="color" value="black"> Black</label>
+                    <label><input type="radio" name="color" value="blue"> Blue</label>
+                </div>
+                <div class="checkout-protection-package">
+                    <label><input type="checkbox" name="protection"> Protection Package</label>
+                </div>
+                <div class="checkout-accessories">
+                    Accessories:
+                    <label><input type="checkbox" name="accessory" value="floor-mats"> Floor Mats</label>
+                    <label><input type="checkbox" name="accessory" value="car-cover"> Car Cover</label>
+                </div>
+                <div class="checkout-personal-details">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="checkout-payment-method">
+                    <select name="payment" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </div>                  
+                <button type="submit">Place Order</button>
+            </form>
+            <form action="#" method="POST" onsubmit="return validateCheckoutForm()">
+              <h2>$150,000</h2>
+              <div class="checkout-finance-options">
+                  Finance Options: <span>$200 a month</span>
+              </div>
+              <div class="checkout-color-options">
+                  Colour:
+                  <label><input type="radio" name="color" value="red"> Red</label>
+                  <label><input type="radio" name="color" value="black"> Black</label>
+                  <label><input type="radio" name="color" value="blue"> Blue</label>
+              </div>
+              <div class="checkout-protection-package">
+                  <label><input type="checkbox" name="protection"> Protection Package</label>
+              </div>
+              <div class="checkout-accessories">
+                  Accessories:
+                  <label><input type="checkbox" name="accessory" value="floor-mats"> Floor Mats</label>
+                  <label><input type="checkbox" name="accessory" value="car-cover"> Car Cover</label>
+              </div>
+              <div class="checkout-personal-details">
+                  <input type="text" name="fullname" placeholder="Full Name" required>
+                  <input type="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="checkout-payment-method">
+                  <select name="payment" required>
+                      <option value="">Select Payment Method</option>
+                      <option value="credit">Credit Card</option>
+                      <option value="paypal">PayPal</option>
+                  </select>
+              </div>                  
+              <button type="submit">Place Order</button>
+          </form>
             </div>
           </div>
         </section>

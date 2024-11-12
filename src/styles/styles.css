@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+/* Hiding the scroll bar to improve aesthetics */
+body::-webkit-scrollbar {
+  display: none; /* This will hide the scrollbar completely */
+}
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -12,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -25,6 +31,10 @@ nav {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   z-index: 1;
+  /* I messed around with the nave bar here, made it fixed, so would change later or not */
+  /* position: fixed;
+  background-color: #fff; 
+  width: 100%; */
 }
 nav .logo {
   display: flex;
@@ -851,11 +861,13 @@ p, h1, h2 {
 .checkout-section {
   display: none; /* Initial state is hidden */
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
+  height: calc(100vh - 60px); /* Adjust height to account for the navbar */
+  overflow-y: auto; /* Scroll only this section and not the entire body */
   margin: 0 auto;
   padding: 0;
-  /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
   background: #fff;
+  position: relative; /* Needed for absolute positioning of children */
 }
 
 .checkout-container {
@@ -864,96 +876,93 @@ p, h1, h2 {
   justify-content: space-between;
   align-items: stretch;
   width: 100vw;
+  /* width: 100%; */
+  height: 100vh;
   margin: 0 auto;
-  /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
   background: #fff;
   padding: 0;
+  /* padding-top: 60px; */
+  overflow: hidden; /* Prevents scrolling on the container itself */
 }
 
 .checkout-image-container {
+  position: fixed; /* Fixed positioning */
+  left: 0; /* Align to the left */
+  top: 0; /* Align to the top */
   width: 70vw;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  align-items: center; /* Center the image vertically */
+}
+
+.checkout-image-container img {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the space without stretching */
 }
 
 .checkout-options {
   width: 30vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-left: 70vw; /* Offset by the width of the image container */
   padding: 40px; /* Adequate padding for inner content */
-  overflow-y: auto; /* Allow scrolling if content exceeds the view */
+  overflow-y: scroll; /* Allow scrolling if content exceeds the view */
+  height: 100vh;
   border-left: 1px solid #ccc;
 }
 
-.checkout-image-container img {
-    /* height: auto; */
+.checkout-options::-webkit-scrollbar {
+  display: none; /* This hides the scrollbar completely */
 }
 
-.checkout-options {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-  height: 90vh;
-  border-left: 1px solid #ccc;
-}
 .checkout-options form {
   display: flex;
   flex-direction: column;
   width: 100%; /* Use full width of the container */
 }
 
-#checkout .checkout-options label {
-  margin: 12px 0; /* Space out the labels */
-  font-size: 16px; /* Readable font size */
-  color: #444; /* Dark grey for readability */
-}
-
-#checkout .checkout-options h2 {
-  color: #333; /* Dark color for contrast */
-  font-size: 24px; /* Visible size */
-}
-
-#checkout .checkout-options h2,
-#checkout .checkout-options .checkout-finance-options,
-#checkout .checkout-options .checkout-color-options,
-#checkout .checkout-options .checkout-accessories,
+/* Styling for text and form elements within the options */
+#checkout .checkout-options label, 
+#checkout .checkout-options h2, 
+#checkout .checkout-options .checkout-finance-options, 
+#checkout .checkout-options .checkout-color-options, 
+#checkout .checkout-options .checkout-accessories, 
 #checkout .checkout-options .checkout-protection-package {
-    color: #000; /* Sets the font color to black */
-    font-size: 18px; /* Ensures the text is neither too large nor too small */
-    margin-top: 20px; /* Adds space above each section for clarity */
-    margin-bottom: 10px; /* Adds a little space below each section heading */
+  color: #000; /* Black font color for visibility */
+  font-size: 18px; /* Appropriate font size */
+  margin: 12px 0; /* Spacing for readability */
 }
 
 #checkout input[type="text"], 
 #checkout input[type="email"], 
 #checkout select {
-    padding: 12px;
-    margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px; /* Slight curve on the borders */
-    box-sizing: border-box;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 #checkout input[type="radio"], 
 #checkout input[type="checkbox"] {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #checkout button {
   background-color: #000;
-  color: #fff;
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 15px;
   display: block;
-  width: 100%; /* Make the button span the full width */
+  width: 100%;
 }
 
 #checkout button:hover {
-  background-color: #333; /* Dark grey on hover for interaction */
+  background-color: #333;
 }
+
 
