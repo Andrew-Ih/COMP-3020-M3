@@ -229,3 +229,40 @@ function updateCompareDetails(carId, selectedCar) {
 
 // Expose the function globally
 window.updateCompareDetails = updateCompareDetails
+
+//--------------------------------------------------------------------------------------------
+// Checkout section 
+//--------------------------------------------------------------------------------------------
+// const images = ['img/tesla3.jpg', 'img/tesla4.avif', 'img/cybertruck.avif'];
+// let currentImageIndex = 0;
+
+// function prevImage() {
+//   currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+//   document.getElementById('carImage').src = images[currentImageIndex];
+// }
+
+// function nextImage() {
+//   currentImageIndex = (currentImageIndex + 1) % images.length;
+//   document.getElementById('carImage').src = images[currentImageIndex];
+// }
+
+// function placeOrder() {
+//   alert('Your order has been placed successfully!');
+// }
+// // Expose the function globally
+// window.prevImage = prevImage
+// window.nextImage = nextImage
+// window.selectColor = selectColor
+// window.placeOrder = placeOrder
+
+function validateCheckoutForm() {
+  const fullname = document.forms[0]["fullname"].value;
+  const email = document.forms[0]["email"].value;
+  if (fullname === "" || email === "") {
+      alert("Name and email must be filled out");
+      return false;
+  }
+  return true;
+}
+
+window.validateCheckoutForm = validateCheckoutForm

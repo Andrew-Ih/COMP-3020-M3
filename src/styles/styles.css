@@ -844,3 +844,116 @@ p, h1, h2 {
 .buy-now-button:hover {
   background-color: #333;
 }
+
+/* ----------------------------------------------------------------------------------------- */
+/* CHECKOUT SECTION */
+/* ----------------------------------------------------------------------------------------- */
+.checkout-section {
+  display: none; /* Initial state is hidden */
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+  background: #fff;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100vw;
+  margin: 0 auto;
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+  background: #fff;
+  padding: 0;
+}
+
+.checkout-image-container {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.checkout-options {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px; /* Adequate padding for inner content */
+  overflow-y: auto; /* Allow scrolling if content exceeds the view */
+  border-left: 1px solid #ccc;
+}
+
+.checkout-image-container img {
+    /* height: auto; */
+}
+
+.checkout-options {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  height: 90vh;
+  border-left: 1px solid #ccc;
+}
+.checkout-options form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Use full width of the container */
+}
+
+#checkout .checkout-options label {
+  margin: 12px 0; /* Space out the labels */
+  font-size: 16px; /* Readable font size */
+  color: #444; /* Dark grey for readability */
+}
+
+#checkout .checkout-options h2 {
+  color: #333; /* Dark color for contrast */
+  font-size: 24px; /* Visible size */
+}
+
+#checkout .checkout-options h2,
+#checkout .checkout-options .checkout-finance-options,
+#checkout .checkout-options .checkout-color-options,
+#checkout .checkout-options .checkout-accessories,
+#checkout .checkout-options .checkout-protection-package {
+    color: #000; /* Sets the font color to black */
+    font-size: 18px; /* Ensures the text is neither too large nor too small */
+    margin-top: 20px; /* Adds space above each section for clarity */
+    margin-bottom: 10px; /* Adds a little space below each section heading */
+}
+
+#checkout input[type="text"], 
+#checkout input[type="email"], 
+#checkout select {
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Slight curve on the borders */
+    box-sizing: border-box;
+}
+
+#checkout input[type="radio"], 
+#checkout input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#checkout button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: block;
+  width: 100%; /* Make the button span the full width */
+}
+
+#checkout button:hover {
+  background-color: #333; /* Dark grey on hover for interaction */
+}
+
