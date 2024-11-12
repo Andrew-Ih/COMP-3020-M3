@@ -167,50 +167,6 @@ section {
   min-height: 100vh; /* Full-height pages */
 }
 
-/* Styling for each individual section/page */
-/* #Main {
-  background-color: grey;
-} */
-
-/* #Main2 {
-  background-color: grey;
-} */
-
-/* #contact {
-  background-color: grey; 
-} */
-
-#Accessories {
-  background-color: #2196F3; /* Blue for Accessories page */
-}
-
-/* #Maintenance {
-  background-color: #f8f8f8
-} */
-
-#Checkout {
-  background-color: grey; /* Orange for Maintenance page */
-}
-
-/* Vehicle drop down pages */
-#view-all {
-  background-color: yellowgreen; /* Orange for Maintenance page */
-}
-#test-drive {
-  background-color: green; /* Orange for Maintenance page */
-}
-#compare {
-  background-color: brown; /* Orange for Maintenance page */
-}
-#brandnew {
-  background-color: lightskyblue; /* Orange for Maintenance page */
-}
-#preowned {
-  background-color: black; /* Orange for Maintenance page */
-}
-
-
-
 /* General styling for section content */
 h1 {
   font-size: 2em;
@@ -706,4 +662,110 @@ h1, h2 {
 
 .car-buttons button:hover {
   background-color: #555;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* VIEW ALL SECTION */
+/* ----------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------- */
+/* TEST DRIVE SECTION */
+/* ----------------------------------------------------------------------------------------- */
+.test-drive-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Dark text for visibility */
+}
+
+.test-drive-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.test-drive-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.test-drive-description {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  font-weight: bold;
+  color: #333; /* Ensure the color matches the style */
+  margin-bottom: 20px; /* Add spacing if needed */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #222; /* Ensure form labels are visible */
+}
+
+input, select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000; /* Ensure text inside input fields is visible */
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds space between the input fields */
+}
+
+.personal-info label {
+  font-weight: bold;
+}
+
+.personal-info input {
+  width: 100%; /* Ensures the inputs take up the full width */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus, select:focus {
+  border-color: #007BFF; /* Blue border for focus */
+  outline: none;
+}
+
+.book-now-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-button:hover {
+  background-color: #444;
+}
+
+p, h1, h2 {
+  color: #222; /* Ensure headings and text are visible */
 }

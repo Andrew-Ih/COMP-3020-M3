@@ -113,12 +113,13 @@ document.getElementById("subscribeForm").addEventListener("submit", function(eve
 });
 
 //--------------------------------------------------------------------------------------------
-// Appointment form submission handling
+// Maintenance Appointment form submission handling
 //--------------------------------------------------------------------------------------------
 document.getElementById("appointmentForm").addEventListener("submit", function(event) {
   event.preventDefault();
   
   const appointmentConfirmation = document.getElementById("appointmentConfirmation");
+  const optionalInput = document.getElementById("appointmentMessage");
 
   // Show confirmation message
   appointmentConfirmation.textContent = "Thank you for booking!";
@@ -127,6 +128,7 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
 
   // Clear the form inputs
   this.reset();
+  optionalInput.style.height = ""; // Reset textarea height
 
   // Hide the confirmation message after 3 seconds
   setTimeout(() => {
@@ -135,4 +137,51 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
 
   // Ensure that the page stays in the Maintenance section after the form is submitted
   // document.getElementById("Maintenance").scrollIntoView({ behavior: "smooth" });
+});
+
+//--------------------------------------------------------------------------------------------
+// Carousel and Filtering in ViewAll section 
+//--------------------------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("carousel3D");
+  const items = document.querySelectorAll(".carousel-item");
+  const totalItems = items.length;
+  let angle = 0;
+  const angleIncrement = 360 / totalItems;
+
+  // Position carousel items in a circle
+  items.forEach((item, index) => {
+      const rotationAngle = index * angleIncrement;
+      item.style.transform = `rotateY(${rotationAngle}deg) translateZ(400px)`;
+  });
+
+  // Navigation buttons
+  document.getElementById("prevButton").addEventListener("click", () => {
+      angle -= angleIncrement;
+      carousel.style.transform = `rotateY(${angle}deg)`;
+  });
+
+  document.getElementById("nextButton").addEventListener("click", () => {
+      angle += angleIncrement;
+      carousel.style.transform = `rotateY(${angle}deg)`;
+  });
+});
+
+//--------------------------------------------------------------------------------------------
+// TestDrive section 
+//--------------------------------------------------------------------------------------------
+
+document.getElementById('testDriveForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const message = document.createElement('p');
+  message.textContent = 'Thank you for booking your test drive!';
+  message.style.color = 'green';
+  message.style.fontSize = '1.1rem';
+  message.style.marginTop = '15px';
+  this.appendChild(message);
+
+  setTimeout(() => {
+    message.remove(); // Remove the thank-you message after 3 seconds
+    this.reset(); // Resets the form fields
+  }, 3000);
 });

@@ -288,14 +288,71 @@
         </section>
 
         <!-- VIEW ALL VEHICLES SECTION -->
-        <section id="view-all">
-          <h1>VIEW ALL Page</h1>
+        <section id="view-all" class="view-vehicles-section">
+          <h1>View Vehicles</h1>
+          
+          <!-- Carousel Controls -->
+          <button id="prevButton" class="carousel-nav">&#8249;</button>
+
+          <!-- 3D Carousel -->
+          <div class="carousel-3d-container">
+            <div class="carousel-3d" id="carousel3D">
+              <div class="carousel-item active"><img src="a4c3077b3370b3bcf693.avif" alt="Car 1"></div>
+              <div class="carousel-item"><img src="99978dbedf573fcd2454.avif" alt="Car 2"></div>
+              <div class="carousel-item"><img src="5934c07980a583bd92f5.avif" alt="Car 3"></div>
+              <div class="carousel-item"><img src="a4c3077b3370b3bcf693.avif" alt="Car 4"></div>
+              <div class="carousel-item"><img src="5934c07980a583bd92f5.avif" alt="Car 5"></div>
+            </div>
+          </div>
+          
+          <!-- Carousel Controls -->
+          <button id="nextButton" class="carousel-nav">&#8250;</button>
         </section>
+        
 
         <!-- TEST DRIVE SECTION -->
-        <section id="test-drive">
-          <h1>TestDrive Page</h1>
-          <p>TestDrive your vehicle</p>
+        <section id="test-drive" class="test-drive-section">
+          <h1>Book a Test Drive</h1>
+          <div class="test-drive-container">
+            <div class="intro">
+              <p class="test-drive-description">Experience the performance of your favorite vehicle by booking a test drive.</p>
+              <img src="5934c07980a583bd92f5.avif" alt="Test Drive" class="test-drive-image">
+            </div>
+        
+            <!-- Form for Booking Test Drive -->
+            <form id="testDriveForm">
+              <div class="personal-info">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+              
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+              </div>
+        
+              <fieldset>
+                <legend>Select Car</legend>
+                <label for="carModel">Car Model:</label>
+                <select id="carModel" name="carModel">
+                  <option value="teslaModel3">Tesla Model 3</option>
+                  <option value="cybertruck">Tesla Cybertruck</option>
+                  <option value="lexusRX">Lexus RX</option>
+                  <option value="astonMartinDBX">Aston Martin DBX</option>
+                </select>
+              </fieldset>
+        
+              <fieldset>
+                <legend>Preferred Date</legend>
+                <label for="preferredDate">Preferred Date:</label>
+                <input type="date" id="preferredDate" name="preferredDate" required>
+              </fieldset>
+        
+              <!-- Book Now Button -->
+              <button type="submit" class="book-now-button">Book Now</button>
+            </form>
+          </div>
         </section>
 
         <!-- COMPARE SECTION -->
