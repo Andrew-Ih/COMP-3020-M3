@@ -255,14 +255,61 @@ window.updateCompareDetails = updateCompareDetails
 // window.selectColor = selectColor
 // window.placeOrder = placeOrder
 
+// function validateCheckoutForm() {
+//   const fullname = document.forms[0]["fullname"].value;
+//   const email = document.forms[0]["email"].value;
+//   if (fullname === "" || email === "") {
+//       alert("Name and email must be filled out");
+//       return false;
+//   }
+//   return true;
+// }
+
+window.validateCheckoutForm = validateCheckoutForm
+
 function validateCheckoutForm() {
-  const fullname = document.forms[0]["fullname"].value;
-  const email = document.forms[0]["email"].value;
-  if (fullname === "" || email === "") {
-      alert("Name and email must be filled out");
-      return false;
+  let isValid = true;
+  
+  // Validate finance options
+  const finance = document.getElementById('finance');
+  if (finance.value === "") {
+      alert('Please select a finance option.');
+      isValid = false;
   }
-  return true;
+
+  // Validate color options
+  const colors = document.querySelectorAll('input[name="color"]:checked');
+  if (colors.length === 0) {
+      alert('Please select a color.');
+      isValid = false;
+  }
+
+  // Validate protection package
+  const protection = document.getElementById('protection');
+  if (protection.value === "") {
+      alert('Please select a protection package.');
+      isValid = false;
+  }
+
+  // Validate personal details
+  const fullname = document.querySelector('input[name="fullname"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const phone = document.querySelector('input[name="phone"]').value;
+  const address = document.querySelector('input[name="address"]').value;
+  if (!fullname || !email || !phone || !address) {
+      alert('Please complete all personal details.');
+      isValid = false;
+  }
+
+  // Validate payment method
+  const payment = document.getElementById('payment');
+  if (payment.value === "") {
+      alert('Please select a payment method.');
+      isValid = false;
+  }
+
+  return isValid; // Return the status of validity
 }
 
 window.validateCheckoutForm = validateCheckoutForm
+

@@ -909,6 +909,8 @@ p, h1, h2 {
   padding: 40px; /* Adequate padding for inner content */
   overflow-y: scroll; /* Allow scrolling if content exceeds the view */
   height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 100px;
   border-left: 1px solid #ccc;
 }
 
@@ -949,16 +951,51 @@ p, h1, h2 {
   margin-right: 10px;
 }
 
-#checkout button {
-  background-color: #000;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
+.checkout-options label {
   display: block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.checkout-options select, .checkout-options input[type="text"],
+.checkout-options input[type="email"] {
   width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.color-selector label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.color-selector input[type="radio"] {
+  display: none;
+}
+
+.color-selector input[type="radio"]:checked + label {
+  border-color: #000;
+}
+
+.checkout-options input[type="checkbox"] + label {
+  margin-left: 5px;
+}
+
+
+#checkout button {
+  background-color: #444;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  width: auto;
 }
 
 #checkout button:hover {
