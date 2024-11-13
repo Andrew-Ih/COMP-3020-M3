@@ -451,13 +451,21 @@
                   
                   <!-- Colour Options -->
                   <div class="checkout-color-options">
-                      <label>Colour:</label>
-                      <div class="color-selector">
-                          <input type="radio" name="color" value="red" id="red"><label for="red" style="background-color: red;">&nbsp;</label>
-                          <input type="radio" name="color" value="black" id="black"><label for="black" style="background-color: black;">&nbsp;</label>
-                          <input type="radio" name="color" value="blue" id="blue"><label for="blue" style="background-color: blue;">&nbsp;</label>
-                          <input type="radio" name="color" value="white" id="white"><label for="white" style="background-color: white;">&nbsp;</label>
-                      </div>
+                    <label>Colour:</label>
+                    <span id="selectedColor">None</span>
+                    <div class="color-selector">
+                        <input type="radio" name="color" value="red" id="red" hidden onchange="updateColorSelection('Red')">
+                        <label for="red" class="color-swatch" style="background-color: red;"></label>
+                
+                        <input type="radio" name="color" value="black" id="black" hidden onchange="updateColorSelection('Black')">
+                        <label for="black" class="color-swatch" style="background-color: black;"></label>
+                
+                        <input type="radio" name="color" value="blue" id="blue" hidden onchange="updateColorSelection('Blue')">
+                        <label for="blue" class="color-swatch" style="background-color: blue;"></label>
+                
+                        <input type="radio" name="color" value="white" id="white" hidden onchange="updateColorSelection('White')">
+                        <label for="white" class="color-swatch" style="background-color: white;"></label>
+                    </div>
                   </div>
                   
                   <!-- Protection Package -->
@@ -472,17 +480,30 @@
                   
                   <!-- Accessories -->
                   <div class="checkout-accessories">
-                      <label>Accessories:</label>
-                      <input type="checkbox" name="accessory" value="floor-mats" id="floor-mats"><label for="floor-mats">Floor Mats</label>
-                      <input type="checkbox" name="accessory" value="car-cover" id="car-cover"><label for="car-cover">Car Cover</label>
+                    <label for="accessories">Accessories:</label>
+                    <div class="accessory-item">
+                        <input type="checkbox" id="floor-mats" name="accessory" value="floor-mats">
+                        <label for="floor-mats">Floor Mats</label>
+                    </div>
+                    <div class="accessory-item">
+                        <input type="checkbox" id="car-cover" name="accessory" value="car-cover">
+                        <label for="car-cover">Car Cover</label>
+                    </div>
                   </div>
                   
                   <!-- Personal Details -->
                   <div class="checkout-personal-details">
-                      <input type="text" name="fullname" placeholder="Full Name" required>
+                      <label for="personal-details">Personal Details:</label>
+                      <input type="text" name="firstname" placeholder="First Name" required>
+                      <input type="text" name="lastname" placeholder="Last Name" required>
                       <input type="email" name="email" placeholder="Email" required>
                       <input type="text" name="phone" placeholder="Phone Number" required>
-                      <input type="text" name="address" placeholder="Delivery Address" required>
+                      <input type="text" name="address" placeholder="Street Address" required>
+                      <input type="text" name="address" placeholder="Apt. or Suite (optional)">
+                      <input type="text" name="address" placeholder="Town/City" required>
+                      <input type="text" name="address" placeholder="Province" required>
+                      <input type="text" name="address" placeholder="Postal Code" required>
+                      <input type="text" name="address" placeholder="Country/Region" required>
                   </div>
                   
                   <!-- Payment Information -->

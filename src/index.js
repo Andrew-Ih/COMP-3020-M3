@@ -313,3 +313,9 @@ function validateCheckoutForm() {
 
 window.validateCheckoutForm = validateCheckoutForm
 
+
+function updateColorSelection(color) {
+  document.getElementById('selectedColor').textContent = color;
+}
+
+window.updateColorSelection = updateColorSelection

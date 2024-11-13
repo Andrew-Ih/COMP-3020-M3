@@ -951,6 +951,16 @@ p, h1, h2 {
   margin-right: 10px;
 }
 
+.accessory-item {
+  display: flex;
+  align-items: center;  /* Centers the label and checkbox vertically */
+  margin-top: 8px;  /* Spacing between each accessory item for better readability */
+}
+
+.accessory-item label {
+  margin-left: 8px;  /* Space between the checkbox and label */
+}
+
 .checkout-options label {
   display: block;
   margin-top: 20px;
@@ -966,26 +976,47 @@ p, h1, h2 {
   border-radius: 4px;
 }
 
-.color-selector label {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #ddd;
-  cursor: pointer;
+#selectedColor {
+  font-weight: bold;
+  margin-left: 10px;
 }
 
-.color-selector input[type="radio"] {
-  display: none;
+.color-selector {
+  padding: 10px 0; /* Add some padding around the color selector area */
+}
+
+.color-selector label {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #ddd; /* Light gray border for all swatches */
+  border-radius: 50%; /* Makes the swatches circular */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+  margin-right: 10px; /* Space between swatches */
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition for transform and border color */
 }
 
 .color-selector input[type="radio"]:checked + label {
-  border-color: #000;
+  border-color: #007BFF; /* Blue border for selected swatch */
+  transform: scale(1.1); /* Slightly increase size when selected */
+  box-shadow: 0 0 8px rgba(50, 50, 255, 0.75); /* Brighter shadow for emphasis */
 }
+
+.color-selector input[type="radio"]:focus + label {
+  outline: none; /* Removes the default focus outline */
+  border-color: #ccc; /* More noticeable border on focus */
+}
+
+.color-selector input[type="radio"]:checked:focus + label {
+  border-color: #0056b3; /* Darker blue for border when focused and checked */
+}
+
+
 
 .checkout-options input[type="checkbox"] + label {
   margin-left: 5px;
 }
-
 
 #checkout button {
   background-color: #444;
