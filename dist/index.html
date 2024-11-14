@@ -429,7 +429,14 @@
         <section id="checkout" class="checkout-section">
           <div class="checkout-container">
             <div class="checkout-image-container">
-              <img src="391ab36fad71ae564b51.jpeg" alt="Featured Car 2">
+              <div class="arrow-container left">
+                <button class="arrow left" onclick="changeImage(-1)">&#10094;</button> <!-- Left arrow -->
+              </div>
+              <img src="391ab36fad71ae564b51.jpeg" alt="Featured Car" id="carImage"> 
+              <!-- <img alt="Featured Car" id="carImage">  No src attribute here -->
+              <div class="arrow-container right">
+                  <button class="arrow right" onclick="changeImage(1)">&#10095;</button> <!-- Right arrow -->
+              </div>
             </div>
 
         

@@ -319,3 +319,49 @@ function updateColorSelection(color) {
 }
 
 window.updateColorSelection = updateColorSelection
+
+//-----------------------------------------------------------
+// document.addEventListener('DOMContentLoaded', function() {
+//   var images = [".img/checkout-image.jpeg", 
+//                 "./img/tesla3.avif", 
+//                 "./img/cybertruck.avif"
+//   ]; // List of images
+//   var currentIndex = 0; // Start with the first image
+
+//   // Set initial image
+//   document.getElementById('carImage').src = images[currentIndex];
+
+//   // Function to change image
+//   window.changeImage = function(direction) {
+//       currentIndex += direction;
+//       if (currentIndex < 0) {
+//           currentIndex = images.length - 1;
+//       } else if (currentIndex >= images.length) {
+//           currentIndex = 0;
+//       }
+//       document.getElementById('carImage').src = images[currentIndex];
+//   }
+// });
+import checkoutImage from './img/checkout-image.jpeg';
+import checkoutImage2 from './img/checkout-image2.jpeg';
+import checkoutImage3 from './img/checkout-image3.jpeg';
+import checkoutImage4 from './img/checkout-image4.jpeg';
+import checkoutImage5 from './img/checkout-image5.jpeg';
+
+
+
+
+let images = [checkoutImage, checkoutImage2, checkoutImage3, checkoutImage4, checkoutImage5];
+let currentIndex = 0; // Start with the first image
+
+function changeImage(direction) {
+    currentIndex += direction; // Increment or decrement index
+    if (currentIndex >= images.length) {
+        currentIndex = 0; // Loop back to first image
+    } else if (currentIndex < 0) {
+        currentIndex = images.length - 1; // Loop back to last image
+    }
+    document.getElementById('carImage').src = images[currentIndex]; // Update image source
+}
+
+window.changeImage = changeImage

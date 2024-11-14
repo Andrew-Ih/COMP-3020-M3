@@ -893,8 +893,34 @@ p, h1, h2 {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Position arrows on the sides */
   align-items: center; /* Center the image vertically */
+}
+
+.checkout-image-container .arrow-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.checkout-image-container .arrow-container.left {
+  left: 10px;
+}
+
+.checkout-image-container .arrow-container.right {
+  right: 10px;
+}
+
+.checkout-image-container .arrow {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 24px;
+  outline: none; /* Removes the focus outline for aesthetic purposes */
 }
 
 .checkout-image-container img {
