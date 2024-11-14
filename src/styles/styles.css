@@ -888,7 +888,7 @@ p, h1, h2 {
 .checkout-image-container {
   position: fixed; /* Fixed positioning */
   left: 0; /* Align to the left */
-  top: 0; /* Align to the top */
+  top: 66px; /* Align to the top */
   width: 70vw;
   height: 100vh;
   overflow: hidden;
@@ -925,7 +925,8 @@ p, h1, h2 {
 
 .checkout-image-container img {
   width: 100%; /* Full width of the container */
-  height: auto; /* Maintain aspect ratio */
+  /* height: auto; Maintain aspect ratio */
+  height: 100%;
   object-fit: cover; /* Cover the space without stretching */
 }
 
