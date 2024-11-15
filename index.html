@@ -289,25 +289,119 @@
 
         <!-- VIEW ALL VEHICLES SECTION -->
         <section id="view-all" class="view-vehicles-section">
-          <h1>View Vehicles</h1>
-          
-          <!-- Carousel Controls -->
-          <button id="prevButton" class="carousel-nav">&#8249;</button>
-
-          <!-- 3D Carousel -->
-          <div class="carousel-3d-container">
-            <div class="carousel-3d" id="carousel3D">
-              <div class="carousel-item active"><img src="a4c3077b3370b3bcf693.avif" alt="Car 1"></div>
-              <div class="carousel-item"><img src="99978dbedf573fcd2454.avif" alt="Car 2"></div>
-              <div class="carousel-item"><img src="5934c07980a583bd92f5.avif" alt="Car 3"></div>
-              <div class="carousel-item"><img src="a4c3077b3370b3bcf693.avif" alt="Car 4"></div>
-              <div class="carousel-item"><img src="5934c07980a583bd92f5.avif" alt="Car 5"></div>
+          <!-- Featured Cars Carousel -->
+          <div class="featured-cars-carousel">
+            <div class="carousel-container">
+              <div class="arrow-container left">
+                <button class="arrow left" onclick="changeFeaturedImage(-1)">&#10094;</button> <!-- Left arrow -->
+              </div>
+              <img src="391ab36fad71ae564b51.jpeg" alt="Featured Car" id="featuredCarImage">
+              <div class="arrow-container right">
+                <button class="arrow right" onclick="changeFeaturedImage(1)">&#10095;</button> <!-- Right arrow -->
+              </div>
             </div>
           </div>
-          
-          <!-- Carousel Controls -->
-          <button id="nextButton" class="carousel-nav">&#8250;</button>
+
+          <!-- Filter and Grid Container -->
+          <div class="filter-grid-wrapper">
+            <!-- Filter Menu -->
+            <aside class="filter-menu">
+              <h2>Filter Options</h2>
+              <div class="filter-group">
+                <label for="searchDistance">Search within</label>
+                <select id="searchDistance">
+                  <option value="50">50 km</option>
+                  <option value="100">100 km</option>
+                  <option value="200" selected>200 km</option>
+                  <option value="500">500 km</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <h3>Models</h3>
+                <label><input type="radio" name="model" value="model-s"> Model S</label>
+                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
+                <label><input type="radio" name="model" value="model-x"> Model X</label>
+                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+              </div>
+              <div class="filter-group">
+                <h3>Inventory Type</h3>
+                <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
+                <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
+              </div>
+              <div class="filter-group">
+                <h3>Exterior Paint</h3>
+                <div class="color-options">
+                  <div class="color-swatch" style="background-color: black;"></div>
+                  <div class="color-swatch" style="background-color: white;"></div>
+                  <div class="color-swatch" style="background-color: blue;"></div>
+                  <div class="color-swatch" style="background-color: red;"></div>
+                </div>
+              </div>
+              <button class="apply-filters-btn">Apply Filters</button>
+            </aside>
+
+            <!-- Grid of Cars -->
+            <div class="car-grid">
+              <div class="car-item">
+                <img src="5934c07980a583bd92f5.avif" alt="Car 1">
+                <div class="car-details">
+                  <h3>Model 3</h3>
+                  <p class="price">$58,780 <span class="strike-through">$63,000</span></p>
+                  <p class="financing">Est. Financing $1,122/mo</p>
+                  <ul class="specs">
+                    <li>548km Range (EPA)</li>
+                    <li>201km/h Top Speed</li>
+                    <li>0-100 km/h in 4.4s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="99978dbedf573fcd2454.avif" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="a4c3077b3370b3bcf693.avif" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="bdcf784f130d6e4c031d.webp" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <!-- Add more car items as needed -->
+            </div>
         </section>
+
         
 
         <!-- TEST DRIVE SECTION -->
@@ -429,107 +523,101 @@
         <section id="checkout" class="checkout-section">
           <div class="checkout-container">
             <div class="checkout-image-container">
-              <img src="391ab36fad71ae564b51.jpeg" alt="Featured Car 2">
+              <div class="arrow-container left">
+                <button class="arrow left" onclick="changeImage(-1)">&#10094;</button> <!-- Left arrow -->
+              </div>
+              <img src="391ab36fad71ae564b51.jpeg" alt="Featured Car" id="carImage"> 
+              <div class="arrow-container right">
+                  <button class="arrow right" onclick="changeImage(1)">&#10095;</button> <!-- Right arrow -->
+              </div>
             </div>
 
+        
+            <!-- <h1>Checkout Options</h1> -->
             <div class="checkout-options">
-              <!-- <h1>Checkout Options</h1> -->
-                <form action="#" method="POST" onsubmit="return validateCheckoutForm()">
+              <form id="checkoutForm" action="#" method="POST" onsubmit="return validateCheckoutForm()">
                   <h2>$150,000</h2>
+                  
+                  <!-- Finance Options -->
                   <div class="checkout-finance-options">
-                      Finance Options: <span>$200 a month</span>
+                      <label for="finance">Finance Options:</label>
+                      <select id="finance" name="finance" required>
+                          <option value="">Select Finance Option</option>
+                          <option value="lease">$200/month lease</option>
+                          <option value="buy">Full purchase $150,000</option>
+                          <option value="finance">Finance $1,200/month</option>
+                      </select>
                   </div>
+                  
+                  <!-- Colour Options -->
                   <div class="checkout-color-options">
-                      Colour:
-                      <label><input type="radio" name="color" value="red"> Red</label>
-                      <label><input type="radio" name="color" value="black"> Black</label>
-                      <label><input type="radio" name="color" value="blue"> Blue</label>
+                    <label>Colour:</label>
+                    <span id="selectedColor">None</span>
+                    <div class="color-selector">
+                        <input type="radio" name="color" value="red" id="red" hidden onchange="updateColorSelection('Red')">
+                        <label for="red" class="color-swatch" style="background-color: red;"></label>
+                
+                        <input type="radio" name="color" value="black" id="black" hidden onchange="updateColorSelection('Black')">
+                        <label for="black" class="color-swatch" style="background-color: black;"></label>
+                
+                        <input type="radio" name="color" value="blue" id="blue" hidden onchange="updateColorSelection('Blue')">
+                        <label for="blue" class="color-swatch" style="background-color: blue;"></label>
+                
+                        <input type="radio" name="color" value="white" id="white" hidden onchange="updateColorSelection('White')">
+                        <label for="white" class="color-swatch" style="background-color: white;"></label>
+                    </div>
                   </div>
+                  
+                  <!-- Protection Package -->
                   <div class="checkout-protection-package">
-                      <label><input type="checkbox" name="protection"> Protection Package</label>
+                      <label for="protection">Protection Package:</label>
+                      <select id="protection" name="protection" required>
+                          <option value="">Select Protection Package</option>
+                          <option value="basic">Basic Coverage</option>
+                          <option value="premium">Premium Coverage</option>
+                      </select>
                   </div>
+                  
+                  <!-- Accessories -->
                   <div class="checkout-accessories">
-                      Accessories:
-                      <label><input type="checkbox" name="accessory" value="floor-mats"> Floor Mats</label>
-                      <label><input type="checkbox" name="accessory" value="car-cover"> Car Cover</label>
+                    <label for="accessories">Accessories:</label>
+                    <div class="accessory-item">
+                        <input type="checkbox" id="floor-mats" name="accessory" value="floor-mats">
+                        <label for="floor-mats">Floor Mats</label>
+                    </div>
+                    <div class="accessory-item">
+                        <input type="checkbox" id="car-cover" name="accessory" value="car-cover">
+                        <label for="car-cover">Car Cover</label>
+                    </div>
                   </div>
+                  
+                  <!-- Personal Details -->
                   <div class="checkout-personal-details">
-                      <input type="text" name="fullname" placeholder="Full Name" required>
+                      <label for="personal-details">Personal Details:</label>
+                      <input type="text" name="firstname" placeholder="First Name" required>
+                      <input type="text" name="lastname" placeholder="Last Name" required>
                       <input type="email" name="email" placeholder="Email" required>
+                      <input type="text" name="phone" placeholder="Phone Number" required>
+                      <input type="text" name="address" placeholder="Street Address" required>
+                      <input type="text" name="address" placeholder="Apt. or Suite (optional)">
+                      <input type="text" name="address" placeholder="Town/City" required>
+                      <input type="text" name="address" placeholder="Province" required>
+                      <input type="text" name="address" placeholder="Postal Code" required>
+                      <input type="text" name="address" placeholder="Country/Region" required>
                   </div>
+                  
+                  <!-- Payment Information -->
                   <div class="checkout-payment-method">
-                      <select name="payment" required>
+                      <label for="payment">Payment Method:</label>
+                      <select id="payment" name="payment" required>
                           <option value="">Select Payment Method</option>
                           <option value="credit">Credit Card</option>
                           <option value="paypal">PayPal</option>
                       </select>
-                  </div>                  
+                  </div>
+                  
                   <button type="submit">Place Order</button>
               </form>
-              <form action="#" method="POST" onsubmit="return validateCheckoutForm()">
-                <h2>$150,000</h2>
-                <div class="checkout-finance-options">
-                    Finance Options: <span>$200 a month</span>
-                </div>
-                <div class="checkout-color-options">
-                    Colour:
-                    <label><input type="radio" name="color" value="red"> Red</label>
-                    <label><input type="radio" name="color" value="black"> Black</label>
-                    <label><input type="radio" name="color" value="blue"> Blue</label>
-                </div>
-                <div class="checkout-protection-package">
-                    <label><input type="checkbox" name="protection"> Protection Package</label>
-                </div>
-                <div class="checkout-accessories">
-                    Accessories:
-                    <label><input type="checkbox" name="accessory" value="floor-mats"> Floor Mats</label>
-                    <label><input type="checkbox" name="accessory" value="car-cover"> Car Cover</label>
-                </div>
-                <div class="checkout-personal-details">
-                    <input type="text" name="fullname" placeholder="Full Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="checkout-payment-method">
-                    <select name="payment" required>
-                        <option value="">Select Payment Method</option>
-                        <option value="credit">Credit Card</option>
-                        <option value="paypal">PayPal</option>
-                    </select>
-                </div>                  
-                <button type="submit">Place Order</button>
-            </form>
-            <form action="#" method="POST" onsubmit="return validateCheckoutForm()">
-              <h2>$150,000</h2>
-              <div class="checkout-finance-options">
-                  Finance Options: <span>$200 a month</span>
-              </div>
-              <div class="checkout-color-options">
-                  Colour:
-                  <label><input type="radio" name="color" value="red"> Red</label>
-                  <label><input type="radio" name="color" value="black"> Black</label>
-                  <label><input type="radio" name="color" value="blue"> Blue</label>
-              </div>
-              <div class="checkout-protection-package">
-                  <label><input type="checkbox" name="protection"> Protection Package</label>
-              </div>
-              <div class="checkout-accessories">
-                  Accessories:
-                  <label><input type="checkbox" name="accessory" value="floor-mats"> Floor Mats</label>
-                  <label><input type="checkbox" name="accessory" value="car-cover"> Car Cover</label>
-              </div>
-              <div class="checkout-personal-details">
-                  <input type="text" name="fullname" placeholder="Full Name" required>
-                  <input type="email" name="email" placeholder="Email" required>
-              </div>
-              <div class="checkout-payment-method">
-                  <select name="payment" required>
-                      <option value="">Select Payment Method</option>
-                      <option value="credit">Credit Card</option>
-                      <option value="paypal">PayPal</option>
-                  </select>
-              </div>                  
-              <button type="submit">Place Order</button>
-          </form>
             </div>
           </div>
         </section>
