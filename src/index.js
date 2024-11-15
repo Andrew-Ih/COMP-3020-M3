@@ -233,37 +233,6 @@ window.updateCompareDetails = updateCompareDetails
 //--------------------------------------------------------------------------------------------
 // Checkout section 
 //--------------------------------------------------------------------------------------------
-// const images = ['img/tesla3.jpg', 'img/tesla4.avif', 'img/cybertruck.avif'];
-// let currentImageIndex = 0;
-
-// function prevImage() {
-//   currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-//   document.getElementById('carImage').src = images[currentImageIndex];
-// }
-
-// function nextImage() {
-//   currentImageIndex = (currentImageIndex + 1) % images.length;
-//   document.getElementById('carImage').src = images[currentImageIndex];
-// }
-
-// function placeOrder() {
-//   alert('Your order has been placed successfully!');
-// }
-// // Expose the function globally
-// window.prevImage = prevImage
-// window.nextImage = nextImage
-// window.selectColor = selectColor
-// window.placeOrder = placeOrder
-
-// function validateCheckoutForm() {
-//   const fullname = document.forms[0]["fullname"].value;
-//   const email = document.forms[0]["email"].value;
-//   if (fullname === "" || email === "") {
-//       alert("Name and email must be filled out");
-//       return false;
-//   }
-//   return true;
-// }
 
 window.validateCheckoutForm = validateCheckoutForm
 
@@ -320,35 +289,11 @@ function updateColorSelection(color) {
 
 window.updateColorSelection = updateColorSelection
 
-//-----------------------------------------------------------
-// document.addEventListener('DOMContentLoaded', function() {
-//   var images = [".img/checkout-image.jpeg", 
-//                 "./img/tesla3.avif", 
-//                 "./img/cybertruck.avif"
-//   ]; // List of images
-//   var currentIndex = 0; // Start with the first image
-
-//   // Set initial image
-//   document.getElementById('carImage').src = images[currentIndex];
-
-//   // Function to change image
-//   window.changeImage = function(direction) {
-//       currentIndex += direction;
-//       if (currentIndex < 0) {
-//           currentIndex = images.length - 1;
-//       } else if (currentIndex >= images.length) {
-//           currentIndex = 0;
-//       }
-//       document.getElementById('carImage').src = images[currentIndex];
-//   }
-// });
 import checkoutImage from './img/checkout-image.jpeg';
 import checkoutImage2 from './img/checkout-image2.jpeg';
 import checkoutImage3 from './img/checkout-image3.jpeg';
 import checkoutImage4 from './img/checkout-image4.jpeg';
 import checkoutImage5 from './img/checkout-image5.jpeg';
-
-
 
 
 let images = [checkoutImage, checkoutImage2, checkoutImage3, checkoutImage4, checkoutImage5];
@@ -365,3 +310,43 @@ function changeImage(direction) {
 }
 
 window.changeImage = changeImage
+
+
+//--------------------------------------------------------------------------------------------
+// View All section 
+//--------------------------------------------------------------------------------------------
+import featuredImage1 from './img/tesla3.avif';
+import featuredImage2 from './img/astonmartin2.webp';
+import featuredImage3 from './img/cybertruck.avif';
+
+let featuredImages = [featuredImage1, featuredImage3, checkoutImage, checkoutImage2, checkoutImage3, checkoutImage4, checkoutImage5];
+let featuredCurrentIndex = 0;
+
+function changeFeaturedImage(direction) {
+  featuredCurrentIndex += direction;
+  if (featuredCurrentIndex >= featuredImages.length) {
+    featuredCurrentIndex = 0;
+  } else if (featuredCurrentIndex < 0) {
+    featuredCurrentIndex = featuredImages.length - 1;
+  }
+  document.getElementById('featuredCarImage').src = featuredImages[featuredCurrentIndex];
+}
+
+// Auto-change image every 3 seconds
+let autoChangeInterval = setInterval(() => {
+  changeFeaturedImage(1); // Move to the next image
+}, 3000); // 3000 milliseconds = 3 seconds
+
+// Pause the auto-change when the cursor is over the image
+document.getElementById('featuredCarImage').addEventListener('mouseenter', () => {
+  clearInterval(autoChangeInterval);
+});
+
+// Resume the auto-change when the cursor leaves the image
+document.getElementById('featuredCarImage').addEventListener('mouseleave', () => {
+  autoChangeInterval = setInterval(() => {
+    changeFeaturedImage(1);
+  }, 3000);
+});
+
+window.changeFeaturedImage = changeFeaturedImage;
