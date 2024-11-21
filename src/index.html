@@ -204,11 +204,122 @@
         </section>
         
 
-        <!-- ACCESSORIES SECTION  -->
-        <section id="Accessories">
-          <h1>Accessories</h1>
-          <p>This is the accessories page.</p>
+        <!-- ACCESSORIES SECTION -->
+        <section id="Accessories" class="accessories-section">
+          <!-- Filter Menu -->
+          <div class="accessories-container">
+            <div id="filterMenu" class="filter-menu">
+              <h2>Filter Options</h2>
+              <!-- Filters -->
+              <div class="filter-group">
+                <h3>Category</h3>
+                <label><input type="checkbox" name="category" value="charging"> Charging</label><br>
+                <label><input type="checkbox" name="category" value="interior"> Interior</label><br>
+                <label><input type="checkbox" name="category" value="exterior"> Exterior</label>
+              </div>
+              <div class="filter-group">
+                <h3>Price Range</h3>
+                <input type="range" min="0" max="1000" step="50" id="priceRange">
+              </div>
+              <button onclick="applyAccessoryFilters()" class="apply-filters-btn">Apply Filters</button>
+            </div>
+
+            <!-- Accessories Grid -->
+            <div class="accessories-content">
+              <!-- Cart Button -->
+              <div class="cart-button-container">
+                <button class="cart-button" onclick="showCartPage()">
+                  <i class="fas fa-shopping-cart"></i> Cart
+                </button>
+              </div>
+
+              <!-- Accessories Grid -->
+              <div class="accessories-grid">
+                <div class="accessory-item">
+                  <img src="img/phone-holder.webp" alt="Tissue">
+                  <!-- <h3>Tissue</h3>
+                  <p>$50</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/gears.jpg" alt="Charger">
+                  <!-- <h3>Charger</h3>
+                  <p>$20</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/a1.webp" alt="Phone Holder">
+                  <!-- <h3>Phone Holder</h3>
+                  <p>$75</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/a2.webp" alt="Phone Holder">
+                  <!-- <h3>Phone Holder</h3>
+                  <p>$75</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/a3.webp" alt="Phone Holder">
+                  <!-- <h3>Phone Holder</h3>
+                  <p>$75</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/toys.webp" alt="Phone Holder">
+                  <!-- <h3>Phone Holder</h3>
+                  <p>$75</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/phone-holder.webp" alt="Tissue">
+                  <!-- <h3>Tissue</h3>
+                  <p>$50</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/a2.webp" alt="Phone Holder">
+                  <!-- <h3>Phone Holder</h3>
+                  <p>$75</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/toys.webp" alt="Phone Holder">
+                  <!-- <h3>Phone Holder</h3>
+                  <p>$75</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/gears.jpg" alt="Charger">
+                  <!-- <h3>Charger</h3>
+                  <p>$20</p> -->
+                </div>
+                <div class="accessory-item">
+                  <img src="img/toys.webp" alt="Phone Holder">
+                  <!-- <h3>Phone Holder</h3>
+                  <p>$75</p> -->
+                </div>
+
+              </div>
+            </div>
+          </div>
         </section>
+
+
+        <!-- CART SECTION -->
+        <section id="Cart" class="cart-section">
+          <!-- Back Button -->
+          <button class="back-button" onclick="showPage('Accessories')">&#8592; Back</button>
+          <h1>Your Cart</h1>
+          <div id="cartItems">
+            <!-- Dynamic Cart Items Will Appear Here -->
+            <div class="cart-item">
+              <span>Item 1</span>
+              <span>$50</span>
+            </div>
+            <div class="cart-item">
+              <span>Item 2</span>
+              <span>$75</span>
+            </div>
+          </div>
+          <div class="cart-total">
+            <p>Total: $<span id="cartTotal">125</span></p>
+            <button onclick="proceedToPayment()">Proceed to Payment</button>
+          </div>
+        </section>
+
+                
         
         <!-- MAINTENANCE SECTION -->
         <section id="Maintenance">

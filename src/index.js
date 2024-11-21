@@ -350,3 +350,81 @@ document.getElementById('featuredCarImage').addEventListener('mouseleave', () =>
 });
 
 window.changeFeaturedImage = changeFeaturedImage;
+
+//--------------------------------------------------------------------------------------------
+// Accessories and cart section 
+//--------------------------------------------------------------------------------------------
+
+// Cart Functionality
+let cart = [];
+
+// Add item to cart
+function addToCart(itemName, itemPrice) {
+  cart.push({ name: itemName, price: itemPrice });
+  updateCartCount();
+}
+
+// Update cart count
+function updateCartCount() {
+  const cartCount = cart.length;
+  const cartButton = document.querySelector('.cart-button i');
+  cartButton.textContent = ` (${cartCount})`;
+}
+
+// Show the cart page
+function showCartPage() {
+  // Hide all sections
+  document.querySelectorAll('section').forEach(section => {
+    section.classList.remove('active');
+  });
+
+  // Show the Cart section
+  document.getElementById('Cart').classList.add('active');
+
+  // Populate cart items
+  displayCartItems();
+}
+
+// Display cart items dynamically
+function displayCartItems() {
+  const cartItemsContainer = document.getElementById('cartItems');
+  cartItemsContainer.innerHTML = ''; // Clear previous content
+
+  let total = 0;
+
+  cart.forEach(item => {
+    const cartItemDiv = document.createElement('div');
+    cartItemDiv.classList.add('cart-item');
+    cartItemDiv.innerHTML = `
+      <span>${item.name}</span>
+      <span>$${item.price}</span>
+    `;
+    cartItemsContainer.appendChild(cartItemDiv);
+    total += item.price;
+  });
+
+  document.getElementById('cartTotal').textContent = total; // Update total
+}
+
+// Proceed to payment
+function proceedToPayment() {
+  alert('Proceeding to payment...');
+  // Add payment logic here
+}
+
+// Go back to Accessories Page
+function showAccessoriesPage() {
+  // Hide all sections
+  document.querySelectorAll('section').forEach(section => {
+    section.classList.remove('active');
+  });
+
+  // Show Accessories section
+  document.getElementById('Accessories').classList.add('active');
+}
+
+// Expose functions globally
+window.addToCart = addToCart;
+window.showCartPage = showCartPage;
+window.proceedToPayment = proceedToPayment;
+window.showAccessoriesPage = showAccessoriesPage;

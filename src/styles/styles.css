@@ -1256,3 +1256,181 @@ p, h1, h2 {
   cursor: pointer;
 }
 
+/* ----------------------------------------------------------------------------------------- */
+/* ACCESSORIES SECTION */
+/* ----------------------------------------------------------------------------------------- */
+/* Accessories Section */
+.accessories-section {
+  display: none;
+  flex-direction: row;
+  height: calc(100vh - 60px); /* Full viewport height minus navbar */
+}
+
+.accessories-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 0;
+}
+
+
+/* Filter Menu Styles */
+.filter-menu {
+  width: 250px;
+  height: 100%; /* Full height */
+  background-color: #fff; 
+  padding: 20px;
+  border-right: 1px solid #ddd; /* Divider on the right */
+  color: #333; /* Dark text for good contrast */
+  overflow: hidden;
+}
+
+.filter-menu h2, 
+.filter-group h3, 
+.filter-group label {
+  color: #333; /* Ensure text is dark */
+}
+
+.filter-menu input[type="checkbox"],
+.filter-menu input[type="range"] {
+  margin-right: 8px; /* Add spacing between checkboxes and labels */
+}
+
+.apply-filters-btn {
+  background-color: #0078d4; /* Button background */
+  color: #fff; /* Button text color */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.apply-filters-btn:hover {
+  background-color: #005bb5; /* Darker blue for hover */
+}
+
+/* Accessories Content */
+.accessories-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart-button-container {
+  text-align: right;
+  padding: 20px;
+}
+
+.cart-button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+  background-color: #005bb5;
+}
+
+/* Accessories Grid */
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3-column grid */
+  gap: 20px;
+  padding: 20px;
+  overflow-y: scroll; /* Allow scrolling if content exceeds the view */
+}
+
+.accessory-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0px;
+  width: 357px;
+  height: 347px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accessory-item img {
+  width: 100%;
+  height: auto;
+  width: 357px;
+  height: 347px;
+  border-radius: 8px;
+}
+
+.accessory-item h3 {
+  margin: 10px 0;
+}
+
+.accessory-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+/* CART SECTION */
+/* ----------------------------------------------------------------------------------------- */
+/* Cart Section */
+.cart-section {
+  padding: 40px;
+}
+
+.cart-section h1 {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-total {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cart-total button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart-total button:hover {
+  background-color: #005bb5;
+}
+
+/* Back Button */
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #0078d4;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
