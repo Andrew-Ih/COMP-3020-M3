@@ -354,7 +354,6 @@ window.changeFeaturedImage = changeFeaturedImage;
 //--------------------------------------------------------------------------------------------
 // Accessories and cart section 
 //--------------------------------------------------------------------------------------------
-
 // Cart Functionality
 let cart = [];
 
@@ -422,6 +421,64 @@ function showAccessoriesPage() {
   // Show Accessories section
   document.getElementById('Accessories').classList.add('active');
 }
+
+
+// Accessories Data
+import phoneHolderImage from './img/phone-holder.webp';
+import gearsImage from './img/gears.jpg';
+import chargingImage from './img/a1.webp';
+import tireImage from './img/a2.webp';
+import interiorDecorImage from './img/a3.webp';
+import exteriorToyImage from './img/toys.webp';
+
+const accessoriesData = [
+  { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },
+  { id: 2, category: 'exterior', img: gearsImage, alt: 'Gears', name: 'Car Gears Set', price: 40 },
+  { id: 3, category: 'charging', img: chargingImage, alt: 'Charging Accessory', name: 'Charging Dock', price: 35 },
+  { id: 4, category: 'tires', img: tireImage, alt: 'Tire Accessory', name: 'All-Season Tires', price: 120 },
+  { id: 5, category: 'interior', img: interiorDecorImage, alt: 'Interior Decor', name: 'Interior Decor', price: 15 },
+  { id: 6, category: 'exterior', img: exteriorToyImage, alt: 'Exterior Toy', name: 'Exterior Toy', price: 10 },
+  { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },
+  { id: 2, category: 'exterior', img: gearsImage, alt: 'Gears', name: 'Car Gears Set', price: 40 },
+  { id: 3, category: 'charging', img: chargingImage, alt: 'Charging Accessory', name: 'Charging Dock', price: 35 },
+  { id: 4, category: 'tires', img: tireImage, alt: 'Tire Accessory', name: 'All-Season Tires', price: 120 },
+  { id: 5, category: 'interior', img: interiorDecorImage, alt: 'Interior Decor', name: 'Interior Decor', price: 15 },
+  { id: 6, category: 'exterior', img: exteriorToyImage, alt: 'Exterior Toy', name: 'Exterior Toy', price: 10 },
+  { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },
+  { id: 2, category: 'exterior', img: gearsImage, alt: 'Gears', name: 'Car Gears Set', price: 40 },
+  { id: 3, category: 'charging', img: chargingImage, alt: 'Charging Accessory', name: 'Charging Dock', price: 35 },
+  { id: 4, category: 'tires', img: tireImage, alt: 'Tire Accessory', name: 'All-Season Tires', price: 120 },
+  { id: 5, category: 'interior', img: interiorDecorImage, alt: 'Interior Decor', name: 'Interior Decor', price: 15 },
+  { id: 6, category: 'exterior', img: exteriorToyImage, alt: 'Exterior Toy', name: 'Exterior Toy', price: 10 },
+];
+
+// Populate Accessories Grid
+function populateAccessories(category) {
+  const accessoriesGrid = document.getElementById('accessoriesGrid');
+  accessoriesGrid.innerHTML = ''; // Clear existing items
+
+  const filteredAccessories = category === 'all' ? accessoriesData : accessoriesData.filter(item => item.category === category);
+
+  filteredAccessories.forEach(item => {
+    const accessoryItem = `
+      <div class="accessory-item-grid">
+        <img src="${item.img}" alt="${item.alt}">
+        <h3>${item.alt}</h3>
+        <p>$${item.price}</p>
+      </div>`;
+    accessoriesGrid.innerHTML += accessoryItem;
+  });
+}
+
+// Initial Population
+populateAccessories('all');
+
+// Filter Accessories by Category
+function filterAccessories(category) {
+  populateAccessories(category);
+}
+
+window.filterAccessories = filterAccessories;
 
 // Expose functions globally
 window.addToCart = addToCart;

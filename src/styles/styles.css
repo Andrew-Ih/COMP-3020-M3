@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /* Hiding the scroll bar to improve aesthetics */
-body::-webkit-scrollbar {
-  display: none; /* This will hide the scrollbar completely */
-}
+/* body::-webkit-scrollbar {
+  display: none; 
+} */
 
 * {
   box-sizing: border-box;
@@ -1353,18 +1353,20 @@ p, h1, h2 {
   overflow-y: scroll; /* Allow scrolling if content exceeds the view */
 }
 
-.accessory-item {
+.accessory-item-grid {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
+  margin-bottom: 100px; /* Adds a gap only at the bottom */
   text-align: center;
   padding: 0px;
   width: 357px;
   height: 347px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text to the left */
 }
 
-.accessory-item img {
+.accessory-item-grid img {
   width: 100%;
   height: auto;
   width: 357px;
@@ -1372,15 +1374,56 @@ p, h1, h2 {
   border-radius: 8px;
 }
 
-.accessory-item h3 {
-  margin: 10px 0;
-}
-
-.accessory-item p {
+.accessory-item-grid h3 {
   font-size: 1rem;
-  color: #555;
+  font-weight: 500;
+  margin-bottom: 5px; /* Add space below the title */
+  color: #333; /* Dark text color */
 }
 
+.accessory-item-grid p {
+  font-size: 1rem;
+  color: #666; /* Subtle text color for the price */
+  margin: 0;
+  font-weight: bold; /* Emphasize the price */
+}
+
+/* Category Buttons */
+.apply-filters-btn {
+  width: 100%; /* Full width within the container */
+  padding: 15px; /* Spacing for comfortable clicking */
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text for contrast */
+  border: none; /* Remove default button border */
+  border-bottom: 1px solid #ddd; /* Add a dividing line between buttons */
+  cursor: pointer;
+  font-size: 1rem; /* Standard font size */
+  font-weight: 500; /* Slightly bold text */
+  text-align: center; /* Center the text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+}
+
+.apply-filters-btn:last-child {
+  border-bottom: none; /* Remove the dividing line from the last button */
+}
+
+.apply-filters-btn:hover {
+  background-color: #f0f0f0; /* Light grey background on hover */
+  color: #000; /* Slightly darker text on hover */
+}
+
+.apply-filters-btn.active, 
+.apply-filters-btn:focus {
+  background-color: #e0e0e0; /* Grey background for active button */
+  color: #000; /* Darker text for contrast */
+  font-weight: bold; /* Emphasize active button */
+  cursor: default; /* Disable hover effects for the active button */
+  outline: none; /* Remove outline when focused */
+}
+
+.apply-filters-btn:hover:active {
+  background-color: #d0d0d0; /* Slightly darker grey on hover */
+}
 
 /* ----------------------------------------------------------------------------------------- */
 /* CART SECTION */
