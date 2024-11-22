@@ -204,11 +204,97 @@
         </section>
         
 
-        <!-- ACCESSORIES SECTION  -->
-        <section id="Accessories">
-          <h1>Accessories</h1>
-          <p>This is the accessories page.</p>
+        <!-- ACCESSORIES SECTION -->
+        <section id="Accessories" class="accessories-section">
+          <div class="accessories-container">
+            <!-- Filter Menu -->
+            <div id="filterMenu" class="filter-menu">
+              <h2>Categories</h2>
+              <div class="filter-buttons">
+                <button onclick="filterAccessories('all')" class="apply-filters-btn">All</button>
+                <button onclick="filterAccessories('interior')" class="apply-filters-btn">Interior</button>
+                <button onclick="filterAccessories('exterior')" class="apply-filters-btn">Exterior</button>
+                <button onclick="filterAccessories('tires')" class="apply-filters-btn">Tires</button>
+              </div>
+            </div>
+
+            <!-- Accessories Grid -->
+            <div class="accessories-content">
+              <!-- Cart Button -->
+              <div class="cart-button-container">
+                <button class="cart-button" onclick="showCartPage()">
+                  <i class="fas fa-shopping-cart"></i> Cart
+                </button>
+              </div>
+
+              <!-- Dynamic Accessories Grid -->
+              <div class="accessories-grid" id="accessoriesGrid">
+                <!-- Accessories items will be dynamically populated here -->
+              </div>
+            </div>
+
+          </div>
         </section>
+
+
+        <!-- CART SECTION -->
+        <section id="cartCheckout" class="cart-section">
+          <div class="cart-container">
+            <!-- Cart Items Display -->
+            <div class="cart-items-container">
+              <!-- Back to Accessories Button -->
+              <button class="back-to-accessories-btn" onclick="showAccessoriesPage()">← Back to Accessories</button>
+
+              <h2>Your Cart</h2>
+              <div id="cartItems" class="cart-items">
+                <!-- Items will be dynamically inserted here -->
+              </div>
+            </div>
+        
+            <!-- Order Summary and Checkout -->
+            <div class="order-summary">
+              <form id="cartCheckoutForm">
+                <h2>Order Summary</h2>
+        
+                <!-- Summary Section -->
+                <div class="summary-details">
+                  <p><strong>Shipping:</strong> Free</p>
+                  <p><strong>Subtotal:</strong> $<span id="cartSubtotal">0.00</span></p>
+                </div>
+        
+                <hr />
+        
+                <!-- Personal Details -->
+                <div class="personal-details">
+                  <h3>Shipping Details</h3>
+                  <input type="text" name="name" placeholder="Full Name" required />
+                  <input type="email" name="email" placeholder="Email Address" required />
+                  <input type="text" name="address" placeholder="Street Address" required />
+                  <input type="text" name="city" placeholder="City" required />
+                  <input type="text" name="province" placeholder="Province" required />
+                  <input type="text" name="postalCode" placeholder="Postal Code" required />
+                  <input type="text" name="country" placeholder="Country" required />
+                </div>
+        
+                <hr />
+        
+                <!-- Payment Information -->
+                <div class="payment-details">
+                  <h3>Payment Information</h3>
+                  <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="credit">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                  </select>
+                </div>
+        
+                <button type="submit" class="checkout-btn">Checkout</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+                
         
         <!-- MAINTENANCE SECTION -->
         <section id="Maintenance">

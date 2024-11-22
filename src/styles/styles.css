@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /* Hiding the scroll bar to improve aesthetics */
-body::-webkit-scrollbar {
-  display: none; /* This will hide the scrollbar completely */
-}
+/* body::-webkit-scrollbar {
+  display: none; 
+} */
 
 * {
   box-sizing: border-box;
@@ -1266,5 +1266,361 @@ p, h1, h2 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* ACCESSORIES SECTION */
+/* ----------------------------------------------------------------------------------------- */
+/* Accessories Section */
+.accessories-section {
+  display: none;
+  flex-direction: row;
+  height: calc(100vh - 60px); /* Full viewport height minus navbar */
+}
+
+.accessories-container {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: stretch;
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 0;
+}
+
+
+/* Filter Menu Styles */
+.filter-menu {
+  width: 250px;
+  height: 100%; /* Full height */
+  background-color: #fff; 
+  padding: 20px;
+  border-right: 1px solid #ddd; /* Divider on the right */
+  color: #333; /* Dark text for good contrast */
+  overflow: hidden;
+  margin: 0;
+}
+
+.filter-menu h2, 
+.filter-group h3, 
+.filter-group label {
+  color: #333; /* Ensure text is dark */
+}
+
+/* Accessories Content */
+.accessories-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart-button-container {
+  text-align: right;
+  padding: 20px;
+}
+
+.cart-button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+  background-color: #005bb5;
+}
+
+/* Accessories Grid */
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3-column grid */
+  gap: 20px;
+  padding: 20px;
+  overflow-y: scroll; /* Allow scrolling if content exceeds the view */
+}
+
+.accessory-item-grid {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 150px; /* Adds a gap only at the bottom */
+  text-align: center;
+  padding: 0px;
+  width: 357px;
+  height: 347px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text to the left */
+}
+
+.accessory-item-grid img {
+  width: 100%;
+  height: auto;
+  width: 357px;
+  height: 347px;
+  border-radius: 8px;
+}
+
+.accessory-item-grid h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 5px; /* Add space below the title */
+  color: #333; /* Dark text color */
+}
+
+.accessory-item-grid p {
+  font-size: 1rem;
+  color: #666; /* Subtle text color for the price */
+  margin: 0;
+  font-weight: bold; /* Emphasize the price */
+}
+
+/* Category Buttons */
+.apply-filters-btn {
+  width: 100%; /* Full width within the container */
+  padding: 15px; /* Spacing for comfortable clicking */
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text for contrast */
+  border: none; /* Remove default button border */
+  border-bottom: 1px solid #ddd; /* Add a dividing line between buttons */
+  cursor: pointer;
+  font-size: 1rem; /* Standard font size */
+  font-weight: 500; /* Slightly bold text */
+  text-align: center; /* Center the text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+}
+
+.apply-filters-btn:last-child {
+  border-bottom: none; /* Remove the dividing line from the last button */
+}
+
+.apply-filters-btn:hover {
+  background-color: #f0f0f0; /* Light grey background on hover */
+  color: #000; /* Slightly darker text on hover */
+}
+
+.apply-filters-btn.active, 
+.apply-filters-btn:focus {
+  background-color: #e0e0e0; /* Grey background for active button */
+  color: #000; /* Darker text for contrast */
+  font-weight: bold; /* Emphasize active button */
+  cursor: default; /* Disable hover effects for the active button */
+  outline: none; /* Remove outline when focused */
+}
+
+.apply-filters-btn:hover:active {
+  background-color: #d0d0d0; /* Slightly darker grey on hover */
+}
+
+/* Show item has been added to cart  */
+.toast-message {
+  position: fixed;
+  top: 100px;
+  right: 500px;
+  background-color: #4caf50; /* Vibrant green for success */
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  z-index: 1000;
+  font-weight: bold;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Add to cart button */
+.add-to-cart-btn {
+  /* background-color: #0078d4; Primary blue color */
+  background-color: #4a4a4a;
+  color: #fff; /* White text for contrast */
+  border: none; /* Remove default border */
+  padding: 10px 15px; /* Add padding for better spacing */
+  font-size: 1rem; /* Standard font size */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover effects */
+}
+
+.add-to-cart-btn:hover {
+  /* background-color: #005bb5; Darker blue on hover */
+  background-color: black;
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.add-to-cart-btn:active {
+  background-color: #004494; /* Even darker blue on click */
+  transform: scale(1); /* Reset to normal size */
+}
+
+.add-to-cart-btn:focus {
+  outline: 2px solid #005bb5; /* Blue outline for accessibility */
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* CART SECTION */
+/* ----------------------------------------------------------------------------------------- */
+/* Back to Accessories Button */
+.back-to-accessories-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* Ensures it looks like a button even if a link */
+}
+
+.back-to-accessories-btn:hover {
+  background-color: #005bb5; /* Darker blue for hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.back-to-accessories-btn:active {
+  background-color: #003f7f; /* Even darker blue for active state */
+  transform: translateY(0); /* Reset the lift effect */
+}
+
+/* Cart Section Styling */
+.cart-section {
+  display: none;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  background: #fff;
+  /* padding-top: 20px; */
+  padding: 0px;
+  overflow-y: auto;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.cart-items-container {
+  width: 70%;
+  padding: 40px;
+  background: #f9f9f9;
+  border-right: 1px solid #ddd;
+  overflow-y: scroll;
+}
+
+.cart-items-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Cart Item Styling */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #fff; /* Ensure background contrast */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333; /* Default text color for visibility */
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.cart-item h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: #333; /* Ensure heading is visible */
+}
+
+.cart-item p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #555; /* Ensure price text is visible */
+}
+
+.cart-item-actions label {
+  font-size: 0.9rem;
+  color: #333; /* Ensure label is visible */
+}
+
+.cart-item-actions input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.cart-item-actions button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cart-item-actions button:hover {
+  background-color: #e54d4d;
+}
+
+.order-summary {
+  width: 30%;
+  padding: 40px;
+  background: #fff;
+  overflow-y: scroll;
+}
+
+.order-summary h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.order-summary .summary-details p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.checkout-btn {
+  background-color: #0078d4;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.checkout-btn:hover {
+  background-color: #005bb5;
 }
 
