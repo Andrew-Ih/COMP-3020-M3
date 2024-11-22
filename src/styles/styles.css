@@ -1311,7 +1311,8 @@ p, h1, h2 {
 }
 
 .cart-button {
-  background-color: #0078d4;
+  /* background-color: #0078d4; */
+  background-color: black;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -1451,7 +1452,8 @@ p, h1, h2 {
 }
 
 .add-to-cart-btn:active {
-  background-color: #004494; /* Even darker blue on click */
+  background-color: black;
+  /* background-color: #004494; Even darker blue on click */
   transform: scale(1); /* Reset to normal size */
 }
 
@@ -1466,7 +1468,8 @@ p, h1, h2 {
 .back-to-accessories-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0078d4;
+  /* background-color: #0078d4; */
+  background-color: black;
   color: white;
   border: none;
   border-radius: 5px;
