@@ -1125,14 +1125,26 @@ p, h1, h2 {
 
 .filter-menu {
   flex: 1;
-  max-width: 300px; /* Increased width for more space */
+  max-width: 300px;
   padding: 20px;
   background-color: #f0f0f0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-radius: 0; /* Remove border radius */
-  box-shadow: none; /* Removed the box shadow */
+}
+
+.filter-menu.hidden {
+  display: none; /* Hide the filter menu */
+}
+
+.toggle-filter-btn {
+  background-color: #0078d4;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
 }
 
 .filter-menu h2 {
