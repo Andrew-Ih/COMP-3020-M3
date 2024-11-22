@@ -1463,31 +1463,40 @@ p, h1, h2 {
 /* CART SECTION */
 /* ----------------------------------------------------------------------------------------- */
 /* Back to Accessories Button */
-
-.back-button {
-  background: none;
+.back-to-accessories-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0078d4;
+  color: white;
   border: none;
-  font-size: 1.2rem;
-  color: #0078d4;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
   cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.back-button:hover {
-  text-decoration: underline;
+  margin: 20px 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* Ensures it looks like a button even if a link */
 }
 
 .back-to-accessories-btn:hover {
-  text-decoration: underline;
+  background-color: #005bb5; /* Darker blue for hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.back-to-accessories-btn:active {
+  background-color: #003f7f; /* Even darker blue for active state */
+  transform: translateY(0); /* Reset the lift effect */
 }
 
 /* Cart Section Styling */
 .cart-section {
-  display: flex;
+  display: none;
   flex-direction: column;
   height: calc(100vh - 60px);
   background: #fff;
-  padding-top: 20px;
+  /* padding-top: 20px; */
+  padding: 0px;
   overflow-y: auto;
 }
 
