@@ -1269,7 +1269,7 @@ p, h1, h2 {
 .accessories-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: stretch;
   width: 100vw;
   height: 100%;
@@ -1288,32 +1288,13 @@ p, h1, h2 {
   border-right: 1px solid #ddd; /* Divider on the right */
   color: #333; /* Dark text for good contrast */
   overflow: hidden;
+  margin: 0;
 }
 
 .filter-menu h2, 
 .filter-group h3, 
 .filter-group label {
   color: #333; /* Ensure text is dark */
-}
-
-.filter-menu input[type="checkbox"],
-.filter-menu input[type="range"] {
-  margin-right: 8px; /* Add spacing between checkboxes and labels */
-}
-
-.apply-filters-btn {
-  background-color: #0078d4; /* Button background */
-  color: #fff; /* Button text color */
-  width: 100%;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.apply-filters-btn:hover {
-  background-color: #005bb5; /* Darker blue for hover */
 }
 
 /* Accessories Content */
@@ -1357,7 +1338,7 @@ p, h1, h2 {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin-bottom: 100px; /* Adds a gap only at the bottom */
+  margin-bottom: 150px; /* Adds a gap only at the bottom */
   text-align: center;
   padding: 0px;
   width: 357px;
@@ -1425,46 +1406,64 @@ p, h1, h2 {
   background-color: #d0d0d0; /* Slightly darker grey on hover */
 }
 
+/* Show item has been added to cart  */
+.toast-message {
+  position: fixed;
+  top: 100px;
+  right: 500px;
+  background-color: #4caf50; /* Vibrant green for success */
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  z-index: 1000;
+  font-weight: bold;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Add to cart button */
+.add-to-cart-btn {
+  /* background-color: #0078d4; Primary blue color */
+  background-color: #4a4a4a;
+  color: #fff; /* White text for contrast */
+  border: none; /* Remove default border */
+  padding: 10px 15px; /* Add padding for better spacing */
+  font-size: 1rem; /* Standard font size */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover effects */
+}
+
+.add-to-cart-btn:hover {
+  /* background-color: #005bb5; Darker blue on hover */
+  background-color: black;
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.add-to-cart-btn:active {
+  background-color: #004494; /* Even darker blue on click */
+  transform: scale(1); /* Reset to normal size */
+}
+
+.add-to-cart-btn:focus {
+  outline: 2px solid #005bb5; /* Blue outline for accessibility */
+}
+
 /* ----------------------------------------------------------------------------------------- */
 /* CART SECTION */
 /* ----------------------------------------------------------------------------------------- */
-/* Cart Section */
-.cart-section {
-  padding: 40px;
-}
+/* Back to Accessories Button */
 
-.cart-section h1 {
-  margin-bottom: 20px;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.cart-total {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.cart-total button {
-  margin-top: 20px;
-  padding: 12px 20px;
-  background-color: #0078d4;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.cart-total button:hover {
-  background-color: #005bb5;
-}
-
-/* Back Button */
 .back-button {
   background: none;
   border: none;
@@ -1477,3 +1476,130 @@ p, h1, h2 {
 .back-button:hover {
   text-decoration: underline;
 }
+
+.back-to-accessories-btn:hover {
+  text-decoration: underline;
+}
+
+/* Cart Section Styling */
+.cart-section {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  background: #fff;
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.cart-items-container {
+  width: 70%;
+  padding: 40px;
+  background: #f9f9f9;
+  border-right: 1px solid #ddd;
+  overflow-y: scroll;
+}
+
+.cart-items-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Cart Item Styling */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #fff; /* Ensure background contrast */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333; /* Default text color for visibility */
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.cart-item h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: #333; /* Ensure heading is visible */
+}
+
+.cart-item p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #555; /* Ensure price text is visible */
+}
+
+.cart-item-actions label {
+  font-size: 0.9rem;
+  color: #333; /* Ensure label is visible */
+}
+
+.cart-item-actions input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.cart-item-actions button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cart-item-actions button:hover {
+  background-color: #e54d4d;
+}
+
+.order-summary {
+  width: 30%;
+  padding: 40px;
+  background: #fff;
+  overflow-y: scroll;
+}
+
+.order-summary h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.order-summary .summary-details p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.checkout-btn {
+  background-color: #0078d4;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.checkout-btn:hover {
+  background-color: #005bb5;
+}
+

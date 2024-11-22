@@ -354,75 +354,6 @@ window.changeFeaturedImage = changeFeaturedImage;
 //--------------------------------------------------------------------------------------------
 // Accessories and cart section 
 //--------------------------------------------------------------------------------------------
-// Cart Functionality
-let cart = [];
-
-// Add item to cart
-function addToCart(itemName, itemPrice) {
-  cart.push({ name: itemName, price: itemPrice });
-  updateCartCount();
-}
-
-// Update cart count
-function updateCartCount() {
-  const cartCount = cart.length;
-  const cartButton = document.querySelector('.cart-button i');
-  cartButton.textContent = ` (${cartCount})`;
-}
-
-// Show the cart page
-function showCartPage() {
-  // Hide all sections
-  document.querySelectorAll('section').forEach(section => {
-    section.classList.remove('active');
-  });
-
-  // Show the Cart section
-  document.getElementById('Cart').classList.add('active');
-
-  // Populate cart items
-  displayCartItems();
-}
-
-// Display cart items dynamically
-function displayCartItems() {
-  const cartItemsContainer = document.getElementById('cartItems');
-  cartItemsContainer.innerHTML = ''; // Clear previous content
-
-  let total = 0;
-
-  cart.forEach(item => {
-    const cartItemDiv = document.createElement('div');
-    cartItemDiv.classList.add('cart-item');
-    cartItemDiv.innerHTML = `
-      <span>${item.name}</span>
-      <span>$${item.price}</span>
-    `;
-    cartItemsContainer.appendChild(cartItemDiv);
-    total += item.price;
-  });
-
-  document.getElementById('cartTotal').textContent = total; // Update total
-}
-
-// Proceed to payment
-function proceedToPayment() {
-  alert('Proceeding to payment...');
-  // Add payment logic here
-}
-
-// Go back to Accessories Page
-function showAccessoriesPage() {
-  // Hide all sections
-  document.querySelectorAll('section').forEach(section => {
-    section.classList.remove('active');
-  });
-
-  // Show Accessories section
-  document.getElementById('Accessories').classList.add('active');
-}
-
-
 // Accessories Data
 import phoneHolderImage from './img/phone-holder.webp';
 import gearsImage from './img/gears.jpg';
@@ -465,6 +396,7 @@ function populateAccessories(category) {
         <img src="${item.img}" alt="${item.alt}">
         <h3>${item.alt}</h3>
         <p>$${item.price}</p>
+        <button class="add-to-cart-btn" data-name="${item.name}" data-price="${item.price}">Add to Cart</button>
       </div>`;
     accessoriesGrid.innerHTML += accessoryItem;
   });
@@ -480,8 +412,187 @@ function filterAccessories(category) {
 
 window.filterAccessories = filterAccessories;
 
+// Function to update cart count
+function updateCartCount() {
+  const cartButton = document.querySelector('.cart-button i');
+  
+  // Calculate the total quantity of items in the cart
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+  // Update the cart button display
+  cartButton.textContent = ` (${totalItems})`;
+}
+
+function addToCart(itemName, itemPrice, itemImg, itemAlt) {
+  // Check if the item already exists in the cart
+  const existingItem = cart.find(item => item.name === itemName);
+
+  if (existingItem) {
+    // If the item exists, increment its quantity
+    existingItem.quantity += 1;
+  } else {
+    // If the item doesn't exist, add it as a new entry
+    cart.push({
+      name: itemName,
+      price: parseFloat(itemPrice),
+      quantity: 1, // Default quantity is 1
+      img: itemImg, // Add the image
+      alt: itemAlt, // Add the alt text for the image
+    });
+  }
+
+  // Update the cart count display
+  updateCartCount();
+
+  // Show a toast message
+  showToast(`${itemName} has been added to the cart!`);
+}
+
+// Update the Event Listener for "Add to Cart" Buttons
+document.getElementById('accessoriesGrid').addEventListener('click', (event) => {
+  if (event.target.classList.contains('add-to-cart-btn')) {
+    const itemName = event.target.getAttribute('data-name');
+    const itemPrice = event.target.getAttribute('data-price');
+    const itemImg = event.target.parentElement.querySelector('img').src; // Get the image source
+    const itemAlt = event.target.parentElement.querySelector('img').alt; // Get the alt text
+
+    // Call the updated addToCart function with all details
+    addToCart(itemName, itemPrice, itemImg, itemAlt);
+  }
+});
+// Function to show a toast message
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'toast-message';
+  toast.textContent = message;
+
+  // Add the toast to the document
+  document.body.appendChild(toast);
+
+  // Remove the toast after 3 seconds
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
+
+// CART SECTION
+// State: Cart array
+let cart = [];
+
+// Function to update and display cart items dynamically
+function displayCartItems() {
+  const cartItemsContainer = document.getElementById('cartItems');
+  cartItemsContainer.innerHTML = ''; // Clear existing items
+
+  let subtotal = 0;
+
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = `<p>Your cart is empty!</p>`;
+  } else {
+    cart.forEach((item, index) => {
+      const cartItem = document.createElement('div');
+      cartItem.classList.add('cart-item');
+      cartItem.innerHTML = `
+        <div class="cart-item-details">
+          <img src="${item.img}" alt="${item.alt}" class="cart-item-image">
+          <div>
+            <h4>${item.name}</h4>
+            <p>Price: $${item.price.toFixed(2)}</p>
+          </div>
+        </div>
+        <div class="cart-item-actions">
+          <label for="quantity-${index}">Qty:</label>
+          <input type="number" id="quantity-${index}" min="1" value="${item.quantity}" data-index="${index}" class="cart-item-quantity">
+          <button class="remove-item-btn" data-index="${index}">Remove</button>
+        </div>
+      `;
+
+      cartItemsContainer.appendChild(cartItem);
+      subtotal += item.price * item.quantity;
+    });
+  }
+
+  // Update subtotal in the order summary
+  document.getElementById('cartSubtotal').textContent = subtotal.toFixed(2);
+}
+
+function handleQuantityChange(event) {
+  if (event.target.classList.contains('cart-item-quantity')) {
+    const index = parseInt(event.target.getAttribute('data-index'));
+    const newQuantity = parseInt(event.target.value);
+
+    if (newQuantity > 0) {
+      cart[index].quantity = newQuantity;
+    } else {
+      cart[index].quantity = 1; // Prevent quantity from being zero or negative
+      event.target.value = 1;
+    }
+
+    displayCartItems(); // Re-render cart items
+  }
+}
+
+// Function to remove an item from the cart
+function removeCartItem(event) {
+  if (event.target.classList.contains('remove-item-btn')) {
+    const index = parseInt(event.target.getAttribute('data-index'));
+
+    cart.splice(index, 1); // Remove item from cart array
+    displayCartItems(); // Re-render cart items
+    updateCartCount();// Update the cart count display
+  }
+}
+
+// Show the Cart Checkout page
+function showCartPage() {
+  // Hide all sections
+  document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+
+  // Show the cart checkout section
+  document.getElementById('cartCheckout').classList.add('active');
+
+  // Populate the cart with items
+  displayCartItems();
+}
+
+// Navigate back to Accessories page
+function showAccessoriesPage() {
+  // Hide all sections
+  document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+
+  // Show Accessories section
+  document.getElementById('Accessories').classList.add('active');
+}
+
+// Event Listeners
+document.getElementById('cartItems').addEventListener('input', handleQuantityChange);
+document.getElementById('cartItems').addEventListener('click', removeCartItem);
+
+// Add "Checkout" form submission logic (optional)
+document.getElementById('cartCheckoutForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent default form submission
+  alert('Order placed successfully!');
+});
+
+// Example: Adding dummy items to the cart (with imported images)
+// cart.push(
+//   { name: 'Phone Holder', price: 25, quantity: 1, img: phoneHolderImage },
+//   { name: 'Charging Dock', price: 35, quantity: 1, img: chargingImage },
+//   { name: 'All-Season Tires', price: 120, quantity: 1, img: tireImage }
+// );
+
+// Expose navigation functions globally
+window.showCartPage = showCartPage;
+window.showAccessoriesPage = showAccessoriesPage;
+
+
+
 // Expose functions globally
 window.addToCart = addToCart;
 window.showCartPage = showCartPage;
-window.proceedToPayment = proceedToPayment;
+
 window.showAccessoriesPage = showAccessoriesPage;
+
+
+
