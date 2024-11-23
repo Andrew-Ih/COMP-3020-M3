@@ -366,24 +366,27 @@ import chargingImage from './img/a1.webp';
 import tireImage from './img/a2.webp';
 import interiorDecorImage from './img/a3.webp';
 import exteriorToyImage from './img/toys.webp';
+import tire1 from './img/tires/tires1.jpg';
+import winterTires from './img/tires/winter-tires.jpg';
+import allseason from './img/tires/allseason.jpg';
 
 const accessoriesData = [
   { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },
   { id: 2, category: 'exterior', img: gearsImage, alt: 'Gears', name: 'Car Gears Set', price: 40 },
   { id: 3, category: 'charging', img: chargingImage, alt: 'Charging Accessory', name: 'Charging Dock', price: 35 },
-  { id: 4, category: 'tires', img: tireImage, alt: 'Tire Accessory', name: 'All-Season Tires', price: 120 },
+  { id: 4, category: 'tires', img: allseason, alt: 'All-Season Tires', name: 'All-Season Tires', price: 120 },
   { id: 5, category: 'interior', img: interiorDecorImage, alt: 'Interior Decor', name: 'Interior Decor', price: 15 },
   { id: 6, category: 'exterior', img: exteriorToyImage, alt: 'Exterior Toy', name: 'Exterior Toy', price: 10 },
   { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },
   { id: 2, category: 'exterior', img: gearsImage, alt: 'Gears', name: 'Car Gears Set', price: 40 },
   { id: 3, category: 'charging', img: chargingImage, alt: 'Charging Accessory', name: 'Charging Dock', price: 35 },
-  { id: 4, category: 'tires', img: tireImage, alt: 'Tire Accessory', name: 'All-Season Tires', price: 120 },
+  { id: 4, category: 'tires', img: winterTires, alt: 'Winter Tires', name: 'Winter Tires', price: 120 },
   { id: 5, category: 'interior', img: interiorDecorImage, alt: 'Interior Decor', name: 'Interior Decor', price: 15 },
   { id: 6, category: 'exterior', img: exteriorToyImage, alt: 'Exterior Toy', name: 'Exterior Toy', price: 10 },
   { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },
   { id: 2, category: 'exterior', img: gearsImage, alt: 'Gears', name: 'Car Gears Set', price: 40 },
   { id: 3, category: 'charging', img: chargingImage, alt: 'Charging Accessory', name: 'Charging Dock', price: 35 },
-  { id: 4, category: 'tires', img: tireImage, alt: 'Tire Accessory', name: 'All-Season Tires', price: 120 },
+  { id: 4, category: 'tires', img: tire1, alt: 'All-Season Tires', name: 'All-Season Tires', price: 120 },
   { id: 5, category: 'interior', img: interiorDecorImage, alt: 'Interior Decor', name: 'Interior Decor', price: 15 },
   { id: 6, category: 'exterior', img: exteriorToyImage, alt: 'Exterior Toy', name: 'Exterior Toy', price: 10 },
 ];
