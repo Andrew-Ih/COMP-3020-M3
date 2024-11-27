@@ -1064,9 +1064,30 @@ p, h1, h2 {
   background-color: #333;
 }
 
+
+.view-brandnew-vehicles-section {
+  padding: 0;
+}
+
 /* ----------------------------------------------------------------------------------------- */
-/* VIEW ALL SECTION */
+/* VIEW ALL, BRANDNEW, AND PREOWNED SECTION */
 /* ----------------------------------------------------------------------------------------- */
+
+.view-brandnew-vehicles-section {
+  padding: 0;
+}
+
+.view-brandnew-vehicles-section h1 {
+  padding: 20px;
+}
+
+.view-preowned-vehicles-section {
+  padding: 0;
+}
+
+.view-preowned-vehicles-section h1 {
+  padding-left: 20px;
+}
 
 .view-vehicles-section {
   padding: 0;

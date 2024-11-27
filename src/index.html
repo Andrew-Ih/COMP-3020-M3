@@ -596,13 +596,235 @@
         </section>
 
         <!-- BRAND NEW SECTION -->
-        <section id="brandnew">
-          <h1>BrandNew Page</h1>
+        <section id="brandnew" class="view-brandnew-vehicles-section">
+          <h1>Brandnew Vehicles</h1>
+          <!-- Featured Cars Carousel -->
+          <div class="featured-cars-carousel">
+            <div class="carousel-container">
+              <div class="arrow-container left">
+                <button class="arrow left" onclick="changeFeaturedImage_brand_new(-1)">&#10094;</button> <!-- Left arrow -->
+              </div>
+              <img src="img/slide-audi-A211426_web_2880.jpg" alt="Brandnew Featured Car" id="featuredCarImage2">
+              <div class="arrow-container right">
+                <button class="arrow right" onclick="changeFeaturedImage_brand_new(1)">&#10095;</button> <!-- Right arrow -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter and Grid Container -->
+          <div class="filter-grid-wrapper">
+            <!-- Filter Menu -->
+            <aside class="filter-menu">
+              <h2>Filter Options</h2>
+              <div class="filter-group">
+                <label for="searchDistance">Search within</label>
+                <select id="searchDistance">
+                  <option value="50">50 km</option>
+                  <option value="100">100 km</option>
+                  <option value="200" selected>200 km</option>
+                  <option value="500">500 km</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <h3>Models</h3>
+                <label><input type="radio" name="model" value="model-s"> Model S</label>
+                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
+                <label><input type="radio" name="model" value="model-x"> Model X</label>
+                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+              </div>
+              <div class="filter-group">
+                <h3>Inventory Type</h3>
+                <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
+                <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
+              </div>
+              <div class="filter-group">
+                <h3>Exterior Paint</h3>
+                <div class="color-options">
+                  <div class="color-swatch" style="background-color: black;"></div>
+                  <div class="color-swatch" style="background-color: white;"></div>
+                  <div class="color-swatch" style="background-color: blue;"></div>
+                  <div class="color-swatch" style="background-color: red;"></div>
+                </div>
+              </div>
+              <button class="apply-filters-btn">Apply Filters</button>
+            </aside>
+
+            <!-- Grid of Cars -->
+            <div class="car-grid">
+              <div class="car-item">
+                <img src="img/audi-A211426_web_2880.jpg" alt="Car 1">
+                <div class="car-details">
+                  <h3>Model 3</h3>
+                  <p class="price">$58,780 <span class="strike-through">$63,000</span></p>
+                  <p class="financing">Est. Financing $1,122/mo</p>
+                  <ul class="specs">
+                    <li>548km Range (EPA)</li>
+                    <li>201km/h Top Speed</li>
+                    <li>0-100 km/h in 4.4s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="img/2017-Audi-A7-S.jpg" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$80,000</p>
+                  <p class="financing">Est. Financing $2,400/mo</p>
+                  <ul class="specs">
+                    <li>780km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="img/new-random-landrover.png" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$81,000</p>
+                  <p class="financing">Est. Financing $1,500/mo</p>
+                  <ul class="specs">
+                    <li>650km Range (EPA)</li>
+                    <li>280km/h Top Speed</li>
+                    <li>0-100 km/h in 3.2s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="img/new-360_F_350797389_jvB1nweQv7iscc34LexSO3ulv8JvLHdv.jpg" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$65,000</p>
+                  <p class="financing">Est. Financing $1,800/mo</p>
+                  <ul class="specs">
+                    <li>685km Range (EPA)</li>
+                    <li>247km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <!-- Add more car items as needed -->
+            </div>
         </section>
 
         <!-- PRE-OWNED SECTION -->
-        <section id="preowned">
-          <h1>Pre-Owned Page</h1>
+        <section id="preowned" class="view-preowned-vehicles-section">
+          <h1>Preowned Vehicles</h1>
+          <!-- Featured Cars Carousel -->
+          <div class="featured-cars-carousel">
+            <div class="carousel-container">
+              <div class="arrow-container left">
+                <button class="arrow left" onclick="changeFeaturedImage_preowned(-1)">&#10094;</button> <!-- Left arrow -->
+              </div>
+              <img src="img/checkout-image.jpeg" alt="Preowned Featured Car" id="featuredCarImage3">
+              <div class="arrow-container right">
+                <button class="arrow right" onclick="changeFeaturedImage_preowned(1)">&#10095;</button> <!-- Right arrow -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter and Grid Container -->
+          <div class="filter-grid-wrapper">
+            <!-- Filter Menu -->
+            <aside class="filter-menu">
+              <h2>Filter Options</h2>
+              <div class="filter-group">
+                <label for="searchDistance">Search within</label>
+                <select id="searchDistance">
+                  <option value="50">50 km</option>
+                  <option value="100">100 km</option>
+                  <option value="200" selected>200 km</option>
+                  <option value="500">500 km</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <h3>Models</h3>
+                <label><input type="radio" name="model" value="model-s"> Model S</label>
+                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
+                <label><input type="radio" name="model" value="model-x"> Model X</label>
+                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+              </div>
+              <div class="filter-group">
+                <h3>Inventory Type</h3>
+                <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
+                <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
+              </div>
+              <div class="filter-group">
+                <h3>Exterior Paint</h3>
+                <div class="color-options">
+                  <div class="color-swatch" style="background-color: black;"></div>
+                  <div class="color-swatch" style="background-color: white;"></div>
+                  <div class="color-swatch" style="background-color: blue;"></div>
+                  <div class="color-swatch" style="background-color: red;"></div>
+                </div>
+              </div>
+              <button class="apply-filters-btn">Apply Filters</button>
+            </aside>
+
+            <!-- Grid of Cars -->
+            <div class="car-grid">
+              <div class="car-item">
+                <img src="img/2016-Audi-S5-Sportback-Photo-by-Audi.jpg" alt="Car 1">
+                <div class="car-details">
+                  <h3>Model 3</h3>
+                  <p class="price">$58,780 <span class="strike-through">$63,000</span></p>
+                  <p class="financing">Est. Financing $1,122/mo</p>
+                  <ul class="specs">
+                    <li>548km Range (EPA)</li>
+                    <li>201km/h Top Speed</li>
+                    <li>0-100 km/h in 4.4s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="img/aston-martin-gettyimages-493517214-612x612.jpg" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="img/new-random-landrover.png" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="img/audi-car-Screenshot 2024-11-24 210021.png" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <!-- Add more car items as needed -->
+            </div>
         </section>
 
         <!-- CHECKOUT Section -->
