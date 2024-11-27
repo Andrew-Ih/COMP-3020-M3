@@ -13,24 +13,64 @@ mobileNav.addEventListener("click", () => toggleNav());
 //--------------------------------------------------------------------------------------------
 // ShowPage function, controlls the switching of the pages through the navbar and buttons
 //--------------------------------------------------------------------------------------------
-function showPage(pageId) {
+// function showPage(pageId) {
+//   // Hide all sections
+//   document.querySelectorAll("section").forEach(section => {
+//     section.classList.remove("active");
+//   });
+  
+//   // If pageId is "Main", activate Main, Main2, and Contact sections
+//   if (pageId === "Main" ) {
+//       const sectionsToActivate = ["Main", "Main2", "contact"];
+      
+//       sectionsToActivate.forEach(id => {
+//           document.getElementById(id).classList.add("active");
+//       });
+//   } else {
+//       // Otherwise, activate only the selected section
+//       document.getElementById(pageId).classList.add("active");
+//   }
+// }
+
+function showPage(pageId, updateHistory = true) {
   // Hide all sections
   document.querySelectorAll("section").forEach(section => {
     section.classList.remove("active");
   });
-  
+
   // If pageId is "Main", activate Main, Main2, and Contact sections
-  if (pageId === "Main" ) {
-      const sectionsToActivate = ["Main", "Main2", "contact"];
-      
-      sectionsToActivate.forEach(id => {
-          document.getElementById(id).classList.add("active");
-      });
+  if (pageId === "Main") {
+    const sectionsToActivate = ["Main", "Main2", "contact"];
+    sectionsToActivate.forEach(id => {
+      document.getElementById(id).classList.add("active");
+    });
   } else {
-      // Otherwise, activate only the selected section
-      document.getElementById(pageId).classList.add("active");
+    // Otherwise, activate only the selected section
+    document.getElementById(pageId).classList.add("active");
+  }
+
+  // Update the browser's history state
+  if (updateHistory) {
+    history.pushState({ pageId }, null, `#${pageId}`);
   }
 }
+
+// Listen for the popstate event (back/forward button)
+window.addEventListener("popstate", event => {
+  const state = event.state;
+  if (state && state.pageId) {
+    showPage(state.pageId, false); // Update UI without modifying history
+  } else {
+    // Fallback to default page if no state is present
+    showPage("Main", false);
+  }
+});
+
+// On page load, check the URL hash or fallback to the default page
+window.addEventListener("load", () => {
+  const pageId = location.hash.substring(1) || "Main"; // Default to Main
+  showPage(pageId, false); // Initialize without updating history
+});
 
 // Expose the function globally
 window.showPage = showPage
@@ -358,12 +398,13 @@ window.changeFeaturedImage = changeFeaturedImage;
 import phoneHolderImage from './img/phone-holder.webp';
 import gearsImage from './img/gears.jpg';
 import chargingImage from './img/a1.webp';
-import tireImage from './img/a2.webp';
-import interiorDecorImage from './img/a3.webp';
+
 import exteriorToyImage from './img/toys.webp';
 import tire1 from './img/tires/tires1.jpg';
 import winterTires from './img/tires/winter-tires.jpg';
 import allseason from './img/tires/allseason.jpg';
+
+import interiorDecorImage from './img/a3.webp';
 
 const accessoriesData = [
   { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },
