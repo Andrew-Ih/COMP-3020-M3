@@ -36,7 +36,7 @@ nav {
   background-color: #fff; 
   width: 100%; */
 }
-nav .logo {
+/* nav .logo {
   display: flex;
   align-items: center;
 }
@@ -51,9 +51,13 @@ nav .logo h1 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+  text-decoration: none;
+} */
+
+
 nav .home-button h1{
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 nav ul {

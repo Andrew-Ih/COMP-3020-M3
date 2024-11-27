@@ -13,25 +13,6 @@ mobileNav.addEventListener("click", () => toggleNav());
 //--------------------------------------------------------------------------------------------
 // ShowPage function, controlls the switching of the pages through the navbar and buttons
 //--------------------------------------------------------------------------------------------
-// function showPage(pageId) {
-//   // Hide all sections
-//   document.querySelectorAll("section").forEach(section => {
-//     section.classList.remove("active");
-//   });
-  
-//   // If pageId is "Main", activate Main, Main2, and Contact sections
-//   if (pageId === "Main" ) {
-//       const sectionsToActivate = ["Main", "Main2", "contact"];
-      
-//       sectionsToActivate.forEach(id => {
-//           document.getElementById(id).classList.add("active");
-//       });
-//   } else {
-//       // Otherwise, activate only the selected section
-//       document.getElementById(pageId).classList.add("active");
-//   }
-// }
-
 function showPage(pageId, updateHistory = true) {
   // Hide all sections
   document.querySelectorAll("section").forEach(section => {
