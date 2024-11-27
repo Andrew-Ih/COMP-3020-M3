@@ -11,7 +11,7 @@
         <!-- NAV BAR -->
         <nav>
             <div class="home-button">
-              <a href="#" onclick="showPage('Main')"><h1>LUX-EV</h1></a>
+              <a href="#" onclick="showPage('Main'); return false;"><h1>LUX-EV</h1></a>
             </div>
 
             <ul>
@@ -20,32 +20,32 @@
                 <div class="dropdown-content" id="vehicleDropdown">
                     <!-- Car Brand Logos -->
                     <div class="brand-logos">
-                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Audi</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Toyota</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Aston Martin</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Land Rover</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Tesla</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all')"><div>Porsche</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Audi</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Toyota</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Aston Martin</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Land Rover</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Tesla</div></a>
+                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Porsche</div></a>
                     </div>
                     <div class="divider"></div>
                     <!-- Additional Options -->
                     <div class="dropdown-options">
-                        <a href="#" onclick="showPage('view-all')">View All</a>
-                        <a href="#" onclick="showPage('test-drive')">Test Drive</a>
-                        <a href="#" onclick="showPage('compare')">Compare</a>
-                        <a href="#" onclick="showPage('brandnew')">Brand New</a>
-                        <a href="#" onclick="showPage('preowned')">Pre-Owned</a>
+                        <a href="#" onclick="showPage('view-all'); return false;">View All</a>
+                        <a href="#" onclick="showPage('test-drive'); return false;">Test Drive</a>
+                        <a href="#" onclick="showPage('compare'); return false;">Compare</a>
+                        <a href="#" onclick="showPage('brandnew'); return false;">Brand New</a>
+                        <a href="#" onclick="showPage('preowned'); return false;">Pre-Owned</a>
                     </div>
                 </div>
               </li>
               <li>
-                <a href="#" onclick="showPage('Accessories')">Accessories</a>
+                <a href="#" onclick="showPage('Accessories'); return false;">Accessories</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('Maintenance')">Maintenance</a>
+                <a href="#" onclick="showPage('Maintenance'); return false;">Maintenance</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('contact')">Contact</a>
+                <a href="#" onclick="showPage('contact'); return false;">Contact</a>
               </li>
             </ul>
             <div class="hamburger">
@@ -59,7 +59,7 @@
         <div class="menubar">
             <ul>
               <!-- <li>
-                <a href="#" onclick="showPage('Vehicles')">Vehicles</a>
+                <a href="#" onclick="showPage('Vehicles'); return false;">Vehicles</a>
               </li> -->
               <li class="dropdown">
                 <a href="#">Vehicles <i class="fas fa-chevron-down"></i></a>
@@ -75,22 +75,22 @@
                     </div> -->
                     <!-- Additional Options -->
                     <!-- <div class="dropdown-options">
-                      <a href="#" onclick="showPage('view-all')">View All</a>
-                      <a href="#" onclick="showPage('test-drive')">Test Drive</a>
-                      <a href="#" onclick="showPage('compare')">Compare</a>
-                      <a href="#" onclick="showPage('brandnew')">Brand New</a>
-                      <a href="#" onclick="showPage('preowned')">Pre-Owned</a>
+                      <a href="#" onclick="showPage('view-all'); return false;">View All</a>
+                      <a href="#" onclick="showPage('test-drive'); return false;">Test Drive</a>
+                      <a href="#" onclick="showPage('compare'); return false;">Compare</a>
+                      <a href="#" onclick="showPage('brandnew'); return false;">Brand New</a>
+                      <a href="#" onclick="showPage('preowned'); return false;">Pre-Owned</a>
                     </div> -->
                 <!-- </div> -->
               </li>
               <li>
-                <a href="#" onclick="showPage('Accessories')">Accessories</a>
+                <a href="#" onclick="showPage('Accessories'); return false;">Accessories</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('Maintenance')">Maintenance</a>
+                <a href="#" onclick="showPage('Maintenance'); return false;">Maintenance</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('contact')">Contact</a>
+                <a href="#" onclick="showPage('contact'); return false;">Contact</a>
               </li>
             </ul>
         </div>
@@ -119,8 +119,8 @@
                 <h2>Car Model 1</h2>
                 <p>Description of the car, highlighting its features and specifications. Mention price or any special details.</p>
                 <div class="car-buttons">
-                  <button onclick="showPage('view-all')">View More</button>
-                  <button onclick="showPage('checkout')">Buy Now</button>
+                  <button onclick="showPage('view-all'); return false;">View More</button>
+                  <button onclick="showPage('checkout'); return false;">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -132,8 +132,8 @@
                 <h2>Car Model 2</h2>
                 <p>Description of the car, highlighting its features and specifications. Mention price or any special details.</p>
                 <div class="car-buttons">
-                  <button onclick="showPage('view-all')">View More</button>
-                  <button onclick="showPage('checkout')">Buy Now</button>
+                  <button onclick="showPage('view-all'); return false;">View More</button>
+                  <button onclick="showPage('checkout'); return false;">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -440,7 +440,7 @@
                     <li>0-100 km/h in 4.4s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
               <div class="car-item">
                 <img src="img/tesla4.avif" alt="Car 2">
@@ -454,7 +454,7 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
               <div class="car-item">
                 <img src="img/tesla3.avif" alt="Car 2">
@@ -468,7 +468,7 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
               <div class="car-item">
                 <img src="img/astonmartin2.webp" alt="Car 2">
@@ -482,7 +482,7 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
               <!-- Add more car items as needed -->
             </div>
@@ -571,7 +571,7 @@
                 <p id="car1-price">$50,000</p>
               </div>
               <!-- Buy Now Button -->
-              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+              <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
             </div>
 
             <!-- Vertical Divider -->
@@ -590,7 +590,7 @@
                 <p id="car2-price">$190,000</p>
               </div>
               <!-- Buy Now Button -->
-              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+              <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
             </div>
           </div>
         </section>
