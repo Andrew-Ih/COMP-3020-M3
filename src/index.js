@@ -673,10 +673,10 @@ document.getElementById('cartItems').addEventListener('input', handleQuantityCha
 document.getElementById('cartItems').addEventListener('click', removeCartItem);
 
 // Add "Checkout" form submission logic (optional)
-document.getElementById('cartCheckoutForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent default form submission
-  alert('Order placed successfully!');
-});
+// document.getElementById('cartCheckoutForm').addEventListener('submit', function (event) {
+//   event.preventDefault(); // Prevent default form submission
+//   alert('Order placed successfully!');
+// });
 
 // Example: Adding dummy items to the cart (with imported images)
 // cart.push(
@@ -693,6 +693,12 @@ window.addToCart = addToCart;
 // Form validation for accessories checkout
 document.getElementById("cartCheckoutForm").addEventListener("submit", function (event) {
   event.preventDefault();
+
+  if (cart.length === 0) {
+    // Alert the user if the cart is empty
+    alert("Your cart is empty! Please add items to the cart before checking out.");
+    return; // Stop the form submission
+  }
 
   const form = this;
   const name = form.querySelector('input[name="name"]');
