@@ -13,24 +13,45 @@ mobileNav.addEventListener("click", () => toggleNav());
 //--------------------------------------------------------------------------------------------
 // ShowPage function, controlls the switching of the pages through the navbar and buttons
 //--------------------------------------------------------------------------------------------
-function showPage(pageId) {
+function showPage(pageId, updateHistory = true) {
   // Hide all sections
   document.querySelectorAll("section").forEach(section => {
     section.classList.remove("active");
   });
-  
+
   // If pageId is "Main", activate Main, Main2, and Contact sections
-  if (pageId === "Main" ) {
-      const sectionsToActivate = ["Main", "Main2", "contact"];
-      
-      sectionsToActivate.forEach(id => {
-          document.getElementById(id).classList.add("active");
-      });
+  if (pageId === "Main") {
+    const sectionsToActivate = ["Main", "Main2", "contact"];
+    sectionsToActivate.forEach(id => {
+      document.getElementById(id).classList.add("active");
+    });
   } else {
-      // Otherwise, activate only the selected section
-      document.getElementById(pageId).classList.add("active");
+    // Otherwise, activate only the selected section
+    document.getElementById(pageId).classList.add("active");
+  }
+
+  // Update the browser's history state
+  if (updateHistory) {
+    history.pushState({ pageId }, null, `#${pageId}`);
   }
 }
+
+// Listen for the popstate event (back/forward button)
+window.addEventListener("popstate", event => {
+  const state = event.state;
+  if (state && state.pageId) {
+    showPage(state.pageId, false); // Update UI without modifying history
+  } else {
+    // Fallback to default page if no state is present
+    showPage("Main", false);
+  }
+});
+
+// On page load, check the URL hash or fallback to the default page
+window.addEventListener("load", () => {
+  const pageId = location.hash.substring(1) || "Main"; // Default to Main
+  showPage(pageId, false); // Initialize without updating history
+});
 
 // Expose the function globally
 window.showPage = showPage
@@ -357,18 +378,97 @@ document.getElementById('featuredCarImage').addEventListener('mouseleave', () =>
 window.changeFeaturedImage = changeFeaturedImage;
 
 //--------------------------------------------------------------------------------------------
+// Brand-new section 
+//--------------------------------------------------------------------------------------------
+import featuredImage4 from './img/slide-audi-A211426_web_2880.jpg';
+import featuredImage5 from './img/slide-2016-Audi-S5-Sportback-Photo-by-Audi.jpg';
+import featuredImage6 from './img/2017-Audi-A7-S.jpg';
+
+let featuredImages2 = [featuredImage6, featuredImage5, featuredImage4, checkoutImage, checkoutImage2, checkoutImage3, checkoutImage4, checkoutImage5];
+let featuredCurrentIndex2 = 0;
+
+function changeFeaturedImage_brand_new(direction) {
+  featuredCurrentIndex2 += direction;
+  if (featuredCurrentIndex2 >= featuredImages2.length) {
+    featuredCurrentIndex2 = 0;
+  } else if (featuredCurrentIndex2 < 0) {
+    featuredCurrentIndex2 = featuredImages2.length - 1;
+  }
+  document.getElementById('featuredCarImage2').src = featuredImages2[featuredCurrentIndex2];
+}
+
+// Auto-change image every 3 seconds
+let autoChangeInterval2 = setInterval(() => {
+  changeFeaturedImage_brand_new(1); // Move to the next image
+}, 3000); // 3000 milliseconds = 3 seconds
+
+// Pause the auto-change when the cursor is over the image
+document.getElementById('featuredCarImage2').addEventListener('mouseenter', () => {
+  clearInterval(autoChangeInterval2);
+});
+
+// Resume the auto-change when the cursor leaves the image
+document.getElementById('featuredCarImage2').addEventListener('mouseleave', () => {
+  autoChangeInterval2 = setInterval(() => {
+    changeFeaturedImage_brand_new(1);
+  }, 3000);
+});
+
+window.changeFeaturedImage_brand_new = changeFeaturedImage_brand_new;
+
+//--------------------------------------------------------------------------------------------
+// preowned section 
+//--------------------------------------------------------------------------------------------
+//import featuredImage4 from './img/slide-audi-A211426_web_2880.jpg';
+//import featuredImage5 from './img/slide-2016-Audi-S5-Sportback-Photo-by-Audi.jpg';
+//import featuredImage6 from './img/2017-Audi-A7-S.jpg';
+
+let featuredImages3 = [featuredImage6, featuredImage5, featuredImage4, checkoutImage, checkoutImage2, checkoutImage3, checkoutImage4, checkoutImage5];
+let featuredCurrentIndex3 = 0;
+
+function changeFeaturedImage_preowned(direction) {
+  featuredCurrentIndex3 += direction;
+  if (featuredCurrentIndex3 >= featuredImages3.length) {
+    featuredCurrentIndex3 = 0;
+  } else if (featuredCurrentIndex3 < 0) {
+    featuredCurrentIndex3 = featuredImages3.length - 1;
+  }
+  document.getElementById('featuredCarImage3').src = featuredImages3[featuredCurrentIndex3];
+}
+
+// Auto-change image every 3 seconds
+let autoChangeInterval3 = setInterval(() => {
+  changeFeaturedImage_preowned(1); // Move to the next image
+}, 3000); // 3000 milliseconds = 3 seconds
+
+// Pause the auto-change when the cursor is over the image
+document.getElementById('featuredCarImage3').addEventListener('mouseenter', () => {
+  clearInterval(autoChangeInterval3);
+});
+
+// Resume the auto-change when the cursor leaves the image
+document.getElementById('featuredCarImage3').addEventListener('mouseleave', () => {
+  autoChangeInterval3 = setInterval(() => {
+    changeFeaturedImage_preowned(1);
+  }, 3000);
+});
+
+window.changeFeaturedImage_preowned = changeFeaturedImage_preowned;
+
+//--------------------------------------------------------------------------------------------
 // Accessories and cart section 
 //--------------------------------------------------------------------------------------------
 // Accessories Data
 import phoneHolderImage from './img/phone-holder.webp';
 import gearsImage from './img/gears.jpg';
 import chargingImage from './img/a1.webp';
-import tireImage from './img/a2.webp';
-import interiorDecorImage from './img/a3.webp';
+
 import exteriorToyImage from './img/toys.webp';
 import tire1 from './img/tires/tires1.jpg';
 import winterTires from './img/tires/winter-tires.jpg';
 import allseason from './img/tires/allseason.jpg';
+
+import interiorDecorImage from './img/a3.webp';
 
 const accessoriesData = [
   { id: 1, category: 'interior', img: phoneHolderImage, alt: 'Phone Holder', name: 'Phone Holder', price: 25 },

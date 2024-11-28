@@ -11,7 +11,7 @@
         <!-- NAV BAR -->
         <nav>
             <div class="home-button">
-              <a href="#" onclick="showPage('Main')"><h1>LUX-EV</h1></a>
+              <a href="#" onclick="showPage('Main'); return false;"><h1>LUX-EV</h1></a>
             </div>
 
             <ul>
@@ -49,22 +49,22 @@
                     <div class="divider"></div>
                     <!-- Additional Options -->
                     <div class="dropdown-options">
-                        <a href="#" onclick="showPage('view-all')">View All</a>
-                        <a href="#" onclick="showPage('test-drive')">Test Drive</a>
-                        <a href="#" onclick="showPage('compare')">Compare</a>
-                        <a href="#" onclick="showPage('brandnew')">Brand New</a>
-                        <a href="#" onclick="showPage('preowned')">Pre-Owned</a>
+                        <a href="#" onclick="showPage('view-all'); return false;">View All</a>
+                        <a href="#" onclick="showPage('test-drive'); return false;">Test Drive</a>
+                        <a href="#" onclick="showPage('compare'); return false;">Compare</a>
+                        <a href="#" onclick="showPage('brandnew'); return false;">Brand New</a>
+                        <a href="#" onclick="showPage('preowned'); return false;">Pre-Owned</a>
                     </div>
                 </div>
               </li>
               <li>
-                <a href="#" onclick="showPage('Accessories')">Accessories</a>
+                <a href="#" onclick="showPage('Accessories'); return false;">Accessories</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('Maintenance')">Maintenance</a>
+                <a href="#" onclick="showPage('Maintenance'); return false;">Maintenance</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('contact')">Contact</a>
+                <a href="#" onclick="showPage('contact'); return false;">Contact</a>
               </li>
             </ul>
             <div class="hamburger">
@@ -78,7 +78,7 @@
         <div class="menubar">
             <ul>
               <!-- <li>
-                <a href="#" onclick="showPage('Vehicles')">Vehicles</a>
+                <a href="#" onclick="showPage('Vehicles'); return false;">Vehicles</a>
               </li> -->
               <li class="dropdown">
                 <a href="#">Vehicles <i class="fas fa-chevron-down"></i></a>
@@ -94,22 +94,22 @@
                     </div> -->
                     <!-- Additional Options -->
                     <!-- <div class="dropdown-options">
-                      <a href="#" onclick="showPage('view-all')">View All</a>
-                      <a href="#" onclick="showPage('test-drive')">Test Drive</a>
-                      <a href="#" onclick="showPage('compare')">Compare</a>
-                      <a href="#" onclick="showPage('brandnew')">Brand New</a>
-                      <a href="#" onclick="showPage('preowned')">Pre-Owned</a>
+                      <a href="#" onclick="showPage('view-all'); return false;">View All</a>
+                      <a href="#" onclick="showPage('test-drive'); return false;">Test Drive</a>
+                      <a href="#" onclick="showPage('compare'); return false;">Compare</a>
+                      <a href="#" onclick="showPage('brandnew'); return false;">Brand New</a>
+                      <a href="#" onclick="showPage('preowned'); return false;">Pre-Owned</a>
                     </div> -->
                 <!-- </div> -->
               </li>
               <li>
-                <a href="#" onclick="showPage('Accessories')">Accessories</a>
+                <a href="#" onclick="showPage('Accessories'); return false;">Accessories</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('Maintenance')">Maintenance</a>
+                <a href="#" onclick="showPage('Maintenance'); return false;">Maintenance</a>
               </li>
               <li>
-                <a href="#" onclick="showPage('contact')">Contact</a>
+                <a href="#" onclick="showPage('contact'); return false;">Contact</a>
               </li>
             </ul>
         </div>
@@ -138,8 +138,8 @@
                 <h2>Car Model 1</h2>
                 <p>Description of the car, highlighting its features and specifications. Mention price or any special details.</p>
                 <div class="car-buttons">
-                  <button onclick="showPage('view-all')">View More</button>
-                  <button onclick="showPage('checkout')">Buy Now</button>
+                  <button onclick="showPage('view-all'); return false;">View More</button>
+                  <button onclick="showPage('checkout'); return false;">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -151,8 +151,8 @@
                 <h2>Car Model 2</h2>
                 <p>Description of the car, highlighting its features and specifications. Mention price or any special details.</p>
                 <div class="car-buttons">
-                  <button onclick="showPage('view-all')">View More</button>
-                  <button onclick="showPage('checkout')">Buy Now</button>
+                  <button onclick="showPage('view-all'); return false;">View More</button>
+                  <button onclick="showPage('checkout'); return false;">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -459,7 +459,7 @@
                     <li>0-100 km/h in 4.4s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
             
               <div class="car-item">
@@ -489,7 +489,7 @@
                     <li>0-100 km/h in 3.9s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
             
               <div class="car-item">
@@ -504,7 +504,7 @@
                     <li>0-100 km/h in 4.0s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
             
               <div class="car-item">
@@ -625,7 +625,7 @@
                     <li>0-100 km/h in 7.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+                <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
               <!-- Add more car items as needed -->
             </div>
@@ -714,7 +714,7 @@
                 <p id="car1-price">$50,000</p>
               </div>
               <!-- Buy Now Button -->
-              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+              <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
             </div>
 
             <!-- Vertical Divider -->
@@ -733,19 +733,241 @@
                 <p id="car2-price">$190,000</p>
               </div>
               <!-- Buy Now Button -->
-              <button class="buy-now-button" onclick="showPage('checkout')">Buy Now</button>
+              <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
             </div>
           </div>
         </section>
 
         <!-- BRAND NEW SECTION -->
-        <section id="brandnew">
-          <h1>BrandNew Page</h1>
+        <section id="brandnew" class="view-brandnew-vehicles-section">
+          <h1>Brandnew Vehicles</h1>
+          <!-- Featured Cars Carousel -->
+          <div class="featured-cars-carousel">
+            <div class="carousel-container">
+              <div class="arrow-container left">
+                <button class="arrow left" onclick="changeFeaturedImage_brand_new(-1)">&#10094;</button> <!-- Left arrow -->
+              </div>
+              <img src="9c26341a579e1c58e93c.jpg" alt="Brandnew Featured Car" id="featuredCarImage2">
+              <div class="arrow-container right">
+                <button class="arrow right" onclick="changeFeaturedImage_brand_new(1)">&#10095;</button> <!-- Right arrow -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter and Grid Container -->
+          <div class="filter-grid-wrapper">
+            <!-- Filter Menu -->
+            <aside class="filter-menu">
+              <h2>Filter Options</h2>
+              <div class="filter-group">
+                <label for="searchDistance">Search within</label>
+                <select id="searchDistance">
+                  <option value="50">50 km</option>
+                  <option value="100">100 km</option>
+                  <option value="200" selected>200 km</option>
+                  <option value="500">500 km</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <h3>Models</h3>
+                <label><input type="radio" name="model" value="model-s"> Model S</label>
+                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
+                <label><input type="radio" name="model" value="model-x"> Model X</label>
+                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+              </div>
+              <div class="filter-group">
+                <h3>Inventory Type</h3>
+                <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
+                <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
+              </div>
+              <div class="filter-group">
+                <h3>Exterior Paint</h3>
+                <div class="color-options">
+                  <div class="color-swatch" style="background-color: black;"></div>
+                  <div class="color-swatch" style="background-color: white;"></div>
+                  <div class="color-swatch" style="background-color: blue;"></div>
+                  <div class="color-swatch" style="background-color: red;"></div>
+                </div>
+              </div>
+              <button class="apply-filters-btn">Apply Filters</button>
+            </aside>
+
+            <!-- Grid of Cars -->
+            <div class="car-grid">
+              <div class="car-item">
+                <img src="25ad7c92904baaac8695.jpg" alt="Car 1">
+                <div class="car-details">
+                  <h3>Model 3</h3>
+                  <p class="price">$58,780 <span class="strike-through">$63,000</span></p>
+                  <p class="financing">Est. Financing $1,122/mo</p>
+                  <ul class="specs">
+                    <li>548km Range (EPA)</li>
+                    <li>201km/h Top Speed</li>
+                    <li>0-100 km/h in 4.4s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="3b1acd5de9baca06ac9a.jpg" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$80,000</p>
+                  <p class="financing">Est. Financing $2,400/mo</p>
+                  <ul class="specs">
+                    <li>780km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="d112055d4d9e92848033.png" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$81,000</p>
+                  <p class="financing">Est. Financing $1,500/mo</p>
+                  <ul class="specs">
+                    <li>650km Range (EPA)</li>
+                    <li>280km/h Top Speed</li>
+                    <li>0-100 km/h in 3.2s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="5d1b23ac23a5ae0167f5.jpg" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$65,000</p>
+                  <p class="financing">Est. Financing $1,800/mo</p>
+                  <ul class="specs">
+                    <li>685km Range (EPA)</li>
+                    <li>247km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <!-- Add more car items as needed -->
+            </div>
         </section>
 
         <!-- PRE-OWNED SECTION -->
-        <section id="preowned">
-          <h1>Pre-Owned Page</h1>
+        <section id="preowned" class="view-preowned-vehicles-section">
+          <h1>Preowned Vehicles</h1>
+          <!-- Featured Cars Carousel -->
+          <div class="featured-cars-carousel">
+            <div class="carousel-container">
+              <div class="arrow-container left">
+                <button class="arrow left" onclick="changeFeaturedImage_preowned(-1)">&#10094;</button> <!-- Left arrow -->
+              </div>
+              <img src="391ab36fad71ae564b51.jpeg" alt="Preowned Featured Car" id="featuredCarImage3">
+              <div class="arrow-container right">
+                <button class="arrow right" onclick="changeFeaturedImage_preowned(1)">&#10095;</button> <!-- Right arrow -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter and Grid Container -->
+          <div class="filter-grid-wrapper">
+            <!-- Filter Menu -->
+            <aside class="filter-menu">
+              <h2>Filter Options</h2>
+              <div class="filter-group">
+                <label for="searchDistance">Search within</label>
+                <select id="searchDistance">
+                  <option value="50">50 km</option>
+                  <option value="100">100 km</option>
+                  <option value="200" selected>200 km</option>
+                  <option value="500">500 km</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <h3>Models</h3>
+                <label><input type="radio" name="model" value="model-s"> Model S</label>
+                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
+                <label><input type="radio" name="model" value="model-x"> Model X</label>
+                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+              </div>
+              <div class="filter-group">
+                <h3>Inventory Type</h3>
+                <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
+                <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
+              </div>
+              <div class="filter-group">
+                <h3>Exterior Paint</h3>
+                <div class="color-options">
+                  <div class="color-swatch" style="background-color: black;"></div>
+                  <div class="color-swatch" style="background-color: white;"></div>
+                  <div class="color-swatch" style="background-color: blue;"></div>
+                  <div class="color-swatch" style="background-color: red;"></div>
+                </div>
+              </div>
+              <button class="apply-filters-btn">Apply Filters</button>
+            </aside>
+
+            <!-- Grid of Cars -->
+            <div class="car-grid">
+              <div class="car-item">
+                <img src="8f280af3d140a8a9f997.jpg" alt="Car 1">
+                <div class="car-details">
+                  <h3>Model 3</h3>
+                  <p class="price">$58,780 <span class="strike-through">$63,000</span></p>
+                  <p class="financing">Est. Financing $1,122/mo</p>
+                  <ul class="specs">
+                    <li>548km Range (EPA)</li>
+                    <li>201km/h Top Speed</li>
+                    <li>0-100 km/h in 4.4s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="9f58c919fca01892c8ed.jpg" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="d112055d4d9e92848033.png" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <div class="car-item">
+                <img src="15b87c502baf76267086.png" alt="Car 2">
+                <div class="car-details">
+                  <h3>Model S</h3>
+                  <p class="price">$78,000</p>
+                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <ul class="specs">
+                    <li>620km Range (EPA)</li>
+                    <li>250km/h Top Speed</li>
+                    <li>0-100 km/h in 3.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              <!-- Add more car items as needed -->
+            </div>
         </section>
 
         <!-- CHECKOUT Section -->
