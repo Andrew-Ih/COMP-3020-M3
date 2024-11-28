@@ -937,5 +937,23 @@
           </div>
         </section>
 
+        <div id="checkoutModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Thank You for Your Purchase!</h2>
+            <p>Your delivery will arrive within 5-7 business days.</p>
+            <p>If you have any questions, please visit the <a href="#" onclick="showPage('contact'); return false;">Contact Page</a>.</p>
+            <div class="receipt">
+              <h3>Receipt</h3>
+              <div id="modalReceiptItems">
+                <!-- Items will be dynamically populated here -->
+              </div>
+              <p><strong>Order Total:</strong> $<span id="modalTotal"></span></p>
+              <p>A receipt has been sent to your email.</p>
+            </div>
+            <button onclick="closeModal()">Close</button>
+          </div>
+        </div>
+
     <script defer src="bundle.js"></script></body>
 </html>

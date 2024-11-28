@@ -691,7 +691,6 @@ window.showAccessoriesPage = showAccessoriesPage;
 window.addToCart = addToCart;
 
 // Form validation for accessories checkout
-// Form Validation
 document.getElementById("cartCheckoutForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -769,7 +768,24 @@ document.getElementById("cartCheckoutForm").addEventListener("submit", function 
   }
 
   if (isValid) {
-    alert("Order placed successfully!");
+    // Calculate subtotal
+    const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+
+    // Generate receipt details
+    const receiptItems = cart.map(
+      (item) =>
+        `<p><strong>${item.name}</strong> - ${item.quantity} x $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}</p>`
+    ).join("");
+
+    // Populate modal with receipt details
+    document.getElementById("modalTotal").textContent = subtotal;
+    document.getElementById("modalReceiptItems").innerHTML = receiptItems;
+
+    // Update modal with details
+    document.getElementById("modalTotal").textContent = subtotal;
+
+    // Show the modal
+    showModal();
 
     // Clear the cart
     cart = []; // Empty the cart array
@@ -779,13 +795,27 @@ document.getElementById("cartCheckoutForm").addEventListener("submit", function 
     // Reset the form
     form.reset();
     document.getElementById("creditCardFields").style.display = "none"; // Hide credit card fields
-
-    // Optionally redirect the user to a confirmation page
-    showPage('Accessories'); // Navigate back to the Accessories page or another section
   } else {
     alert("Please correct the highlighted fields.");
   }
 });
+
+// Function to show the modal
+function showModal() {
+  const modal = document.getElementById("checkoutModal");
+  modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById("checkoutModal");
+  modal.style.display = "none";
+
+  // Optionally redirect to a specific page (e.g., home or accessories)
+  showPage("Accessories");
+}
+
+window.closeModal = closeModal;
 
 // Show/Hide Credit Card Fields
 document.getElementById("paymentMethod").addEventListener("change", function () {
