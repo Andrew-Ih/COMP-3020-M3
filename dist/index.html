@@ -20,13 +20,32 @@
                 <div class="dropdown-content" id="vehicleDropdown">
                     <!-- Car Brand Logos -->
                     <div class="brand-logos">
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Audi</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Toyota</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Aston Martin</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Land Rover</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Tesla</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Porsche</div></a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all')" style="position: relative; display: inline-block; text-align: center; text-decoration: none; color: black; font-weight: bold;">
+                        <div style="background-image: url('Audi-logo-1.png'); background-size: cover; background-position: center; opacity: 0.3; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                        <div style="position: relative; z-index: 1;">Audi</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all')" style="position: relative; display: inline-block; text-align: center; text-decoration: none; color: black; font-weight: bold;">
+                        <div style="background-image: url('Toyota-logo.jpg'); background-size: cover; background-position: center; opacity: 0.3; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                        <div style="position: relative; z-index: 1;">Toyota</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all')" style="position: relative; display: inline-block; text-align: center; text-decoration: none; color: black; font-weight: bold;">
+                        <div style="background-image: url('Aston-logo.jpg'); background-size: cover; background-position: center; opacity: 0.3; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                        <div style="position: relative; z-index: 1;">Aston Martin</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all')" style="position: relative; display: inline-block; text-align: center; text-decoration: none; color: black; font-weight: bold;">
+                        <div style="background-image: url('Land-rover-logo.jpg'); background-size: cover; background-position: center; opacity: 0.3; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                        <div style="position: relative; z-index: 1;">Land Rover</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all')" style="position: relative; display: inline-block; text-align: center; text-decoration: none; color: black; font-weight: bold;">
+                        <div style="background-image: url('Tesla-logo.jpg'); background-size: cover; background-position: center; opacity: 0.3; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                        <div style="position: relative; z-index: 1;">Tesla</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all')" style="position: relative; display: inline-block; text-align: center; text-decoration: none; color: black; font-weight: bold;">
+                        <div style="background-image: url('Porsche-logo.jpg'); background-size: cover; background-position: center; opacity: 0.3; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                        <div style="position: relative; z-index: 1;">Porsche</div>
+                      </a>
                     </div>
+                                        
                     <div class="divider"></div>
                     <!-- Additional Options -->
                     <div class="dropdown-options">
@@ -403,12 +422,12 @@
                 </select>
               </div>
               <div class="filter-group">
-                <h3>Models</h3>
+                <!-- <h3>Models</h3>
                 <label><input type="radio" name="model" value="model-s"> Model S</label>
                 <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
                 <label><input type="radio" name="model" value="model-x"> Model X</label>
                 <label><input type="radio" name="model" value="model-y"> Model Y</label>
-              </div>
+              </div> -->
               <div class="filter-group">
                 <h3>Inventory Type</h3>
                 <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
@@ -429,9 +448,9 @@
             <!-- Grid of Cars -->
             <div class="car-grid">
               <div class="car-item">
-                <img src="5934c07980a583bd92f5.avif" alt="Car 1">
+                <img src="5934c07980a583bd92f5.avif" alt="Tesla Model 3">
                 <div class="car-details">
-                  <h3>Model 3</h3>
+                  <h3>Tesla Model 3</h3>
                   <p class="price">$58,780 <span class="strike-through">$63,000</span></p>
                   <p class="financing">Est. Financing $1,122/mo</p>
                   <ul class="specs">
@@ -442,44 +461,168 @@
                 </div>
                 <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
+            
               <div class="car-item">
-                <img src="99978dbedf573fcd2454.avif" alt="Car 2">
+                <img src="99978dbedf573fcd2454.avif" alt="Tesla Model S">
                 <div class="car-details">
-                  <h3>Model S</h3>
-                  <p class="price">$78,000</p>
-                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <h3>Tesla Model S</h3>
+                  <p class="price">$88,000 <span class="strike-through">$95,000</span></p>
+                  <p class="financing">Est. Financing $1,622/mo</p>
                   <ul class="specs">
-                    <li>620km Range (EPA)</li>
-                    <li>250km/h Top Speed</li>
-                    <li>0-100 km/h in 3.5s</li>
+                    <li>652km Range (EPA)</li>
+                    <li>322km/h Top Speed</li>
+                    <li>0-100 km/h in 2.1s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+            
+              <div class="car-item">
+                <img src="a4c3077b3370b3bcf693.avif" alt="Audi e-tron GT">
+                <div class="car-details">
+                  <h3>Audi e-tron GT</h3>
+                  <p class="price">$104,500</p>
+                  <p class="financing">Est. Financing $1,930/mo</p>
+                  <ul class="specs">
+                    <li>472km Range (WLTP)</li>
+                    <li>245km/h Top Speed</li>
+                    <li>0-100 km/h in 3.9s</li>
                   </ul>
                 </div>
                 <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
+            
               <div class="car-item">
-                <img src="a4c3077b3370b3bcf693.avif" alt="Car 2">
+                <img src="bdcf784f130d6e4c031d.webp" alt="Porsche Taycan 4S">
                 <div class="car-details">
-                  <h3>Model S</h3>
-                  <p class="price">$78,000</p>
-                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <h3>Porsche Taycan 4S</h3>
+                  <p class="price">$119,000</p>
+                  <p class="financing">Est. Financing $2,200/mo</p>
                   <ul class="specs">
-                    <li>620km Range (EPA)</li>
+                    <li>463km Range (WLTP)</li>
                     <li>250km/h Top Speed</li>
-                    <li>0-100 km/h in 3.5s</li>
+                    <li>0-100 km/h in 4.0s</li>
                   </ul>
                 </div>
                 <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>
               </div>
+            
               <div class="car-item">
-                <img src="bdcf784f130d6e4c031d.webp" alt="Car 2">
+                <img src="aston-martin-db-electric.jpg" alt="Aston Martin Rapide E">
                 <div class="car-details">
-                  <h3>Model S</h3>
-                  <p class="price">$78,000</p>
-                  <p class="financing">Est. Financing $1,400/mo</p>
+                  <h3>Aston Martin Rapide E</h3>
+                  <p class="price">$250,000</p>
+                  <p class="financing">Est. Financing $4,600/mo</p>
                   <ul class="specs">
-                    <li>620km Range (EPA)</li>
+                    <li>320km Range (WLTP)</li>
                     <li>250km/h Top Speed</li>
-                    <li>0-100 km/h in 3.5s</li>
+                    <li>0-100 km/h in 4.2s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+            
+              <div class="car-item">
+                <img src="land-rover-electric.webp" alt="Land Rover Defender Electric">
+                <div class="car-details">
+                  <h3>Land Rover Defender Electric</h3>
+                  <p class="price">$85,000</p>
+                  <p class="financing">Est. Financing $1,570/mo</p>
+                  <ul class="specs">
+                    <li>500km Range (WLTP)</li>
+                    <li>210km/h Top Speed</li>
+                    <li>0-100 km/h in 5.5s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+
+              <div class="car-item">
+                <img src="audi-q4-e-tron.jpg" alt="Audi Q4 e-tron">
+                <div class="car-details">
+                  <h3>Audi Q4 e-tron</h3>
+                  <p class="price">$59,900</p>
+                  <p class="financing">Est. Financing $1,140/mo</p>
+                  <ul class="specs">
+                    <li>520km Range (WLTP)</li>
+                    <li>180km/h Top Speed</li>
+                    <li>0-100 km/h in 6.2s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              
+              <div class="car-item">
+                <img src="5934c07980a583bd92f5.avif" alt="Tesla Cybertruck">
+                <div class="car-details">
+                  <h3>Tesla Cybertruck</h3>
+                  <p class="price">$69,900</p>
+                  <p class="financing">Est. Financing $1,330/mo</p>
+                  <ul class="specs">
+                    <li>800km Range (EPA)</li>
+                    <li>193km/h Top Speed</li>
+                    <li>0-100 km/h in 2.9s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              
+              <div class="car-item">
+                <img src="porsche-taycan-turbo.jpg" alt="Porsche Taycan Turbo">
+                <div class="car-details">
+                  <h3>Porsche Taycan Turbo</h3>
+                  <p class="price">$150,000</p>
+                  <p class="financing">Est. Financing $2,780/mo</p>
+                  <ul class="specs">
+                    <li>450km Range (WLTP)</li>
+                    <li>260km/h Top Speed</li>
+                    <li>0-100 km/h in 3.2s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              
+              <div class="car-item">
+                <img src="toyota-lexus-rz.jpg" alt="Toyota Lexus RZ">
+                <div class="car-details">
+                  <h3>Toyota Lexus RZ</h3>
+                  <p class="price">$62,000</p>
+                  <p class="financing">Est. Financing $1,180/mo</p>
+                  <ul class="specs">
+                    <li>450km Range (WLTP)</li>
+                    <li>200km/h Top Speed</li>
+                    <li>0-100 km/h in 5.3s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              
+              <div class="car-item">
+                <img src="land-rover-electric-discovery.jpg" alt="Land Rover Discovery Electric">
+                <div class="car-details">
+                  <h3>Land Rover Discovery Electric</h3>
+                  <p class="price">$95,000</p>
+                  <p class="financing">Est. Financing $1,760/mo</p>
+                  <ul class="specs">
+                    <li>470km Range (WLTP)</li>
+                    <li>210km/h Top Speed</li>
+                    <li>0-100 km/h in 5.8s</li>
+                  </ul>
+                </div>
+                <button onclick="showPage('checkout')" class="details-btn">View Details</button>
+              </div>
+              
+            
+              <div class="car-item">
+                <img src="toyota-bz4x-electric.jpg" alt="Toyota bZ4X">
+                <div class="car-details">
+                  <h3>Toyota bZ4X</h3>
+                  <p class="price">$45,000</p>
+                  <p class="financing">Est. Financing $830/mo</p>
+                  <ul class="specs">
+                    <li>410km Range (WLTP)</li>
+                    <li>180km/h Top Speed</li>
+                    <li>0-100 km/h in 7.5s</li>
                   </ul>
                 </div>
                 <button onclick="showPage('checkout'); return false;" class="details-btn">View Details</button>

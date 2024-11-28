@@ -188,6 +188,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.getElementById("toggleFilterButton").addEventListener("click", function() {
+  const filterMenu = document.getElementById("filterMenu");
+  filterMenu.classList.toggle("hidden");
+});
+
 //--------------------------------------------------------------------------------------------
 // TestDrive section 
 //--------------------------------------------------------------------------------------------
