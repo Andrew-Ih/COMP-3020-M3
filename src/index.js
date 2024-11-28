@@ -672,19 +672,6 @@ function showAccessoriesPage() {
 document.getElementById('cartItems').addEventListener('input', handleQuantityChange);
 document.getElementById('cartItems').addEventListener('click', removeCartItem);
 
-// Add "Checkout" form submission logic (optional)
-// document.getElementById('cartCheckoutForm').addEventListener('submit', function (event) {
-//   event.preventDefault(); // Prevent default form submission
-//   alert('Order placed successfully!');
-// });
-
-// Example: Adding dummy items to the cart (with imported images)
-// cart.push(
-//   { name: 'Phone Holder', price: 25, quantity: 1, img: phoneHolderImage },
-//   { name: 'Charging Dock', price: 35, quantity: 1, img: chargingImage },
-//   { name: 'All-Season Tires', price: 120, quantity: 1, img: tireImage }
-// );
-
 // Expose navigation functions globally
 window.showCartPage = showCartPage;
 window.showAccessoriesPage = showAccessoriesPage;
