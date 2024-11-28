@@ -1365,22 +1365,25 @@ p, h1, h2 {
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 150px; /* Adds a gap only at the bottom */
-  text-align: center;
   padding: 0px;
-  width: 357px;
-  height: 347px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   text-align: left; /* Align text to the left */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .accessory-item-grid img {
-  width: 100%;
-  height: auto;
-  width: 357px;
-  height: 347px;
-  border-radius: 8px;
+  width: 100%; /* Ensure the image scales to fit the grid */
+  height: 100%; /* Maintain full height inside the grid */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 8px; /* Match grid radius */
 }
 
+/* For responsiveness on smaller screens */
+@media screen and (max-width: 768px) {
+  .accessory-item-grid {
+    max-width: 90%; /* Allow a larger width relative to the screen */
+    margin-bottom: 50px; /* Reduce gap for smaller screens */
+  }
+}
 .accessory-item-grid h3 {
   font-size: 1rem;
   font-weight: 500;
