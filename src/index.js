@@ -688,14 +688,117 @@ document.getElementById('cartCheckoutForm').addEventListener('submit', function 
 // Expose navigation functions globally
 window.showCartPage = showCartPage;
 window.showAccessoriesPage = showAccessoriesPage;
-
-
-
-// Expose functions globally
 window.addToCart = addToCart;
-window.showCartPage = showCartPage;
 
-window.showAccessoriesPage = showAccessoriesPage;
+// Form validation for accessories checkout
+// Form Validation
+document.getElementById("cartCheckoutForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const form = this;
+  const name = form.querySelector('input[name="name"]');
+  const email = form.querySelector('input[name="email"]');
+  const address = form.querySelector('input[name="address"]');
+  const city = form.querySelector('input[name="city"]');
+  const province = form.querySelector('input[name="province"]');
+  const postalCode = form.querySelector('input[name="postalCode"]');
+  const country = form.querySelector('input[name="country"]');
+  const paymentMethod = form.querySelector('#paymentMethod');
+  const creditCardFields = document.getElementById("creditCardFields");
+
+  let isValid = true;
+
+  // Validate text fields
+  [name, email, address, city, province, postalCode, country].forEach((field) => {
+    if (!field.value.trim()) {
+      isValid = false;
+      field.style.borderColor = "red"; // Highlight invalid field
+    } else {
+      field.style.borderColor = ""; // Reset field border
+    }
+  });
+
+  // Validate email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email.value)) {
+    isValid = false;
+    email.style.borderColor = "red";
+  }
+
+  // Validate postal code (basic validation)
+  const postalCodePattern = /^[A-Za-z0-9\s-]{3,10}$/;
+  if (!postalCodePattern.test(postalCode.value)) {
+    isValid = false;
+    postalCode.style.borderColor = "red";
+  }
+
+  // Validate payment method
+  if (!paymentMethod.value) {
+    isValid = false;
+    paymentMethod.style.borderColor = "red";
+  } else {
+    paymentMethod.style.borderColor = "";
+  }
+
+  // If Credit Card is selected, validate card details
+  if (paymentMethod.value === "credit") {
+    const creditCardNumber = form.querySelector("#creditCardNumber");
+    const expiryDate = form.querySelector("#expiryDate");
+    const cvc = form.querySelector("#cvc");
+
+    // Validate credit card number
+    const cardPattern = /^\d{16}$/;
+    if (!cardPattern.test(creditCardNumber.value)) {
+      isValid = false;
+      creditCardNumber.style.borderColor = "red";
+    }
+
+    // Validate expiry date (MM/YY)
+    const expiryPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    if (!expiryPattern.test(expiryDate.value)) {
+      isValid = false;
+      expiryDate.style.borderColor = "red";
+    }
+
+    // Validate CVC (3 digits)
+    const cvcPattern = /^\d{3}$/;
+    if (!cvcPattern.test(cvc.value)) {
+      isValid = false;
+      cvc.style.borderColor = "red";
+    }
+  }
+
+  if (isValid) {
+    alert("Order placed successfully!");
+
+    // Clear the cart
+    cart = []; // Empty the cart array
+    displayCartItems(); // Update the cart display
+    updateCartCount(); // Reset the cart button count
+
+    // Reset the form
+    form.reset();
+    document.getElementById("creditCardFields").style.display = "none"; // Hide credit card fields
+
+    // Optionally redirect the user to a confirmation page
+    showPage('Accessories'); // Navigate back to the Accessories page or another section
+  } else {
+    alert("Please correct the highlighted fields.");
+  }
+});
+
+// Show/Hide Credit Card Fields
+document.getElementById("paymentMethod").addEventListener("change", function () {
+  const creditCardFields = document.getElementById("creditCardFields");
+  if (this.value === "credit") {
+    creditCardFields.style.display = "block";
+  } else {
+    creditCardFields.style.display = "none";
+  }
+});
+
+
+
 
 
 

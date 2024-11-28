@@ -1384,6 +1384,7 @@ p, h1, h2 {
     margin-bottom: 50px; /* Reduce gap for smaller screens */
   }
 }
+
 .accessory-item-grid h3 {
   font-size: 1rem;
   font-weight: 500;
@@ -1625,6 +1626,40 @@ p, h1, h2 {
 .order-summary .summary-details p {
   font-size: 1rem;
   margin: 10px 0;
+}
+
+#cartCheckoutForm {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 15px; /* Space between form elements */
+  width: 100%; /* Full width of the parent container */
+}
+
+#cartCheckoutForm input,
+#cartCheckoutForm select {
+  width: 100%; /* Full width of the container */
+  padding: 12px; /* Add padding for better usability */
+  border: 1px solid #ccc; /* Light gray border for separation */
+  border-radius: 4px; /* Rounded corners for a modern look */
+  font-size: 1rem; /* Consistent font size */
+  box-sizing: border-box; /* Include padding in width calculation */
+  background-color: #fff; /* White background for inputs */
+  color: #333; /* Dark text color for contrast */
+}
+
+#cartCheckoutForm select {
+  appearance: none; /* Remove default dropdown styling for a custom look */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M7 7l3 3 3-3'/%3E%3C/svg%3E"); /* Add a custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+#cartCheckoutForm select:focus,
+#cartCheckoutForm input:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #007BFF; /* Add a blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional focus shadow */
 }
 
 .checkout-btn {

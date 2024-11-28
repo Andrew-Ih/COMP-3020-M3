@@ -286,6 +286,13 @@
                     <option value="credit">Credit Card</option>
                     <option value="paypal">PayPal</option>
                   </select>
+                
+                  <!-- Credit Card Fields (hidden by default) -->
+                  <div id="creditCardFields" style="display: none; margin-top: 15px;">
+                    <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Credit Card Number (16 digits)" maxlength="16" />
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" />
+                    <input type="text" id="cvc" name="cvc" placeholder="CVC" maxlength="3" />
+                  </div>
                 </div>
         
                 <button type="submit" class="checkout-btn">Checkout</button>
