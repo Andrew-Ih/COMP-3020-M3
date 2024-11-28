@@ -1,15 +1,6 @@
 import _ from 'lodash';
 import "./styles/styles.css";
 
-const mobileNav = document.querySelector(".hamburger");
-const navbar = document.querySelector(".menubar");
-
-const toggleNav = () => {
-  navbar.classList.toggle("active");
-  mobileNav.classList.toggle("hamburger-active");
-};
-mobileNav.addEventListener("click", () => toggleNav());
-
 //--------------------------------------------------------------------------------------------
 // ShowPage function, controlls the switching of the pages through the navbar and buttons
 //--------------------------------------------------------------------------------------------
