@@ -1294,8 +1294,8 @@ p, h1, h2 {
 }
 
 .breadcrumb span {
-  /* color: white; */
-  color: black;
+  color: white;
+  /* color: black; */
   margin: 0 5px;
 }
 

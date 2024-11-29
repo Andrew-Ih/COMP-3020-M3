@@ -995,20 +995,20 @@
                     <label>Colour:</label>
                     <span id="selectedColor">None</span>
                     <div class="color-selector">
-                        <input type="radio" name="color" value="red" id="red" hidden onchange="updateColorSelection('Red')">
-                        <label for="red" class="color-swatch" style="background-color: red;"></label>
-                
-                        <input type="radio" name="color" value="black" id="black" hidden onchange="updateColorSelection('Black')">
-                        <label for="black" class="color-swatch" style="background-color: black;"></label>
-                
-                        <input type="radio" name="color" value="blue" id="blue" hidden onchange="updateColorSelection('Blue')">
-                        <label for="blue" class="color-swatch" style="background-color: blue;"></label>
-                
-                        <input type="radio" name="color" value="white" id="white" hidden onchange="updateColorSelection('White')">
-                        <label for="white" class="color-swatch" style="background-color: white;"></label>
+                      <input type="radio" name="color" value="red" id="red" hidden onchange="updateSelection('Red')">
+                      <label for="red" class="color-swatch" style="background-color: red;"></label>
+
+                      <input type="radio" name="color" value="black" id="black" hidden onchange="updateSelection('Black')" checked>
+                      <label for="black" class="color-swatch" style="background-color: black;"></label>
+
+                      <input type="radio" name="color" value="blue" id="blue" hidden onchange="updateSelection('Blue')">
+                      <label for="blue" class="color-swatch" style="background-color: blue;"></label>
+
+                      <input type="radio" name="color" value="white" id="white" hidden onchange="updateSelection('White')">
+                      <label for="white" class="color-swatch" style="background-color: white;"></label>
                     </div>
                   </div>
-                  
+                                    
                   <!-- Protection Package -->
                   <div class="checkout-protection-package">
                       <label for="protection">Protection Package:</label>

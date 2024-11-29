@@ -368,8 +368,30 @@ import checkoutImage3 from './img/checkout-image3.jpeg';
 import checkoutImage4 from './img/checkout-image4.jpeg';
 import checkoutImage5 from './img/checkout-image5.jpeg';
 
+import redCheckout1 from './img/redTesla1.jpeg';
+import redCheckout2 from './img/redTesla2.jpeg';
+import redCheckout3 from './img/redTesla3.jpeg';
+import redCheckout4 from './img/redTesla4.jpeg';
 
-let images = [checkoutImage, checkoutImage2, checkoutImage3, checkoutImage4, checkoutImage5];
+
+import blueCheckout1 from './img/blueTesla1.jpeg';
+import blueCheckout2 from './img/blueTesla2.jpeg';
+import blueCheckout3 from './img/blueTesla3.jpeg';
+import blueCheckout4 from './img/blueTesla4.jpeg';
+
+
+import whiteCheckout1 from './img/whiteTesla1.jpeg';
+import whiteCheckout2 from './img/whiteTesla2.jpeg';
+import whiteCheckout3 from './img/whiteTesla3.jpeg';
+import whiteCheckout4 from './img/whiteTesla4.jpeg';
+
+
+let blackCheckout = [checkoutImage, checkoutImage2, checkoutImage3, checkoutImage4, checkoutImage5];
+let redCheckout = [redCheckout1, redCheckout2, redCheckout3, redCheckout4, checkoutImage5];
+let blueCheckout = [blueCheckout1, blueCheckout2, blueCheckout3, blueCheckout4, checkoutImage5];
+let whiteCheckout = [whiteCheckout1, whiteCheckout2, whiteCheckout3, whiteCheckout4, checkoutImage5];
+
+let images = blackCheckout; // Default images are black
 let currentIndex = 0; // Start with the first image
 
 function changeImage(direction) {
@@ -382,7 +404,33 @@ function changeImage(direction) {
     document.getElementById('carImage').src = images[currentIndex]; // Update image source
 }
 
+// Function to switch images array based on color selection
+function updateSelection(color) {
+  const selectedColorSpan = document.getElementById('selectedColor');
+  selectedColorSpan.textContent = color; // Display selected color
+
+  // Switch the `images` array based on the color
+  switch (color.toLowerCase()) {
+      case 'red':
+          images = redCheckout;
+          break;
+      case 'blue':
+          images = blueCheckout;
+          break;
+      case 'white':
+          images = whiteCheckout;
+          break;
+      case 'black':
+      default:
+          images = blackCheckout; // Default to black
+  }
+
+  currentIndex = 0; // Reset to the first image of the selected color
+  document.getElementById('carImage').src = images[currentIndex]; // Update the displayed image
+}
+
 window.changeImage = changeImage
+window.updateSelection = updateSelection
 
 function goBack() {
   const referrer = document.referrer; // Get the URL of the previous page
@@ -887,20 +935,7 @@ document.getElementById("paymentMethod").addEventListener("change", function () 
 //--------------------------------------------------------------------------------------------
 // View more details section 
 //--------------------------------------------------------------------------------------------
-// // JavaScript to dynamically update breadcrumbs
-// document.addEventListener("DOMContentLoaded", () => {
-//   // Define the breadcrumb links
-//   const breadcrumbPrev = document.getElementById("breadcrumbPrev");
-//   const breadcrumbCheckout = document.getElementById("breadcrumbCheckout");
 
-//   // Update the links dynamically
-//   const previousPage = sessionStorage.getItem("previousPage") || "home"; // Fallback to 'home' if not set
-//   breadcrumbPrev.href = `#${previousPage}`;
-//   breadcrumbPrev.textContent = previousPage.charAt(0).toUpperCase() + previousPage.slice(1); // Capitalize the text
-
-//   // Always set checkout link
-//   breadcrumbCheckout.href = "#checkout";
-// });
 
 
 
