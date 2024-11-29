@@ -846,8 +846,6 @@
           </div>
         </section>
 
-        
-
         <!-- TEST DRIVE SECTION -->
         <section id="test-drive" class="test-drive-section">
           <h1>Book a Test Drive</h1>
@@ -1049,14 +1047,41 @@
                   
                   <!-- Payment Information -->
                   <div class="checkout-payment-method">
-                      <label for="payment">Payment Method:</label>
-                      <select id="payment" name="payment" required>
-                          <option value="">Select Payment Method</option>
-                          <option value="credit">Credit Card</option>
-                          <option value="paypal">PayPal</option>
-                      </select>
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" name="payment" onchange="updatePaymentFields()" required>
+                      <option value="">Select Payment Method</option>
+                      <option value="credit">Credit Card</option>
+                      <option value="paypal">PayPal</option>
+                    </select>
+
+                    <!-- Credit Card Fields -->
+                    <div id="credit-card-fields" style="display: none;">
+                      <!-- <label for="credit-card-number">Card Number:</label> -->
+                      <input type="text" id="credit-card-number" name="credit-card-number" placeholder="16-digit card number">
+
+                      <!-- <label for="credit-card-expiry">Expiry Date (MM/YY):</label> -->
+                      <input type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="Expiry Date (MM/YY)">
+
+                      <!-- <label for="credit-card-cvc">CVC:</label> -->
+                      <input type="text" id="credit-card-cvc" name="credit-card-cvc" placeholder="3-digit CVC">
+                    </div>
+
+                    <!-- PayPal Field -->
+                    <div id="paypal-field" style="display: none;">
+                      <!-- <label for="paypal-email">PayPal Email:</label> -->
+                      <input type="email" id="paypal-email" name="paypal-email" placeholder="Enter your PayPal email">
+                    </div>
                   </div>
+
+                  <!-- Assistance Section -->
+                  <div class="checkout-assistance">
+                    <p>If you have any questions or need assistance with completing this purchase, please contact us.</p>
+                    <p>Your purchase history would be saved, just hit the back arrow on the broser after clicking the contact page</p>
+                    <button id="contactButton" onclick="showPage('contact'); return false;">Contact Us</button>
+                  </div>
+                         
                   
+                  <!-- Place Order button -->
                   <button type="submit">Place Order</button>
               </form>
             </div>
