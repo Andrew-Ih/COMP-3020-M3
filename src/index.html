@@ -761,33 +761,21 @@
         </section>
 
         <!-- VIEW MORE DETAILS SECTION -->
-        <!-- change this later don't want to fully comment this all out -->
-        <section id="morez-details" class="view-morez-details">
-          <!-- Featured Cars Carousel -->
-          <div class="featured-cars-carousel">
-            <div class="carousel-container">
-              <!-- <div class="arrow-container left">
-                <button class="arrow left" onclick="changeFeaturedImage(-1)">&#10094;</button> 
-              </div> -->
-              <img src="img/checkout-image2.jpeg" alt="Featured Car" id="featuredCarImage">
-              <!-- <div class="arrow-container right">
-                <button class="arrow right" onclick="changeFeaturedImage(1)">&#10095;</button>
-              </div> -->
-            </div>
+        <section id="more-details" class="view-more-details">
+          <!-- Breadcrumb Section -->
+          <div class="breadcrumb">
+            <a href="#" id="breadcrumbPrev">View All</a> <!-- Dynamically change this link -->
+            <span> &gt; </span>
+            <a href="#" id="breadcrumbCheckout">Explore</a>
           </div>
 
-          <h1>More details</h1>
-        </section>
-
-        <section id="more-details" class="view-more-details">
           
           <!-- Hero Section -->
           <div class="hero-section">
             <img src="img/audi-SUV.jpg" alt="Car Hero Image">
-            <!-- <div class="hero-text">
-              <h1>Model X - 2024</h1>
-              <p>Unmatched performance, innovation, and style.</p>
-            </div> -->
+            <div class="overlay-text">Scroll down to explore more details
+              <i class="fas fa-angle-double-down"></i>
+            </div>
           </div>
         
           <!-- Performance Section -->
@@ -852,6 +840,9 @@
                 <td>5</td>
               </tr>
             </table>
+            <div class="explore-checkout-button-container">
+              <button class="explore-checkout-button" onclick="showPage('checkout'); return false;">Checkout</button>
+            </div>
           </div>
         </section>
 

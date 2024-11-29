@@ -21,9 +21,67 @@ function showPage(pageId, updateHistory = true) {
     document.getElementById(pageId).classList.add("active");
   }
 
+  // Update breadcrumbs
+  updateBreadcrumbs(pageId);
+
   // Update the browser's history state
   if (updateHistory) {
     history.pushState({ pageId }, null, `#${pageId}`);
+  }
+}
+
+//--------------------------------------------------------------------------------------------
+// Function to dynamically update breadcrumbs
+//--------------------------------------------------------------------------------------------
+function updateBreadcrumbs(currentPage) {
+  const breadcrumbContainer = document.querySelector(".breadcrumb");
+
+  if (!breadcrumbContainer) return; // If there's no breadcrumb container, skip
+
+  // Allowed previous pages
+  const allowedPages = ["Main", "view-all", "preowned", "brandnew"];
+
+  // Get the previous page from sessionStorage
+  const previousPage = sessionStorage.getItem("previousPage");
+
+  // Check if the current page is part of allowed pages to set as the previous page
+  if (allowedPages.includes(currentPage)) {
+    sessionStorage.setItem("previousPage", currentPage);
+  }
+
+  // Use the previousPage stored in sessionStorage or default to "Main"
+  const validPreviousPage = previousPage && allowedPages.includes(previousPage) ? previousPage : "Main";
+
+  // Format the breadcrumb HTML
+  breadcrumbContainer.innerHTML = `
+    <a href="#${validPreviousPage}" id="breadcrumbPrev">${formatBreadcrumbText(validPreviousPage)}</a>
+    <span> &gt; </span>
+    <span id="breadcrumbCurrent" class="current-page">${formatBreadcrumbText(currentPage)}</span>
+  `;
+
+  // Add event listener for the previous page link
+  const breadcrumbPrev = document.getElementById("breadcrumbPrev");
+  breadcrumbPrev.addEventListener("click", (event) => {
+    event.preventDefault();
+    showPage(validPreviousPage, true);
+  });
+}
+
+//--------------------------------------------------------------------------------------------
+// Utility function to format breadcrumb text
+//--------------------------------------------------------------------------------------------
+function formatBreadcrumbText(pageId) {
+  switch (pageId) {
+    case "Main":
+      return "Home";
+    case "view-all":
+      return "View All";
+    case "preowned":
+      return "Preowned";
+    case "brandnew":
+      return "Brand New";
+    default:
+      return pageId.charAt(0).toUpperCase() + pageId.slice(1);
   }
 }
 
@@ -811,6 +869,23 @@ document.getElementById("paymentMethod").addEventListener("change", function () 
   }
 });
 
+//--------------------------------------------------------------------------------------------
+// View more details section 
+//--------------------------------------------------------------------------------------------
+// // JavaScript to dynamically update breadcrumbs
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Define the breadcrumb links
+//   const breadcrumbPrev = document.getElementById("breadcrumbPrev");
+//   const breadcrumbCheckout = document.getElementById("breadcrumbCheckout");
+
+//   // Update the links dynamically
+//   const previousPage = sessionStorage.getItem("previousPage") || "home"; // Fallback to 'home' if not set
+//   breadcrumbPrev.href = `#${previousPage}`;
+//   breadcrumbPrev.textContent = previousPage.charAt(0).toUpperCase() + previousPage.slice(1); // Capitalize the text
+
+//   // Always set checkout link
+//   breadcrumbCheckout.href = "#checkout";
+// });
 
 
 
