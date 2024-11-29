@@ -373,12 +373,10 @@ import redCheckout2 from './img/redTesla2.jpeg';
 import redCheckout3 from './img/redTesla3.jpeg';
 import redCheckout4 from './img/redTesla4.jpeg';
 
-
 import blueCheckout1 from './img/blueTesla1.jpeg';
 import blueCheckout2 from './img/blueTesla2.jpeg';
 import blueCheckout3 from './img/blueTesla3.jpeg';
 import blueCheckout4 from './img/blueTesla4.jpeg';
-
 
 import whiteCheckout1 from './img/whiteTesla1.jpeg';
 import whiteCheckout2 from './img/whiteTesla2.jpeg';
@@ -404,33 +402,39 @@ function changeImage(direction) {
     document.getElementById('carImage').src = images[currentIndex]; // Update image source
 }
 
-// Function to switch images array based on color selection
+// Function to switch images array while maintaining the same index
 function updateSelection(color) {
   const selectedColorSpan = document.getElementById('selectedColor');
   selectedColorSpan.textContent = color; // Display selected color
 
-  // Switch the `images` array based on the color
+  // Determine the new color array
+  let newImages;
   switch (color.toLowerCase()) {
       case 'red':
-          images = redCheckout;
+          newImages = redCheckout;
           break;
       case 'blue':
-          images = blueCheckout;
+          newImages = blueCheckout;
           break;
       case 'white':
-          images = whiteCheckout;
+          newImages = whiteCheckout;
           break;
       case 'black':
       default:
-          images = blackCheckout; // Default to black
+          newImages = blackCheckout; // Default to black
   }
 
-  currentIndex = 0; // Reset to the first image of the selected color
+  // Ensure `currentIndex` is within bounds of the new array
+  if (currentIndex >= newImages.length) {
+      currentIndex = newImages.length - 1; // Adjust if the new array is smaller
+  }
+
+  images = newImages; // Update the `images` array
   document.getElementById('carImage').src = images[currentIndex]; // Update the displayed image
 }
 
-window.changeImage = changeImage
-window.updateSelection = updateSelection
+window.changeImage = changeImage;
+window.updateSelection = updateSelection;
 
 function goBack() {
   const referrer = document.referrer; // Get the URL of the previous page
