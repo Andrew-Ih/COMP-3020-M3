@@ -1021,6 +1021,35 @@ p, h1, h2 {
   padding: 0;
 }
 
+/* Assistance Section Styling */
+.checkout-assistance {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+#contactButton {
+  background-color: #007BFF !important; /* Enforce blue color */
+  color: white;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; /* Full width */
+}
+#contactButton:hover {
+  background-color: #0056b3 !important; /* Enforce blue color */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+#contactButton:active {
+  background-color: #004494 !important; /* Enforce blue color */
+  transform: translateY(0); /* Reset lift effect */
+}
+
 /* ----------------------------------------------------------------------------------------- */
 /* VIEW ALL, BRANDNEW, AND PREOWNED SECTION */
 /* ----------------------------------------------------------------------------------------- */

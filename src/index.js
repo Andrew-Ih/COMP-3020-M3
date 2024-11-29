@@ -402,6 +402,8 @@ function changeImage(direction) {
     document.getElementById('carImage').src = images[currentIndex]; // Update image source
 }
 
+window.changeImage = changeImage;
+
 // Function to switch images array while maintaining the same index
 function updateSelection(color) {
   const selectedColorSpan = document.getElementById('selectedColor');
@@ -433,21 +435,125 @@ function updateSelection(color) {
   document.getElementById('carImage').src = images[currentIndex]; // Update the displayed image
 }
 
-window.changeImage = changeImage;
 window.updateSelection = updateSelection;
 
 function goBack() {
-  const referrer = document.referrer; // Get the URL of the previous page
-  if (referrer) {
-    // Redirect to the referring page
-    window.location.href = referrer;
+  if (history.state && history.state.pageId) {
+    // If there is a previous state in the history, go back
+    history.back();
   } else {
-    // If no referrer, redirect to a fallback page
-    window.location.href = "index.html"; // Replace with your fallback URL
+    // If no history state is present, default to the "Main" section
+    showPage("Main", true);
   }
 }
 
 window.goback = goBack
+
+window.validateCarCheckoutForm = validateCarCheckoutForm;
+
+function validateCarCheckoutForm() {
+  let isValid = true;
+  const messages = [];
+
+  // Validate finance options
+  const finance = document.getElementById('finance');
+  if (finance.value === "") {
+    messages.push('Please select a finance option.');
+    isValid = false;
+  }
+
+  // Validate color options
+  const colors = document.querySelectorAll('input[name="color"]:checked');
+  if (colors.length === 0) {
+    messages.push('Please select a color.');
+    isValid = false;
+  }
+
+  // Validate protection package
+  const protection = document.getElementById('protection');
+  if (protection.value === "") {
+    messages.push('Please select a protection package.');
+    isValid = false;
+  }
+
+  // Validate personal details
+  const firstname = document.querySelector('input[name="firstname"]').value.trim();
+  const lastname = document.querySelector('input[name="lastname"]').value.trim();
+  const email = document.querySelector('input[name="email"]').value.trim();
+  const phone = document.querySelector('input[name="phone"]').value.trim();
+
+  if (!/^[a-zA-Z\s]+$/.test(firstname)) {
+    messages.push('First name must only contain letters.');
+    isValid = false;
+  }
+  if (!/^[a-zA-Z\s]+$/.test(lastname)) {
+    messages.push('Last name must only contain letters.');
+    isValid = false;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    messages.push('Please enter a valid email address.');
+    isValid = false;
+  }
+  if (!/^\d{10,15}$/.test(phone)) {
+    messages.push('Phone number must be a valid numeric value (10-15 digits).');
+    isValid = false;
+  }
+
+  // Validate payment details
+  const payment = document.getElementById('payment');
+  if (payment.value === "") {
+    messages.push('Please select a payment method.');
+    isValid = false;
+  } else if (payment.value === "credit") {
+    const cardNumber = document.getElementById('credit-card-number').value.trim();
+    const expiryDate = document.getElementById('credit-card-expiry').value.trim();
+    const cvc = document.getElementById('credit-card-cvc').value.trim();
+
+    if (!/^\d{16}$/.test(cardNumber)) {
+      messages.push('Credit card number must be 16 digits.');
+      isValid = false;
+    }
+    if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
+      messages.push('Expiry date must be in MM/YY format.');
+      isValid = false;
+    }
+    if (!/^\d{3,4}$/.test(cvc)) {
+      messages.push('CVC must be 3 or 4 digits.');
+      isValid = false;
+    }
+  } else if (payment.value === "paypal") {
+    const paypalEmail = document.getElementById('paypal-email').value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(paypalEmail)) {
+      messages.push('Please enter a valid PayPal email address.');
+      isValid = false;
+    }
+  }
+
+  if (!isValid) {
+    alert(messages.join('\n'));
+  }
+  return isValid;
+}
+
+// Show and hide payment fields based on selection
+function updatePaymentFields() {
+  const payment = document.getElementById('payment').value;
+  const creditFields = document.getElementById('credit-card-fields');
+  const paypalField = document.getElementById('paypal-field');
+
+  if (payment === "credit") {
+    creditFields.style.display = "block";
+    paypalField.style.display = "none";
+  } else if (payment === "paypal") {
+    creditFields.style.display = "none";
+    paypalField.style.display = "block";
+  } else {
+    creditFields.style.display = "none";
+    paypalField.style.display = "none";
+  }
+}
+
+window.updatePaymentFields = updatePaymentFields;
 
 //--------------------------------------------------------------------------------------------
 // View All section 
