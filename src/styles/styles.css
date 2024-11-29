@@ -485,12 +485,13 @@ h1, h2 {
 .service-box h3 {
   font-size: 1.2rem;
   color: #333; /* Dark text for contrast */
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .service-box p {
   font-size: 1rem;
   color: #555; /* Subtle text color */
+  margin-top: 0px;
 }
 
 /* ----------------------------------------------------------------------------------------- */

@@ -21,6 +21,9 @@ function showPage(pageId, updateHistory = true) {
     document.getElementById(pageId).classList.add("active");
   }
 
+  // Scroll to the top of the page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
   // Update breadcrumbs
   updateBreadcrumbs(pageId);
 
