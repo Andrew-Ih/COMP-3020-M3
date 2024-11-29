@@ -438,13 +438,12 @@ function updateSelection(color) {
 window.updateSelection = updateSelection;
 
 function goBack() {
-  const referrer = document.referrer; // Get the URL of the previous page
-  if (referrer) {
-    // Redirect to the referring page
-    window.location.href = referrer;
+  if (history.state && history.state.pageId) {
+    // If there is a previous state in the history, go back
+    history.back();
   } else {
-    // If no referrer, redirect to a fallback page
-    window.location.href = "index.html"; // Replace with your fallback URL
+    // If no history state is present, default to the "Main" section
+    showPage("Main", true);
   }
 }
 
