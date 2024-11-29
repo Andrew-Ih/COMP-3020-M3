@@ -1,15 +1,6 @@
 import _ from 'lodash';
 import "./styles/styles.css";
 
-const mobileNav = document.querySelector(".hamburger");
-const navbar = document.querySelector(".menubar");
-
-const toggleNav = () => {
-  navbar.classList.toggle("active");
-  mobileNav.classList.toggle("hamburger-active");
-};
-mobileNav.addEventListener("click", () => toggleNav());
-
 //--------------------------------------------------------------------------------------------
 // ShowPage function, controlls the switching of the pages through the navbar and buttons
 //--------------------------------------------------------------------------------------------
@@ -677,30 +668,156 @@ function showAccessoriesPage() {
 document.getElementById('cartItems').addEventListener('input', handleQuantityChange);
 document.getElementById('cartItems').addEventListener('click', removeCartItem);
 
-// Add "Checkout" form submission logic (optional)
-document.getElementById('cartCheckoutForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent default form submission
-  alert('Order placed successfully!');
-});
-
-// Example: Adding dummy items to the cart (with imported images)
-// cart.push(
-//   { name: 'Phone Holder', price: 25, quantity: 1, img: phoneHolderImage },
-//   { name: 'Charging Dock', price: 35, quantity: 1, img: chargingImage },
-//   { name: 'All-Season Tires', price: 120, quantity: 1, img: tireImage }
-// );
-
 // Expose navigation functions globally
 window.showCartPage = showCartPage;
 window.showAccessoriesPage = showAccessoriesPage;
-
-
-
-// Expose functions globally
 window.addToCart = addToCart;
-window.showCartPage = showCartPage;
 
-window.showAccessoriesPage = showAccessoriesPage;
+// Form validation for accessories checkout
+document.getElementById("cartCheckoutForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (cart.length === 0) {
+    // Alert the user if the cart is empty
+    alert("Your cart is empty! Please add items to the cart before checking out.");
+    return; // Stop the form submission
+  }
+
+  const form = this;
+  const name = form.querySelector('input[name="name"]');
+  const email = form.querySelector('input[name="email"]');
+  const address = form.querySelector('input[name="address"]');
+  const city = form.querySelector('input[name="city"]');
+  const province = form.querySelector('input[name="province"]');
+  const postalCode = form.querySelector('input[name="postalCode"]');
+  const country = form.querySelector('input[name="country"]');
+  const paymentMethod = form.querySelector('#paymentMethod');
+  const creditCardFields = document.getElementById("creditCardFields");
+
+  let isValid = true;
+
+  // Validate text fields
+  [name, email, address, city, province, postalCode, country].forEach((field) => {
+    if (!field.value.trim()) {
+      isValid = false;
+      field.style.borderColor = "red"; // Highlight invalid field
+    } else {
+      field.style.borderColor = ""; // Reset field border
+    }
+  });
+
+  // Validate email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email.value)) {
+    isValid = false;
+    email.style.borderColor = "red";
+  }
+
+  // Validate postal code (basic validation)
+  const postalCodePattern = /^[A-Za-z0-9\s-]{3,10}$/;
+  if (!postalCodePattern.test(postalCode.value)) {
+    isValid = false;
+    postalCode.style.borderColor = "red";
+  }
+
+  // Validate payment method
+  if (!paymentMethod.value) {
+    isValid = false;
+    paymentMethod.style.borderColor = "red";
+  } else {
+    paymentMethod.style.borderColor = "";
+  }
+
+  // If Credit Card is selected, validate card details
+  if (paymentMethod.value === "credit") {
+    const creditCardNumber = form.querySelector("#creditCardNumber");
+    const expiryDate = form.querySelector("#expiryDate");
+    const cvc = form.querySelector("#cvc");
+
+    // Validate credit card number
+    const cardPattern = /^\d{16}$/;
+    if (!cardPattern.test(creditCardNumber.value)) {
+      isValid = false;
+      creditCardNumber.style.borderColor = "red";
+    }
+
+    // Validate expiry date (MM/YY)
+    const expiryPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    if (!expiryPattern.test(expiryDate.value)) {
+      isValid = false;
+      expiryDate.style.borderColor = "red";
+    }
+
+    // Validate CVC (3 digits)
+    const cvcPattern = /^\d{3}$/;
+    if (!cvcPattern.test(cvc.value)) {
+      isValid = false;
+      cvc.style.borderColor = "red";
+    }
+  }
+
+  if (isValid) {
+    // Calculate subtotal
+    const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+
+    // Generate receipt details
+    const receiptItems = cart.map(
+      (item) =>
+        `<p><strong>${item.name}</strong> - ${item.quantity} x $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}</p>`
+    ).join("");
+
+    // Populate modal with receipt details
+    document.getElementById("modalTotal").textContent = subtotal;
+    document.getElementById("modalReceiptItems").innerHTML = receiptItems;
+
+    // Update modal with details
+    document.getElementById("modalTotal").textContent = subtotal;
+
+    // Show the modal
+    showModal();
+
+    // Clear the cart
+    cart = []; // Empty the cart array
+    displayCartItems(); // Update the cart display
+    updateCartCount(); // Reset the cart button count
+
+    // Reset the form
+    form.reset();
+    document.getElementById("creditCardFields").style.display = "none"; // Hide credit card fields
+  } else {
+    alert("Please correct the highlighted fields.");
+  }
+});
+
+// Function to show the modal
+function showModal() {
+  const modal = document.getElementById("checkoutModal");
+  modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById("checkoutModal");
+  modal.style.display = "none";
+
+  // Optionally redirect to a specific page (e.g., home or accessories)
+  showPage("Accessories");
+}
+
+window.closeModal = closeModal;
+
+// Show/Hide Credit Card Fields
+document.getElementById("paymentMethod").addEventListener("change", function () {
+  const creditCardFields = document.getElementById("creditCardFields");
+  if (this.value === "credit") {
+    creditCardFields.style.display = "block";
+  } else {
+    creditCardFields.style.display = "none";
+  }
+});
+
+
+
 
 
 
