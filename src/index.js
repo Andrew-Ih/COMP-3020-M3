@@ -381,6 +381,18 @@ function changeImage(direction) {
 
 window.changeImage = changeImage
 
+function goBack() {
+  const referrer = document.referrer; // Get the URL of the previous page
+  if (referrer) {
+    // Redirect to the referring page
+    window.location.href = referrer;
+  } else {
+    // If no referrer, redirect to a fallback page
+    window.location.href = "index.html"; // Replace with your fallback URL
+  }
+}
+
+window.goback = goBack
 
 //--------------------------------------------------------------------------------------------
 // View All section 
