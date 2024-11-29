@@ -11,7 +11,7 @@
         <!-- NAV BAR -->
         <nav>
             <div class="home-button">
-              <a href="#" onclick="showPage('Main'); return false;"><h1>LUX-EV</h1></a>
+              <a href="#" onclick="showPage('Main'); return false;" class="home-link">LUX-EV</a>
             </div>
 
             <ul>
@@ -20,12 +20,30 @@
                 <div class="dropdown-content" id="vehicleDropdown">
                     <!-- Car Brand Logos -->
                     <div class="brand-logos">
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Audi</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Toyota</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Aston Martin</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Land Rover</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Tesla</div></a>
-                        <a href="#" class="logo-item" onclick="showPage('view-all'); return false;"><div>Porsche</div></a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all'); return false;">
+                        <img src="0f297a4857e803bee714.png" alt="Audi" class="brand-logo">
+                        <div>Audi</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all'); return false;">
+                        <img src="ba1ea4ecb44d90a5da9c.png" alt="Toyota" class="brand-logo">
+                        <div>Toyota</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all'); return false;">
+                        <img src="d7cc4b28f5bd46cb0b6a.jpeg" alt="Aston Martin" class="brand-logo">
+                        <div>Aston Martin</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all'); return false;">
+                        <img src="160c5d8f547e8a80c92d.jpeg" alt="Land Rover" class="brand-logo">
+                        <div>Land Rover</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all'); return false;">
+                        <img src="4d422d9d8af89eec4857.jpeg" alt="Tesla" class="brand-logo">
+                        <div>Tesla</div>
+                      </a>
+                      <a href="#" class="logo-item" onclick="showPage('view-all'); return false;">
+                        <img src="4a05418bac25de4dab33.jpeg" alt="Porsche" class="brand-logo">
+                        <div>Porsche</div>
+                      </a>
                     </div>
                     <div class="divider"></div>
                     <!-- Additional Options -->
@@ -49,8 +67,6 @@
               </li>
             </ul>
         </nav>
-
-        
 
         <!-- Pages -->
 
@@ -166,7 +182,7 @@
           <div class="accessories-container">
             <!-- Filter Menu -->
             <div id="filterMenu" class="filter-menu">
-              <h2>Categories</h2>
+              <h1>Accessories</h1>
               <div class="filter-buttons">
                 <button onclick="filterAccessories('all')" class="apply-filters-btn">All</button>
                 <button onclick="filterAccessories('interior')" class="apply-filters-btn">Interior</button>
