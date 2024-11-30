@@ -307,14 +307,16 @@ window.updateCompareDetails = updateCompareDetails
 // Checkout section 
 //--------------------------------------------------------------------------------------------
 
-window.validateCheckoutForm = validateCheckoutForm
+//window.validateCheckoutForm = validateCheckoutForm
 
-function validateCheckoutForm() {
+document.getElementById("checkoutForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const form = this;
   let isValid = true;
   
   // Validate finance options
   const finance = document.getElementById('finance');
-  if (finance.value === "") {
+  if (!finance || finance.value === "") {
       alert('Please select a finance option.');
       isValid = false;
   }
@@ -328,33 +330,73 @@ function validateCheckoutForm() {
 
   // Validate protection package
   const protection = document.getElementById('protection');
-  if (protection.value === "") {
+  if (!protection || protection.value === "") {
       alert('Please select a protection package.');
       isValid = false;
   }
 
   // Validate personal details
-  const fullname = document.querySelector('input[name="fullname"]').value;
+  const firstname = document.querySelector('input[name="firstname"]').value;
+  const lastname = document.querySelector('input[name="lastname"]').value;
   const email = document.querySelector('input[name="email"]').value;
   const phone = document.querySelector('input[name="phone"]').value;
   const address = document.querySelector('input[name="address"]').value;
-  if (!fullname || !email || !phone || !address) {
+  const address1 = document.querySelector('input[name="address2"]').value;
+  const address2 = document.querySelector('input[name="address2"]').value;
+  const address3 = document.querySelector('input[name="address3"]').value;
+  const address4 = document.querySelector('input[name="address4"]').value;
+
+  console.log('First Name:', firstname);  // Debugging line
+  console.log('Last Name:', lastname);    // Debugging line
+  console.log('Email:', email);            // Debugging line
+  console.log('Phone:', phone);            // Debugging line
+  console.log('Address:', address);   
+
+  if (!firstname || !lastname || !phone) {
       alert('Please complete all personal details.');
       isValid = false;
   }
 
   // Validate payment method
   const payment = document.getElementById('payment');
-  if (payment.value === "") {
+  if (!payment || payment.value === "") {
       alert('Please select a payment method.');
       isValid = false;
   }
 
+  if (isValid){
+    const userConfirmed = confirm("Are you sure you want to place this order?");
+    if (userConfirmed) {
+        // Show the confirmation modal
+        showThankYouModal();
+        form.reset();
+        document.getElementById("credit-card-fields").style.display = "none"; // Hide credit card fields
+    } else {
+        // Stay on the same page
+        console.log("Order cancelled by user.");
+        return false;
+    }
+  }
+
   return isValid; // Return the status of validity
+});
+
+//window.validateCheckoutForm = validateCheckoutForm
+
+function showThankYouModal() {
+  const modal = document.getElementById("checkoutModal");
+  modal.style.display = "block";
 }
 
-window.validateCheckoutForm = validateCheckoutForm
+window.showThankYouModal = showThankYouModal;
 
+function closeModal() {
+  const modal = document.getElementById("checkoutModal");
+  modal.style.display = "none";
+  showPage('Main');
+}
+
+window.closeModal = closeModal;
 
 function updateColorSelection(color) {
   document.getElementById('selectedColor').textContent = color;
@@ -402,8 +444,6 @@ function changeImage(direction) {
     document.getElementById('carImage').src = images[currentIndex]; // Update image source
 }
 
-window.changeImage = changeImage;
-
 // Function to switch images array while maintaining the same index
 function updateSelection(color) {
   const selectedColorSpan = document.getElementById('selectedColor');
@@ -435,125 +475,30 @@ function updateSelection(color) {
   document.getElementById('carImage').src = images[currentIndex]; // Update the displayed image
 }
 
+window.changeImage = changeImage;
 window.updateSelection = updateSelection;
 
 function goBack() {
-  if (history.state && history.state.pageId) {
-    // If there is a previous state in the history, go back
-    history.back();
+  const referrer = document.referrer; // Get the URL of the previous page
+  if (referrer) {
+    // Redirect to the referring page
+    window.location.href = referrer;
   } else {
-    // If no history state is present, default to the "Main" section
-    showPage("Main", true);
+    // If no referrer, redirect to a fallback page
+    window.location.href = "index.html"; // Replace with your fallback URL
   }
 }
 
 window.goback = goBack
 
-window.validateCarCheckoutForm = validateCarCheckoutForm;
-
-function validateCarCheckoutForm() {
-  let isValid = true;
-  const messages = [];
-
-  // Validate finance options
-  const finance = document.getElementById('finance');
-  if (finance.value === "") {
-    messages.push('Please select a finance option.');
-    isValid = false;
-  }
-
-  // Validate color options
-  const colors = document.querySelectorAll('input[name="color"]:checked');
-  if (colors.length === 0) {
-    messages.push('Please select a color.');
-    isValid = false;
-  }
-
-  // Validate protection package
-  const protection = document.getElementById('protection');
-  if (protection.value === "") {
-    messages.push('Please select a protection package.');
-    isValid = false;
-  }
-
-  // Validate personal details
-  const firstname = document.querySelector('input[name="firstname"]').value.trim();
-  const lastname = document.querySelector('input[name="lastname"]').value.trim();
-  const email = document.querySelector('input[name="email"]').value.trim();
-  const phone = document.querySelector('input[name="phone"]').value.trim();
-
-  if (!/^[a-zA-Z\s]+$/.test(firstname)) {
-    messages.push('First name must only contain letters.');
-    isValid = false;
-  }
-  if (!/^[a-zA-Z\s]+$/.test(lastname)) {
-    messages.push('Last name must only contain letters.');
-    isValid = false;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    messages.push('Please enter a valid email address.');
-    isValid = false;
-  }
-  if (!/^\d{10,15}$/.test(phone)) {
-    messages.push('Phone number must be a valid numeric value (10-15 digits).');
-    isValid = false;
-  }
-
-  // Validate payment details
-  const payment = document.getElementById('payment');
-  if (payment.value === "") {
-    messages.push('Please select a payment method.');
-    isValid = false;
-  } else if (payment.value === "credit") {
-    const cardNumber = document.getElementById('credit-card-number').value.trim();
-    const expiryDate = document.getElementById('credit-card-expiry').value.trim();
-    const cvc = document.getElementById('credit-card-cvc').value.trim();
-
-    if (!/^\d{16}$/.test(cardNumber)) {
-      messages.push('Credit card number must be 16 digits.');
-      isValid = false;
-    }
-    if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
-      messages.push('Expiry date must be in MM/YY format.');
-      isValid = false;
-    }
-    if (!/^\d{3,4}$/.test(cvc)) {
-      messages.push('CVC must be 3 or 4 digits.');
-      isValid = false;
-    }
-  } else if (payment.value === "paypal") {
-    const paypalEmail = document.getElementById('paypal-email').value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(paypalEmail)) {
-      messages.push('Please enter a valid PayPal email address.');
-      isValid = false;
-    }
-  }
-
-  if (!isValid) {
-    alert(messages.join('\n'));
-  }
-  return isValid;
-}
-
-// Show and hide payment fields based on selection
-function updatePaymentFields() {
-  const payment = document.getElementById('payment').value;
-  const creditFields = document.getElementById('credit-card-fields');
-  const paypalField = document.getElementById('paypal-field');
-
-  if (payment === "credit") {
-    creditFields.style.display = "block";
-    paypalField.style.display = "none";
-  } else if (payment === "paypal") {
-    creditFields.style.display = "none";
-    paypalField.style.display = "block";
+document.getElementById("payment").addEventListener("change", function () {
+  const creditCardFields = document.getElementById("credit-card-fields");
+  if (this.value === "credit") {
+    creditCardFields.style.display = "block";
   } else {
-    creditFields.style.display = "none";
-    paypalField.style.display = "none";
+    creditCardFields.style.display = "none";
   }
-}
-
-window.updatePaymentFields = updatePaymentFields;
+});
 
 //--------------------------------------------------------------------------------------------
 // View All section 
@@ -983,54 +928,63 @@ document.getElementById("cartCheckoutForm").addEventListener("submit", function 
   }
 
   if (isValid) {
-    // Calculate subtotal
-    const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    const userConfirmed = confirm("Are you sure you want to place this order?");
+    if (userConfirmed) {
+      // Calculate subtotal
+      const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 
-    // Generate receipt details
-    const receiptItems = cart.map(
-      (item) =>
-        `<p><strong>${item.name}</strong> - ${item.quantity} x $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}</p>`
-    ).join("");
+      // Generate receipt details
+      const receiptItems = cart.map(
+        (item) =>
+          `<p><strong>${item.name}</strong> - ${item.quantity} x $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}</p>`
+      ).join("");
 
-    // Populate modal with receipt details
-    document.getElementById("modalTotal").textContent = subtotal;
-    document.getElementById("modalReceiptItems").innerHTML = receiptItems;
+      // Populate modal with receipt details
+      document.getElementById("modalTotal").textContent = subtotal;
+      document.getElementById("modalReceiptItems").innerHTML = receiptItems;
 
-    // Update modal with details
-    document.getElementById("modalTotal").textContent = subtotal;
+      // Update modal with details
+      document.getElementById("modalTotal").textContent = subtotal;
 
-    // Show the modal
-    showModal();
+      // Show the modal
+      showModal();
 
-    // Clear the cart
-    cart = []; // Empty the cart array
-    displayCartItems(); // Update the cart display
-    updateCartCount(); // Reset the cart button count
+      // Clear the cart
+      cart = []; // Empty the cart array
+      displayCartItems(); // Update the cart display
+      updateCartCount(); // Reset the cart button count
 
-    // Reset the form
-    form.reset();
-    document.getElementById("creditCardFields").style.display = "none"; // Hide credit card fields
+      // Reset the form
+      form.reset();
+      document.getElementById("creditCardFields").style.display = "none"; // Hide credit card fields
+    } else {
+      alert("Please correct the highlighted fields.");
+    }
   } else {
-    alert("Please correct the highlighted fields.");
+    // Stay on the same page
+    console.log("Order cancelled by user.");
+    return false;
   }
+ 
 });
 
 // Function to show the modal
+
 function showModal() {
-  const modal = document.getElementById("checkoutModal");
+  const modal = document.getElementById("cartCheckoutModal");
   modal.style.display = "block";
 }
 
 // Function to close the modal
-function closeModal() {
-  const modal = document.getElementById("checkoutModal");
+function closeTheModal() {
+  const modal = document.getElementById("cartCheckoutModal");
   modal.style.display = "none";
 
   // Optionally redirect to a specific page (e.g., home or accessories)
   showPage("Accessories");
 }
 
-window.closeModal = closeModal;
+window.closeTheModal = closeTheModal;
 
 // Show/Hide Credit Card Fields
 document.getElementById("paymentMethod").addEventListener("change", function () {

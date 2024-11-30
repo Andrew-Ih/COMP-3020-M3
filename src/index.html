@@ -267,12 +267,30 @@
                     <input type="text" id="cvc" name="cvc" placeholder="CVC" maxlength="3" />
                   </div>
                 </div>
-        
+
                 <button type="submit" class="checkout-btn">Checkout</button>
               </form>
             </div>
           </div>
         </section>
+
+        <div id="cartCheckoutModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeTheModal()">&times;</span>
+            <h2>Thank You for Your Purchase!</h2>
+            <p>Your delivery will arrive within 5-7 business days.</p>
+            <p>If you have any questions, please visit the <a href="#" onclick="showPage('contact'); return false;">Contact Page</a>.</p>
+            <div class="receipt">
+              <h3>Receipt</h3>
+              <div id="modalReceiptItems">
+                <!-- Items will be dynamically populated here -->
+              </div>
+              <p><strong>Order Total:</strong> $<span id="modalTotal"></span></p>
+              <p>A receipt has been sent to your email.</p>
+            </div>
+            <button onclick="closeTheModal()">Close</button>
+          </div>
+        </div>
 
         <!-- MAINTENANCE SECTION -->
         <section id="Maintenance">
@@ -420,7 +438,10 @@
                     <li>0-100 km/h in 4.4s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/tesla4.avif" alt="Car 2">
@@ -434,7 +455,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/tesla3.avif" alt="Car 2">
@@ -448,7 +472,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/astonmartin2.webp" alt="Car 2">
@@ -462,7 +489,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/cybertruck.avif" alt="Car 1">
@@ -476,7 +506,10 @@
                     <li>0-100 km/h in 4.4s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/tesla4.avif" alt="Car 2">
@@ -490,7 +523,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/tesla3.avif" alt="Car 2">
@@ -504,7 +540,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/astonmartin2.webp" alt="Car 2">
@@ -518,7 +557,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <!-- Add more car items as needed -->
             </div>
@@ -594,7 +636,10 @@
                     <li>0-100 km/h in 4.4s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/2017-Audi-A7-S.jpg" alt="Car 2">
@@ -608,7 +653,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/new-random-landrover.png" alt="Car 2">
@@ -622,7 +670,10 @@
                     <li>0-100 km/h in 3.2s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/new-360_F_350797389_jvB1nweQv7iscc34LexSO3ulv8JvLHdv.jpg" alt="Car 2">
@@ -636,7 +687,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <!-- Add more car items as needed -->
             </div>
@@ -712,7 +766,10 @@
                     <li>0-100 km/h in 4.4s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/aston-martin-gettyimages-493517214-612x612.jpg" alt="Car 2">
@@ -726,7 +783,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/new-random-landrover.png" alt="Car 2">
@@ -740,7 +800,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <div class="car-item">
                 <img src="img/audi-car-Screenshot 2024-11-24 210021.png" alt="Car 2">
@@ -754,7 +817,10 @@
                     <li>0-100 km/h in 3.5s</li>
                   </ul>
                 </div>
-                <button onclick="showPage('more-details')" class="details-btn">View Details</button>
+                <div class="car-buttons">
+                  <button onclick="showPage('more-details'); return false;" class="details-btn">View Details</button>
+                  <button class="buy-now-button" onclick="showPage('checkout'); return false;">Buy Now</button>
+                </div>
               </div>
               <!-- Add more car items as needed -->
             </div>
@@ -974,7 +1040,7 @@
         
             <!-- <h1>Checkout Options</h1> -->
             <div class="checkout-options">
-              <form id="checkoutForm" action="#" method="POST" onsubmit="return validateCheckoutForm()">
+              <form id="checkoutForm">
                   <h2>$150,000</h2>
                   
                   <!-- Finance Options -->
@@ -1033,22 +1099,22 @@
                   <!-- Personal Details -->
                   <div class="checkout-personal-details">
                       <label for="personal-details">Personal Details:</label>
-                      <input type="text" name="firstname" placeholder="First Name" required>
-                      <input type="text" name="lastname" placeholder="Last Name" required>
-                      <input type="email" name="email" placeholder="Email" required>
-                      <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number">
-                      <input type="text" name="address" placeholder="Street Address" required>
-                      <input type="text" name="address" placeholder="Apt. or Suite (optional)">
-                      <input type="text" name="address" placeholder="Town/City" required>
-                      <input type="text" name="address" placeholder="Province" required>
-                      <input type="text" name="address" placeholder="Postal Code" required>
-                      <input type="text" name="address" placeholder="Country/Region" required>
+                      <input type="text" name="firstname" placeholder="First Name" required />
+                      <input type="text" name="lastname" placeholder="Last Name" required />
+                      <input type="email" name="email" placeholder="Email" required />
+                      <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" />
+                      <input type="text" name="address" placeholder="Street Address" required />
+                      <input type="text" name="address5" placeholder="Apt. or Suite (optional)" />
+                      <input type="text" name="address1" placeholder="Town/City" required />
+                      <input type="text" name="address2" placeholder="Province" required />
+                      <input type="text" name="address3" placeholder="Postal Code" required />
+                      <input type="text" name="address4" placeholder="Country/Region" required />
                   </div>
                   
                   <!-- Payment Information -->
                   <div class="checkout-payment-method">
                     <label for="payment">Payment Method:</label>
-                    <select id="payment" name="payment" onchange="updatePaymentFields()" required>
+                    <select id="payment" name="payment" required>
                       <option value="">Select Payment Method</option>
                       <option value="credit">Credit Card</option>
                       <option value="paypal">PayPal</option>
@@ -1057,13 +1123,13 @@
                     <!-- Credit Card Fields -->
                     <div id="credit-card-fields" style="display: none;">
                       <!-- <label for="credit-card-number">Card Number:</label> -->
-                      <input type="text" id="credit-card-number" name="credit-card-number" placeholder="16-digit card number">
+                      <input type="text" id="credit-card-number" name="credit-card-number" placeholder="16-digit card number" maxlength="16" />
 
                       <!-- <label for="credit-card-expiry">Expiry Date (MM/YY):</label> -->
-                      <input type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="Expiry Date (MM/YY)">
+                      <input type="text" id="credit-card-expiry" name="credit-card-expiry" placeholder="Expiry Date (MM/YY)" maxlength="5" />
 
                       <!-- <label for="credit-card-cvc">CVC:</label> -->
-                      <input type="text" id="credit-card-cvc" name="credit-card-cvc" placeholder="3-digit CVC">
+                      <input type="text" id="credit-card-cvc" name="credit-card-cvc" placeholder="3-digit CVC" maxlength="3" />
                     </div>
 
                     <!-- PayPal Field -->
@@ -1076,7 +1142,7 @@
                   <!-- Assistance Section -->
                   <div class="checkout-assistance">
                     <p>If you have any questions or need assistance with completing this purchase, please contact us.</p>
-                    <p>Your purchase history would be saved, just hit the back arrow on the broser after clicking the contact page</p>
+                    <p>Your purchase history would be saved, just hit the back arrow on the browser after clicking the contact page</p>
                     <button id="contactButton" onclick="showPage('contact'); return false;">Contact Us</button>
                   </div>
                          
@@ -1099,12 +1165,11 @@
               <div id="modalReceiptItems">
                 <!-- Items will be dynamically populated here -->
               </div>
-              <p><strong>Order Total:</strong> $<span id="modalTotal"></span></p>
+              <p><strong>Order Total:</strong> $<span id="modalTotal">150,000</span></p>
               <p>A receipt has been sent to your email.</p>
             </div>
             <button onclick="closeModal()">Close</button>
           </div>
         </div>
-
     </body>
 </html>
