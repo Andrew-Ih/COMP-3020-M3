@@ -479,17 +479,18 @@ window.changeImage = changeImage;
 window.updateSelection = updateSelection;
 
 function goBack() {
-  const referrer = document.referrer; // Get the URL of the previous page
-  if (referrer) {
+  //const referrer = document.referrer; // Get the URL of the previous page
+  if (window.history.length > 1) {
     // Redirect to the referring page
-    window.location.href = referrer;
+    //window.location.href = referrer;
+    window.history.back();
   } else {
     // If no referrer, redirect to a fallback page
-    window.location.href = "index.html"; // Replace with your fallback URL
+    showPage("Main"); // Replace with your fallback URL
   }
 }
 
-window.goback = goBack
+window.goBack = goBack;
 
 document.getElementById("payment").addEventListener("change", function () {
   const creditCardFields = document.getElementById("credit-card-fields");
