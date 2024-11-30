@@ -391,6 +391,7 @@
             <!-- Filter Menu -->
             <aside class="filter-menu">
               <h2>Filter Options</h2>
+              <!-- Search Distance -->
               <div class="filter-group">
                 <label for="searchDistance">Search within</label>
                 <select id="searchDistance">
@@ -400,27 +401,63 @@
                   <option value="500">500 km</option>
                 </select>
               </div>
+
+              <!-- Range Filter -->
               <div class="filter-group">
-                <h3>Models</h3>
-                <label><input type="radio" name="model" value="model-s"> Model S</label>
-                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
-                <label><input type="radio" name="model" value="model-x"> Model X</label>
-                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+                <h3>Range</h3>
+                <label for="range">Minimum Range (km)</label>
+                <select id="range">
+                  <option value="200">200 km</option>
+                  <option value="300">300 km</option>
+                  <option value="400">400 km</option>
+                  <option value="500">500 km</option>
+                  <option value="600">600+ km</option>
+                </select>
               </div>
+
+              <!-- Battery Capacity Filter -->
+              <div class="filter-group">
+                <h3>Battery Capacity</h3>
+                <label for="batteryCapacity">Minimum Capacity (kWh)</label>
+                <select id="batteryCapacity">
+                  <option value="50">50 kWh</option>
+                  <option value="75">75 kWh</option>
+                  <option value="100">100 kWh</option>
+                  <option value="125">125 kWh</option>
+                </select>
+              </div>
+
+              <!-- Charging Speed Filter -->
+              <div class="filter-group">
+                <h3>Charging Speed</h3>
+                <label for="chargingSpeed">Charging Time (to 80%)</label>
+                <select id="chargingSpeed">
+                  <option value="30">Under 30 mins</option>
+                  <option value="60">Under 60 mins</option>
+                  <option value="120">Under 2 hours</option>
+                  <option value="180">Under 3 hours</option>
+                </select>
+              </div>
+
+              <!-- Inventory Type Filter -->
               <div class="filter-group">
                 <h3>Inventory Type</h3>
                 <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
                 <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
               </div>
+
+              <!-- Exterior Paint Filter -->
               <div class="filter-group">
                 <h3>Exterior Paint</h3>
                 <div class="color-options">
-                  <div class="color-swatch" style="background-color: black;"></div>
-                  <div class="color-swatch" style="background-color: white;"></div>
-                  <div class="color-swatch" style="background-color: blue;"></div>
-                  <div class="color-swatch" style="background-color: red;"></div>
+                  <div class="color-swatch" style="background-color: black;" title="Black"></div>
+                  <div class="color-swatch" style="background-color: white;" title="White"></div>
+                  <div class="color-swatch" style="background-color: blue;" title="Blue"></div>
+                  <div class="color-swatch" style="background-color: red;" title="Red"></div>
                 </div>
               </div>
+
+              <!-- Apply Filters Button -->
               <button class="apply-filters-btn">Apply Filters</button>
             </aside>
 
@@ -657,6 +694,7 @@
             <!-- Filter Menu -->
             <aside class="filter-menu">
               <h2>Filter Options</h2>
+              <!-- Search Distance -->
               <div class="filter-group">
                 <label for="searchDistance">Search within</label>
                 <select id="searchDistance">
@@ -666,27 +704,63 @@
                   <option value="500">500 km</option>
                 </select>
               </div>
+
+              <!-- Range Filter -->
               <div class="filter-group">
-                <h3>Models</h3>
-                <label><input type="radio" name="model" value="model-s"> Model S</label>
-                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
-                <label><input type="radio" name="model" value="model-x"> Model X</label>
-                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+                <h3>Range</h3>
+                <label for="range">Minimum Range (km)</label>
+                <select id="range">
+                  <option value="200">200 km</option>
+                  <option value="300">300 km</option>
+                  <option value="400">400 km</option>
+                  <option value="500">500 km</option>
+                  <option value="600">600+ km</option>
+                </select>
               </div>
+
+              <!-- Battery Capacity Filter -->
+              <div class="filter-group">
+                <h3>Battery Capacity</h3>
+                <label for="batteryCapacity">Minimum Capacity (kWh)</label>
+                <select id="batteryCapacity">
+                  <option value="50">50 kWh</option>
+                  <option value="75">75 kWh</option>
+                  <option value="100">100 kWh</option>
+                  <option value="125">125 kWh</option>
+                </select>
+              </div>
+
+              <!-- Charging Speed Filter -->
+              <div class="filter-group">
+                <h3>Charging Speed</h3>
+                <label for="chargingSpeed">Charging Time (to 80%)</label>
+                <select id="chargingSpeed">
+                  <option value="30">Under 30 mins</option>
+                  <option value="60">Under 60 mins</option>
+                  <option value="120">Under 2 hours</option>
+                  <option value="180">Under 3 hours</option>
+                </select>
+              </div>
+
+              <!-- Inventory Type Filter -->
               <div class="filter-group">
                 <h3>Inventory Type</h3>
                 <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
                 <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
               </div>
+
+              <!-- Exterior Paint Filter -->
               <div class="filter-group">
                 <h3>Exterior Paint</h3>
                 <div class="color-options">
-                  <div class="color-swatch" style="background-color: black;"></div>
-                  <div class="color-swatch" style="background-color: white;"></div>
-                  <div class="color-swatch" style="background-color: blue;"></div>
-                  <div class="color-swatch" style="background-color: red;"></div>
+                  <div class="color-swatch" style="background-color: black;" title="Black"></div>
+                  <div class="color-swatch" style="background-color: white;" title="White"></div>
+                  <div class="color-swatch" style="background-color: blue;" title="Blue"></div>
+                  <div class="color-swatch" style="background-color: red;" title="Red"></div>
                 </div>
               </div>
+
+              <!-- Apply Filters Button -->
               <button class="apply-filters-btn">Apply Filters</button>
             </aside>
 
@@ -838,6 +912,7 @@
             <!-- Filter Menu -->
             <aside class="filter-menu">
               <h2>Filter Options</h2>
+              <!-- Search Distance -->
               <div class="filter-group">
                 <label for="searchDistance">Search within</label>
                 <select id="searchDistance">
@@ -847,27 +922,63 @@
                   <option value="500">500 km</option>
                 </select>
               </div>
+
+              <!-- Range Filter -->
               <div class="filter-group">
-                <h3>Models</h3>
-                <label><input type="radio" name="model" value="model-s"> Model S</label>
-                <label><input type="radio" name="model" value="model-3" checked> Model 3</label>
-                <label><input type="radio" name="model" value="model-x"> Model X</label>
-                <label><input type="radio" name="model" value="model-y"> Model Y</label>
+                <h3>Range</h3>
+                <label for="range">Minimum Range (km)</label>
+                <select id="range">
+                  <option value="200">200 km</option>
+                  <option value="300">300 km</option>
+                  <option value="400">400 km</option>
+                  <option value="500">500 km</option>
+                  <option value="600">600+ km</option>
+                </select>
               </div>
+
+              <!-- Battery Capacity Filter -->
+              <div class="filter-group">
+                <h3>Battery Capacity</h3>
+                <label for="batteryCapacity">Minimum Capacity (kWh)</label>
+                <select id="batteryCapacity">
+                  <option value="50">50 kWh</option>
+                  <option value="75">75 kWh</option>
+                  <option value="100">100 kWh</option>
+                  <option value="125">125 kWh</option>
+                </select>
+              </div>
+
+              <!-- Charging Speed Filter -->
+              <div class="filter-group">
+                <h3>Charging Speed</h3>
+                <label for="chargingSpeed">Charging Time (to 80%)</label>
+                <select id="chargingSpeed">
+                  <option value="30">Under 30 mins</option>
+                  <option value="60">Under 60 mins</option>
+                  <option value="120">Under 2 hours</option>
+                  <option value="180">Under 3 hours</option>
+                </select>
+              </div>
+
+              <!-- Inventory Type Filter -->
               <div class="filter-group">
                 <h3>Inventory Type</h3>
                 <label><input type="checkbox" name="inventory-type" value="new" checked> New</label>
                 <label><input type="checkbox" name="inventory-type" value="used"> Used</label>
               </div>
+
+              <!-- Exterior Paint Filter -->
               <div class="filter-group">
                 <h3>Exterior Paint</h3>
                 <div class="color-options">
-                  <div class="color-swatch" style="background-color: black;"></div>
-                  <div class="color-swatch" style="background-color: white;"></div>
-                  <div class="color-swatch" style="background-color: blue;"></div>
-                  <div class="color-swatch" style="background-color: red;"></div>
+                  <div class="color-swatch" style="background-color: black;" title="Black"></div>
+                  <div class="color-swatch" style="background-color: white;" title="White"></div>
+                  <div class="color-swatch" style="background-color: blue;" title="Blue"></div>
+                  <div class="color-swatch" style="background-color: red;" title="Red"></div>
                 </div>
               </div>
+
+              <!-- Apply Filters Button -->
               <button class="apply-filters-btn">Apply Filters</button>
             </aside>
 
